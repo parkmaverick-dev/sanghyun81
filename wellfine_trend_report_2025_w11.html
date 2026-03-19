@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WellFine 글로벌 건기식·기능성식품 주간 트렌드 보고서 | 2025년 3월 3주차 (1호)</title>
+<style>
+  :root {
+    --green1: #2E6B3E;
+    --green2: #4A9B60;
+    --green3: #A8D5B5;
+    --cream: #F5F2EA;
+    --white: #FFFFFF;
+    --dark: #1A2A1E;
+    --mid: #4A5568;
+    --light: #718096;
+    --accent: #E8A028;
+    --red: #C53030;
+    --border: #D4E8DC;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', sans-serif; background: #F0EDE5; color: var(--dark); line-height: 1.7; font-size: 14px; }
+  
+  /* COVER */
+  .cover { background: var(--green1); color: white; padding: 50px 60px; position: relative; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; border-radius: 50%; background: rgba(255,255,255,0.04); }
+  .cover::after { content: ''; position: absolute; bottom: -60px; left: -60px; width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,0.05); }
+  .cover-badge { display: inline-block; background: var(--accent); color: white; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px; }
+  .cover h1 { font-size: 28px; font-weight: 700; line-height: 1.4; margin-bottom: 8px; }
+  .cover h2 { font-size: 16px; font-weight: 400; opacity: 0.85; margin-bottom: 30px; }
+  .cover-meta { display: flex; gap: 32px; flex-wrap: wrap; }
+  .cover-meta-item { }
+  .cover-meta-item .label { font-size: 11px; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; }
+  .cover-meta-item .value { font-size: 14px; font-weight: 600; margin-top: 2px; }
+  .cover-tags { margin-top: 24px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .cover-tag { background: rgba(255,255,255,0.12); padding: 4px 12px; border-radius: 12px; font-size: 12px; }
+
+  /* LAYOUT */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .section { margin: 28px 0; }
+  
+  /* SECTION HEADER */
+  .sec-header { background: var(--green1); color: white; padding: 14px 24px; border-radius: 8px 8px 0 0; display: flex; align-items: center; gap: 12px; }
+  .sec-header .num { background: var(--accent); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+  .sec-header h2 { font-size: 16px; font-weight: 700; }
+  .sec-header .sub { font-size: 12px; opacity: 0.75; margin-left: auto; }
+  .sec-body { background: white; border-radius: 0 0 8px 8px; border: 1px solid var(--border); border-top: none; padding: 24px; }
+
+  /* EXECUTIVE SUMMARY */
+  .exec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 20px; }
+  .exec-card { background: var(--cream); border-radius: 8px; padding: 16px; border-left: 4px solid var(--green2); }
+  .exec-card .ec-label { font-size: 11px; color: var(--light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .exec-card .ec-value { font-size: 22px; font-weight: 700; color: var(--green1); }
+  .exec-card .ec-note { font-size: 12px; color: var(--mid); margin-top: 4px; }
+  .highlight-box { background: linear-gradient(135deg, #EDF7F0, #D4EED9); border-radius: 8px; padding: 16px 20px; border: 1px solid var(--green3); margin-bottom: 16px; }
+  .highlight-box h4 { color: var(--green1); font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+  .highlight-box p { font-size: 13px; color: var(--mid); }
+  .key-insights { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .ki-item { display: flex; gap: 10px; padding: 12px; background: #FAFAFA; border-radius: 6px; border: 1px solid #EEE; }
+  .ki-icon { font-size: 20px; flex-shrink: 0; }
+  .ki-text strong { display: block; font-size: 13px; color: var(--dark); }
+  .ki-text span { font-size: 12px; color: var(--light); }
+
+  /* COUNTRY SECTION */
+  .country-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
+  .country-flag { font-size: 28px; }
+  .country-title h3 { font-size: 17px; font-weight: 700; color: var(--green1); }
+  .country-title p { font-size: 12px; color: var(--light); }
+  .country-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .cg-card { background: var(--cream); border-radius: 6px; padding: 14px; }
+  .cg-card h4 { font-size: 12px; font-weight: 700; color: var(--green1); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .cg-card p, .cg-card li { font-size: 13px; color: var(--mid); margin-bottom: 4px; }
+  .cg-card ul { padding-left: 16px; }
+  .trend-tags { display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0; }
+  .ttag { padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+  .ttag.hot { background: #FFF0E0; color: #C05621; }
+  .ttag.up { background: #E6F7EC; color: #276749; }
+  .ttag.new { background: #EBF4FF; color: #2B6CB0; }
+  .ttag.watch { background: #FAF0FF; color: #6B46C1; }
+
+  /* INGREDIENT TABLE */
+  .ing-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+  .ing-table th { background: var(--green1); color: white; padding: 8px 12px; text-align: left; font-weight: 600; }
+  .ing-table td { padding: 8px 12px; border-bottom: 1px solid #EEE; vertical-align: top; }
+  .ing-table tr:hover td { background: #F9FBF9; }
+  .ing-table .badge { display: inline-block; padding: 2px 8px; border-radius: 8px; font-size: 11px; font-weight: 600; }
+  .badge-high { background: #FED7D7; color: #C53030; }
+  .badge-med { background: #FEFCBF; color: #975A16; }
+  .badge-low { background: #C6F6D5; color: #276749; }
+
+  /* TREND TIMELINE */
+  .timeline { display: flex; gap: 0; margin: 16px 0; }
+  .tl-item { flex: 1; }
+  .tl-head { padding: 8px 14px; text-align: center; font-size: 12px; font-weight: 700; color: white; }
+  .tl-head.past { background: var(--light); }
+  .tl-head.now { background: var(--green2); }
+  .tl-head.future { background: var(--green1); }
+  .tl-body { background: #FAFAFA; border: 1px solid #DDD; padding: 12px 14px; min-height: 100px; font-size: 12px; color: var(--mid); }
+  .tl-body ul { padding-left: 14px; }
+  .tl-body li { margin-bottom: 4px; }
+  .tl-arrow { display: flex; align-items: center; color: var(--green2); font-size: 24px; padding: 0 4px; margin-top: 28px; }
+
+  /* FORMULATION TREND */
+  .form-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .form-card { text-align: center; background: var(--cream); border-radius: 8px; padding: 16px 10px; border: 2px solid transparent; transition: border-color 0.2s; }
+  .form-card:hover { border-color: var(--green3); }
+  .form-icon { font-size: 32px; margin-bottom: 8px; }
+  .form-name { font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+  .form-growth { font-size: 20px; font-weight: 700; color: var(--green1); }
+  .form-note { font-size: 11px; color: var(--light); margin-top: 4px; }
+  .form-bar { height: 4px; background: #DDD; border-radius: 2px; margin-top: 8px; overflow: hidden; }
+  .form-bar-fill { height: 100%; border-radius: 2px; background: var(--green2); }
+
+  /* WELLFINE SPECIAL */
+  .wf-section { background: linear-gradient(135deg, var(--green1), #1A4A2A); color: white; border-radius: 8px; padding: 24px; margin-top: 20px; }
+  .wf-section h3 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .wf-section .sub { opacity: 0.75; font-size: 13px; margin-bottom: 20px; }
+  .wf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .wf-card { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 16px; }
+  .wf-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 10px; color: var(--green3); }
+  .wf-card p, .wf-card li { font-size: 12px; opacity: 0.9; margin-bottom: 4px; }
+  .wf-card ul { padding-left: 16px; }
+  .opportunity-box { background: rgba(232, 160, 40, 0.2); border-radius: 8px; padding: 16px; margin-top: 16px; border: 1px solid rgba(232, 160, 40, 0.4); }
+  .opportunity-box h4 { color: var(--accent); font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+  .opportunity-box p { font-size: 13px; opacity: 0.9; }
+
+  /* PIPELINE TABLE */
+  .pipeline-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .pipeline-table th { background: var(--green1); color: white; padding: 9px 12px; text-align: left; font-weight: 600; font-size: 12px; }
+  .pipeline-table td { padding: 9px 12px; border-bottom: 1px solid #EEE; vertical-align: top; }
+  .pipeline-table tr:nth-child(even) td { background: #F9FBF9; }
+  .pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+  .pill-cn { background: #FFE4E4; color: #C53030; }
+  .pill-us { background: #DBEAFE; color: #1E40AF; }
+  .pill-eu { background: #EDE9FE; color: #5B21B6; }
+  .pill-sea { background: #D1FAE5; color: #065F46; }
+  .pill-mea { background: #FEF3C7; color: #92400E; }
+  .pill-kr { background: #FCE7F3; color: #9D174D; }
+
+  /* FOOTER */
+  .footer { background: var(--dark); color: white; padding: 24px 40px; margin-top: 40px; }
+  .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; max-width: 1100px; margin: 0 auto; }
+  .footer h4 { font-size: 13px; font-weight: 700; color: var(--green3); margin-bottom: 8px; }
+  .footer p, .footer li { font-size: 12px; opacity: 0.7; margin-bottom: 3px; }
+  .footer ul { padding-left: 16px; }
+  .footer-bottom { text-align: center; margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 11px; opacity: 0.5; }
+
+  /* UTILITY */
+  .divider { height: 1px; background: var(--border); margin: 20px 0; }
+  .tag-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .source-note { font-size: 11px; color: var(--light); font-style: italic; margin-top: 12px; padding-top: 10px; border-top: 1px dashed #DDD; }
+
+  @media print {
+    body { background: white; }
+    .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .sec-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="container">
+    <div class="cover-badge">🌿 WELLFINE GLOBAL INTELLIGENCE</div>
+    <h1>글로벌 건강기능식품·기능성식품<br>주간 트렌드 보고서</h1>
+    <h2>Global Health Functional Food & Nutraceutical Weekly Trend Report</h2>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><div class="label">발행호수</div><div class="value">Vol. 1 (2025년 3월 3주차)</div></div>
+      <div class="cover-meta-item"><div class="label">보고서 기준일</div><div class="value">2025년 3월 19일</div></div>
+      <div class="cover-meta-item"><div class="label">작성</div><div class="value">WellFine 글로벌사업팀</div></div>
+      <div class="cover-meta-item"><div class="label">데이터 소스</div><div class="value">Innova MI, Mintel, Mordor Intelligence 外</div></div>
+    </div>
+    <div class="cover-tags">
+      <span class="cover-tag">🇰🇷 한국</span><span class="cover-tag">🇺🇸 미국</span><span class="cover-tag">🇪🇺 유럽</span><span class="cover-tag">🇨🇳 중국</span><span class="cover-tag">🇻🇳🇹🇭🇮🇩 동남아시아</span><span class="cover-tag">🌙 중동</span><span class="cover-tag">🌍 아프리카</span><span class="cover-tag">💊 WellFine 제품 심층분석</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- SECTION 1: EXECUTIVE SUMMARY -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">1</div>
+    <h2>글로벌 시장 핵심 요약</h2>
+    <span class="sub">Executive Summary | 2025년 3월 기준</span>
+  </div>
+  <div class="sec-body">
+    <div class="exec-grid">
+      <div class="exec-card">
+        <div class="ec-label">글로벌 기능성식품 시장 규모</div>
+        <div class="ec-value">$3,988억</div>
+        <div class="ec-note">2025년 기준 / CAGR 10.65% (포춘비즈니스인사이트)</div>
+      </div>
+      <div class="exec-card">
+        <div class="ec-label">아시아태평양 시장 점유율</div>
+        <div class="ec-value">39.7%</div>
+        <div class="ec-note">$1,582억, CAGR 10.82% – 최대 성장 지역</div>
+      </div>
+      <div class="exec-card">
+        <div class="ec-label">국내 건기식 시장 규모</div>
+        <div class="ec-value">5.96조원</div>
+        <div class="ec-note">2025년 전년 대비 +0.2% 소폭 반등, 정체 국면 지속</div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>📌 이번 주 최대 이슈</h4>
+      <p>PepsiCo가 2025년 3월 프리바이오틱 소다 브랜드 <strong>'Poppi'를 약 19.5억 달러에 인수</strong>하며 기능성 음료 시장에 메가 M&A가 발생했습니다. 동시에 유럽위원회는 2025년 3월 기능성식품·음료의 <strong>프로바이오틱 건강 기능 표시를 공식 승인</strong>하여 EU 시장의 기능성 음료 성장에 모멘텀이 더해졌습니다.</p>
+    </div>
+
+    <div class="key-insights">
+      <div class="ki-item">
+        <div class="ki-icon">🏥</div>
+        <div class="ki-text">
+          <strong>GLP-1 보완 건기식 급부상</strong>
+          <span>위고비 등 비만치료제 사용자 증가 → 근육 유지, 피부 탄력, 영양 보완 특화 제품 수요 폭증. 한국에서도 GLP-1 대체·보완 건기식 출시 활발</span>
+        </div>
+      </div>
+      <div class="ki-item">
+        <div class="ki-icon">🧠</div>
+        <div class="ki-text">
+          <strong>멘탈 웰니스·수면 지원 성장세</strong>
+          <span>Innova: 글로벌 소비자 36%가 정신 건강을 1순위 목표로 지목. 어댑토겐(아시와간다), 마그네슘, B비타민 복합 제품 출시 급증</span>
+        </div>
+      </div>
+      <div class="ki-item">
+        <div class="ki-icon">🍬</div>
+        <div class="ki-text">
+          <strong>기능성 구미(Gummy) 글로벌 폭발 성장</strong>
+          <span>시장 규모 $257억(2025), 2030년 $381억 목표. 콜라겐·프로바이오틱스·수면·미용 기능성 구미 EU·US·SEA 전방위 출시</span>
+        </div>
+      </div>
+      <div class="ki-item">
+        <div class="ki-icon">🎯</div>
+        <div class="ki-text">
+          <strong>초개인화 영양 (Precision Wellness)</strong>
+          <span>한국 2025 키워드: "정밀 소비". 중국 Tmall도 7개 핵심 트랙 집중 투자. AI 기반 맞춤 영양 솔루션 가속화</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="source-note">📚 주요 참고 자료: Fortune Business Insights Global F&B Market Report 2025, Innova Market Insights Top 10 Trends 2025, Mintel Global Food & Drink Trends 2025, 한국건강기능식품협회 '2025 건기식 시장 현황 및 소비자 실태조사', Mordor Intelligence Regional Market Reports</p>
+  </div>
+</div>
+
+<!-- SECTION 2: KOREA -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">2</div>
+    <h2>국가별 섹션 ① 한국 🇰🇷</h2>
+    <span class="sub">Korea Health Functional Food Market</span>
+  </div>
+  <div class="sec-body">
+    <div class="country-header">
+      <div class="country-flag">🇰🇷</div>
+      <div class="country-title">
+        <h3>한국 — 정체기 속 '정밀 소비' 트렌드 본격화</h3>
+        <p>시장 규모: 5.96조원 (2025) | 상위 3사 점유율 확대: KGC인삼공사(34.9%) · 종근당건강(19.7%) · 고려은단</p>
+      </div>
+    </div>
+
+    <div class="trend-tags">
+      <span class="ttag hot">🔥 정밀소비(Precision Wellness)</span>
+      <span class="ttag hot">🔥 GLP-1 보완제품</span>
+      <span class="ttag up">📈 저속노화/장수</span>
+      <span class="ttag up">📈 멘탈케어·수면</span>
+      <span class="ttag new">✨ 뉴트로픽(인지기능)</span>
+      <span class="ttag watch">👀 혈당관리</span>
+    </div>
+
+    <div class="country-grid">
+      <div class="cg-card">
+        <h4>📊 시장 구조 변화</h4>
+        <ul>
+          <li>2021~2022 고속 성장 이후 3년째 6조원 박스권 정체</li>
+          <li>브랜드 쏠림 심화: 상위 3사 인지도 독식</li>
+          <li><strong>온라인 판매 비중 70% 돌파</strong> (네이버, 카카오, 쿠팡)</li>
+          <li>소비자 키워드 Top: 유산균(月 192만건) → 혈당(128만건) → 갱년기(42만건)</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>🌿 주요 기능성 원료 트렌드</h4>
+        <ul>
+          <li>검색량 1위: <strong>오메가3</strong> (3년 지속 안정 수요)</li>
+          <li>급성장: <strong>혈당관리 소재</strong> (베르베린, 바나바엽)</li>
+          <li>복귀: <strong>콜라겐</strong> + 비오틴 복합제 인기 재상승</li>
+          <li>신흥: <strong>NMN(니코틴아마이드 모노뉴클레오타이드)</strong> 항노화 원료</li>
+          <li>갱년기 특화: 석류 추출물·홍삼 복합 여성 건강 제품</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>📦 인기 제형 변화</h4>
+        <ul>
+          <li><strong>젤리스틱·파우치형</strong> 폭발 성장 (편의성 극대화)</li>
+          <li>음료형: 콜라겐 RTD 드링크, 유산균 음료</li>
+          <li>구미(Gummy) 시장 진입 가속 (2030세대 타깃)</li>
+          <li>워터파우더(물에 타먹는 포): 1인가구 증가와 맞물려 성장</li>
+          <li>기존 캡슐/정제는 시니어·약국 채널에서 여전히 강세</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>🔮 신규 트렌드 핫이슈</h4>
+        <ul>
+          <li><strong>GLP-1 연계 건기식</strong>: 위고비 사용자용 단백질·유산균·섬유질 복합제</li>
+          <li><strong>저속노화 시장</strong>: NMN, 레스베라트롤, 스퍼미딘 등 항노화 원료</li>
+          <li><strong>뉴트로픽</strong>: 인지 기능 향상 보충제 (라이온스 메인 버섯, 포스파티딜세린)</li>
+          <li>멘탈케어: 마그네슘 글리시네이트, 테아닌, 아시와간다 복합제</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-head past">◀ 과거 (2020~2023)</div>
+        <div class="tl-body"><ul>
+          <li>면역 부스팅 폭발 (코로나)</li>
+          <li>홍삼/프로폴리스 1위</li>
+          <li>오프라인 방판 중심</li>
+          <li>혈액건강 버블 후 붕괴</li>
+          <li>유산균 1세대 성장</li>
+        </ul></div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-item">
+        <div class="tl-head now">● 현재 (2024~2025)</div>
+        <div class="tl-body"><ul>
+          <li>정체기 속 <strong>정밀 소비</strong> 전환</li>
+          <li>혈당·갱년기·수면 세분화</li>
+          <li>온라인 70%+ 지배</li>
+          <li>젤리스틱·파우치 제형 부상</li>
+          <li>GLP-1 대체/보완 건기식 등장</li>
+        </ul></div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-item">
+        <div class="tl-head future">▶ 미래 (2026~2028)</div>
+        <div class="tl-body"><ul>
+          <li>AI 맞춤 영양 솔루션 확산</li>
+          <li>노화 지연 시장 본격화</li>
+          <li>마이크로바이옴 정밀 제품</li>
+          <li>구독형 개인화 건기식</li>
+          <li>기능성 식품 경계 붕괴</li>
+        </ul></div>
+      </div>
+    </div>
+    <p class="source-note">출처: 한국건강기능식품협회 2025 실태조사, 리스닝마인드 인텐트파인더, 푸드아이콘 2025 트렌드 특집, 씽크푸드 2025</p>
+  </div>
+</div>
+
+<!-- SECTION 2: USA -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">2</div>
+    <h2>국가별 섹션 ② 미국 🇺🇸</h2>
+    <span class="sub">United States Health Supplement & Functional Food Market</span>
+  </div>
+  <div class="sec-body">
+    <div class="country-header">
+      <div class="country-flag">🇺🇸</div>
+      <div class="country-title">
+        <h3>미국 — GLP-1 연계 제품 & 프리바이오틱 음료 메가 트렌드</h3>
+        <p>시장 규모: $1,172억 (2032년 목표) | PepsiCo Poppi 인수($19.5억) - 기능성 음료 판도 변화</p>
+      </div>
+    </div>
+
+    <div class="trend-tags">
+      <span class="ttag hot">🔥 GLP-1 Support 제품</span>
+      <span class="ttag hot">🔥 프리바이오틱 음료</span>
+      <span class="ttag up">📈 Ozempic Face 대응 콜라겐</span>
+      <span class="ttag up">📈 마그네슘 폭발 성장</span>
+      <span class="ttag new">✨ Gut-Brain Axis</span>
+      <span class="ttag watch">👀 기능성 구미 품질 논란</span>
+    </div>
+
+    <div class="country-grid">
+      <div class="cg-card">
+        <h4>🔥 2025년 최대 핫이슈: GLP-1 연계</h4>
+        <ul>
+          <li>Ozempic·Wegovy 사용자 대상 특화 건기식 급증</li>
+          <li>Smoothie King: 'GLP-1 Support 메뉴' 출시 (20g 단백질 스무디)</li>
+          <li>근육 유지 단백질 + 피부 탄력 콜라겐 복합 제품</li>
+          <li>'Ozempic Face' 피부 탄력 저하 대응 콜라겐 RTD</li>
+          <li>GLP-1 부작용 완화(소화불량, 변비) 프리·프로바이오틱스</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>💰 2025년 3월 주요 M&A·출시</h4>
+        <ul>
+          <li><strong>PepsiCo → Poppi 인수 ($19.5억)</strong>: 프리바이오틱 소다</li>
+          <li>Herbalife: 생체측정 기반 맞춤 영양 기술 인수($25~30M)</li>
+          <li>Germany의 Elasten 액상 콜라겐 미국 시장 진출 (Nov 2025)</li>
+          <li>Marks & Spencer: YAY! 버섯 드링크·Brain Food 라인 론칭</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>📦 주목 제형 & 원료</h4>
+        <ul>
+          <li><strong>마그네슘 L-트레오네이트 (Magtein)</strong>: 뇌 투과 마그네슘, 수면·인지 기능 특화</li>
+          <li>아시와간다 + 마그네슘 + GABA 복합 수면 구미</li>
+          <li>해조류 DHA (Algal Oil): 비건 오메가3 주류화</li>
+          <li>기능성 버섯(라이온스메인·레이시·차가) 보충제</li>
+          <li>콜라겐 구미: 35세 미만 여성 주요 구매 제형으로 부상</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>🧠 소비자 트렌드</h4>
+        <ul>
+          <li>71%의 미국 성인: "스트레스 감소가 건강 개선의 핵심"</li>
+          <li>수면 지원 제품: 멜라토닌 → 마그네슘·테아닌 복합으로 이동</li>
+          <li>Z세대: 예방 건강 투자 적극적 (스트레스, 장 건강 우선)</li>
+          <li>개인화 영양: 온라인 문진 기반 맞춤형 구미 스택 성장</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-head past">◀ 과거 (2020~2023)</div>
+        <div class="tl-body"><ul>
+          <li>면역 강화 붐 (코로나)</li>
+          <li>단백질·스포츠 영양 성장</li>
+          <li>D2C 브랜드 급증</li>
+          <li>전통 종합 비타민 정체</li>
+        </ul></div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-item">
+        <div class="tl-head now">● 현재 (2024~2025)</div>
+        <div class="tl-body"><ul>
+          <li><strong>GLP-1 연계 특화 건기식</strong> 신시장 형성</li>
+          <li>프리바이오틱 음료 메인스트림화</li>
+          <li>마그네슘·기능성 버섯 폭발</li>
+          <li>뷰티 프롬 위딘 주류화</li>
+        </ul></div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-item">
+        <div class="tl-head future">▶ 미래 (2026~2028)</div>
+        <div class="tl-body"><ul>
+          <li>AI 영양 플랫폼 구독 확산</li>
+          <li>GLP-1 보조 시장 $수십억대로 성장</li>
+          <li>포스트바이오틱스 주류화</li>
+          <li>정밀 발효 성분 상업화</li>
+        </ul></div>
+      </div>
+    </div>
+    <p class="source-note">출처: Innova Market Insights Functional Food Trends 2025, Fortune Business Insights US Market 2025, Mordor Intelligence 2025, PepsiCo Press Release</p>
+  </div>
+</div>
+
+<!-- SECTION 2: EUROPE -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">2</div>
+    <h2>국가별 섹션 ③ 유럽 🇪🇺</h2>
+    <span class="sub">European Nutraceutical & Functional Food Market</span>
+  </div>
+  <div class="sec-body">
+    <div class="country-header">
+      <div class="country-flag">🇪🇺</div>
+      <div class="country-title">
+        <h3>유럽 — 프로바이오틱스 건강 표시 승인 & 콜라겐 Gummy 폭발</h3>
+        <p>2025년 3월 EU 집행위 프로바이오틱스 건강 기능 표시 공식 승인 | 유럽 콜라겐 시장 $18.5억 (2025)</p>
+      </div>
+    </div>
+
+    <div class="trend-tags">
+      <span class="ttag hot">🔥 EU 프로바이오틱스 표시 승인</span>
+      <span class="ttag hot">🔥 콜라겐 Gummy CAGR 21.4%</span>
+      <span class="ttag up">📈 Magtein 뇌 마그네슘 EFSA 승인</span>
+      <span class="ttag up">📈 Synbiotics 삼총사 (Pre+Pro+Post)</span>
+      <span class="ttag new">✨ 마이코프로틴/기능성 버섯</span>
+      <span class="ttag watch">👀 Clean-label 규제 강화</span>
+    </div>
+
+    <div class="country-grid">
+      <div class="cg-card">
+        <h4>📋 2025년 3월 최신 규제 이슈</h4>
+        <ul>
+          <li><strong>EU 집행위 프로바이오틱스 건강 표시 승인</strong> (2025.3) - 기업들의 기능성 음료 마케팅 탄력</li>
+          <li>Magtein (마그네슘 L-트레오네이트) <strong>EFSA Novel Food 승인</strong> (2024말~2025 효력)</li>
+          <li>독일: 액상 콜라겐 Elasten 미국 진출하며 글로벌 확장 가속</li>
+          <li>Vitafoods Europe 2025: 개인화 영양, 콜라겐, 알조류 오일, 기능성 버섯 핵심 주제</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>🧪 주목 신원료·신제품</h4>
+        <ul>
+          <li><strong>Bismethyl Glycinate 미네랄</strong>: 비스글리시네이트 미네랄 (생체이용률 업그레이드)</li>
+          <li>마이오이노시톨: 여성 PCOS·대사 건강 특화 신흥 원료</li>
+          <li>기능성 버섯(Musheez®): PureLionsMane, PureReishi, PureChaga 론칭</li>
+          <li>Rousselot Nextida 플랫폼: 특정 건강 기능 타겟 콜라겐 펩타이드 조합</li>
+          <li>Nourished 3D 프린팅 개인화 구미: UK·EU·일본·인도 매장 확장</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>📦 제형 트렌드</h4>
+        <ul>
+          <li>콜라겐 구미: 18~30세 여성 74% 선택 (유럽소비자협회 조사)</li>
+          <li>드링크·샷 형태: CAGR 10.08% (가장 빠른 성장)</li>
+          <li>Synbiotics 구미: 프로·프리·포스트바이오틱스 통합</li>
+          <li>기능성 구미 시장: $257억 (2025), $381억 (2030) 목표</li>
+          <li>스페인 Infarma 2025: 뼈 모양 칼슘 구미, 페릴라오일 비건 오메가3 구미 화제</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>🌍 국가별 포커스</h4>
+        <ul>
+          <li><strong>독일</strong>: 스포츠 영양 + 뷰티 콜라겐 중심. 탄소중립 소 콜라겐 부상</li>
+          <li><strong>영국</strong>: 항노화 콜라겐 + 면역 기능 복합. 구미 반복 구매 +38%</li>
+          <li><strong>프랑스</strong>: HTL Biotechnology 재조합 콜라겐 플랫폼 확보</li>
+          <li><strong>스페인</strong>: 콜라겐 + CoQ10 + 포도씨 추출물 항산화 복합 구미 인기</li>
+        </ul>
+      </div>
+    </div>
+    <p class="source-note">출처: Mordor Intelligence Europe Collagen Market 2025, Innova Market Insights EU Supplement Trends, NutraIngredients Vitafoods 2025 Preview, Sirio Europe Infarma 2025 Report, Technavio EU Functional F&B Market 2025</p>
+  </div>
+</div>
+
+<!-- SECTION 2: CHINA -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">2</div>
+    <h2>국가별 섹션 ④ 중국 🇨🇳</h2>
+    <span class="sub">China Health Supplement & Nutraceutical Market — WellFine 1순위 수출 시장</span>
+  </div>
+  <div class="sec-body">
+    <div class="country-header">
+      <div class="country-flag">🇨🇳</div>
+      <div class="country-title">
+        <h3>중국 — Tmall 7대 핵심 트랙 집중 투자 & 마린 콜라겐 붐</h3>
+        <p>건강보조식품 시장 2023년 RMB 3,879억 → 2028년 RMB 5,067억 목표 | Tmall Health 다조단위 RMB 7개 트랙 투자</p>
+      </div>
+    </div>
+
+    <div class="trend-tags">
+      <span class="ttag hot">🔥 마린 콜라겐 Beauty-From-Within</span>
+      <span class="ttag hot">🔥 Douyin(틱톡) 건기식 판매 급성장</span>
+      <span class="ttag up">📈 장 건강(Gut Health) 52% 관심</span>
+      <span class="ttag up">📈 Healthy Aging 항노화</span>
+      <span class="ttag new">✨ 전통 중의학(TCM) + 서양 과학 융합</span>
+      <span class="ttag watch">👀 Blue Hat 인증 중요도 증가</span>
+    </div>
+
+    <div class="country-grid">
+      <div class="cg-card">
+        <h4>🛒 Tmall Health 2025년 투자 7대 트랙</h4>
+        <ul>
+          <li>1. <strong>비타민·미네랄</strong> (기본 영양)</li>
+          <li>2. <strong>칼슘·철·아연</strong> 복합 (어린이 성장)</li>
+          <li>3. <strong>피쉬오일 (EPA/DHA)</strong></li>
+          <li>4. <strong>어린이 시력 건강</strong></li>
+          <li>5. <strong>스포츠 영양</strong></li>
+          <li>6. <strong>소화건강</strong> (프로바이오틱스)</li>
+          <li>7. <strong>면역 지원 단백질</strong></li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>🌟 최신 주목 소재 (2025.3 기준)</h4>
+        <ul>
+          <li><strong>마린 콜라겐 펩타이드</strong>: Rousselot 2025.3 중국용 고순도 마린 콜라겐 론칭</li>
+          <li><strong>GELITA AG</strong>: 관절·뼈 건강용 생체활성 콜라겐 펩타이드 중국 시장 확장</li>
+          <li>유산균 + 콜라겐 구강미용 제품 (Oral Beauty)</li>
+          <li>CoQ10 (항피로·심혈관): 구미형 신제품 출시 활발</li>
+          <li>아스타잔틴: 여성 구매 급증 (2022 대비 +63%)</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>💎 소비자 인사이트</h4>
+        <ul>
+          <li>프로바이오틱스·단백질 스타 원료, 콜라겐·식이섬유 차순위</li>
+          <li>밀레니얼(94%) vs 베이비부머(81%) 복용률 차이</li>
+          <li>52%가 <strong>장 건강</strong>에 강한 관심</li>
+          <li>89%: "기능성 원료 표기 시 구매 의향 상승"</li>
+          <li>젊은 세대: 구미·젤리·구강 액상 선호 (의약품 이미지 탈피)</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>📱 유통 채널 변화</h4>
+        <ul>
+          <li>온라인 판매 비중: 2019년 28% → 2023년 62% 수직 상승</li>
+          <li><strong>Douyin(틱톡) 라이브커머스</strong>: 타 플랫폼 대비 가장 빠른 성장</li>
+          <li>Tmall, JD.com, WeChat 등 옴니채널 전략 필수</li>
+          <li>Blue Hat(보건식품 인증) 없는 CBEC 루트도 여전히 유효</li>
+          <li>Doctor Recommendation 최대 구매 결정 요인</li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="ing-table">
+      <tr>
+        <th>원료/제품</th>
+        <th>시장 동향</th>
+        <th>성장도</th>
+        <th>주목 기업</th>
+      </tr>
+      <tr>
+        <td><strong>마린 콜라겐 펩타이드</strong></td>
+        <td>Beauty-From-Within 트렌드 핵심. 중국 콜라겐 시장 2024년 $25억 → 2035년 $73억</td>
+        <td><span class="badge badge-high">🔺 HIGH</span></td>
+        <td>Rousselot, GELITA, Nitta Gelatin</td>
+      </tr>
+      <tr>
+        <td><strong>프로바이오틱스 (유산균)</strong></td>
+        <td>CAGR 16% (프로바이오틱스 하위 카테고리), 중장년 Boomer 선호 1위</td>
+        <td><span class="badge badge-high">🔺 HIGH</span></td>
+        <td>By-Health, H&H, 養天和</td>
+      </tr>
+      <tr>
+        <td><strong>액상 칼슘 (Liquid Calcium)</strong></td>
+        <td>2024년 Tmall 어린이 성장 카테고리 전년 대비 두자릿수~100% 성장</td>
+        <td><span class="badge badge-high">🔺 HIGH</span></td>
+        <td>WellFine ← 직접 기회</td>
+      </tr>
+      <tr>
+        <td><strong>CoQ10</strong></td>
+        <td>코로나 회복·피로·심혈관 대응으로 구미형 신제품 지속 출시</td>
+        <td><span class="badge badge-med">→ MED</span></td>
+        <td>康比特, 汤臣倍健</td>
+      </tr>
+      <tr>
+        <td><strong>아스타잔틴</strong></td>
+        <td>여성 피부 항산화 수요 급증 (+63% YoY), 구미·소프트젤 인기</td>
+        <td><span class="badge badge-med">→ MED</span></td>
+        <td>AstaReal, 澳佳宝</td>
+      </tr>
+    </table>
+    <p class="source-note">출처: Innova Market Insights China Supplement Trends 2025, Daxue Consulting China Health Supplement Report, Mintel China Health Supplements Market Report 2025, TMO Group Asia Supplements Market</p>
+  </div>
+</div>
+
+<!-- SECTION 2: SOUTHEAST ASIA -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">2</div>
+    <h2>국가별 섹션 ⑤ 동남아시아 🇻🇳🇹🇭🇮🇩</h2>
+    <span class="sub">Southeast Asia — Vietnam · Thailand · Indonesia</span>
+  </div>
+  <div class="sec-body">
+    <div class="country-header">
+      <div class="country-flag">🌏</div>
+      <div class="country-title">
+        <h3>동남아시아 — US $6B 시장, 베트남·인도네시아 최고속 성장, TikTok Shop 라이브커머스 폭발</h3>
+        <p>SEA 보충제 시장 $69.2억 (2018) → $138.5억 (2032) | CAGR 5.12% | Top 3국(TH+ID+VN)이 시장 70% 차지</p>
+      </div>
+    </div>
+
+    <div class="trend-tags">
+      <span class="ttag hot">🔥 TikTok Shop 라이브커머스</span>
+      <span class="ttag hot">🔥 뷰티 From Within (콜라겐)</span>
+      <span class="ttag up">📈 전통 허브 현대화 (Jamu, 강황)</span>
+      <span class="ttag up">📈 어린이 영양 (성장, 시력)</span>
+      <span class="ttag new">✨ 기능성 구미 (어린이용)</span>
+      <span class="ttag watch">👀 BPOM 규제 강화 (인도네시아)</span>
+    </div>
+
+    <div class="country-grid">
+      <div class="cg-card">
+        <h4>🇻🇳 베트남 — CAGR 10.1% 최고속 성장</h4>
+        <ul>
+          <li>소비자 75.1%: 기능성식품 온라인 구매 의향</li>
+          <li>도시 소비자 예방 건강 구매 행동 급속 증가</li>
+          <li>면역·소화 건강 중심, 브랜드 반복 구매 중시</li>
+          <li>Shopee·Lazada 외산 브랜드 CBEC 진입 활발</li>
+          <li>온라인 YoY +72.8% 성장 (SEA 최고)</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>🇹🇭 태국 — 미용·관절·소화 특화</h4>
+        <ul>
+          <li>미용 보충제 가장 강한 수요 (Beauty From Within)</li>
+          <li>정부: 전통 허브 챔피언 3종 지정 (안드로그라피스·강황·Thai 흑생강)</li>
+          <li>2024.2 강화된 과학 기반 건강 표시 기준 시행</li>
+          <li>Sirio Pharma: 태국 구미 생산 공장 $4천만 투자 (2024)</li>
+          <li>구미: 어린이 영양 + 미용 카테고리 인기 폭발</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>🇮🇩 인도네시아 — SEA 최대·최고속 CAGR 9.6%</h4>
+        <ul>
+          <li>2025.3 BPOM 규정 제6호: 유통 전 안정성 시험 의무화</li>
+          <li>전통 Jamu 허브 드링크 MZ세대 재발견 (카페형 Jamu)</li>
+          <li>TikTok·라이브스트리밍·미니드라마 PPL로 건기식 마케팅</li>
+          <li>비타민 E, A + 콜라겐 캡슐: 고령 소비층 선호</li>
+          <li>직접 판매(Direct Selling) 여전히 강세: Amway, Herbalife</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>📊 SEA 공통 인기 카테고리</h4>
+        <ul>
+          <li>1위: <strong>비타민·미네랄</strong></li>
+          <li>2위: <strong>뷰티 (콜라겐·아스타잔틴)</strong></li>
+          <li>3위: <strong>면역 지원</strong></li>
+          <li>4위: <strong>프로바이오틱스·소화건강</strong></li>
+          <li>5위: <strong>스포츠 영양 (단백질·아미노산)</strong></li>
+          <li>특이: 인도네시아 구미 어린이 영양 강세, 태국 뷰티 구미 강세</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-head past">◀ 과거 (2020~2023)</div>
+        <div class="tl-body"><ul>
+          <li>코로나 면역 폭발</li>
+          <li>현지 허브·전통 의약 수요</li>
+          <li>오프라인·직접판매 중심</li>
+          <li>외산 브랜드 프리미엄 포지셔닝</li>
+        </ul></div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-item">
+        <div class="tl-head now">● 현재 (2024~2025)</div>
+        <div class="tl-body"><ul>
+          <li><strong>TikTok Shop 라이브커머스</strong> 급부상</li>
+          <li>현지 허브 현대화 (Jamu카페, 강황 캡슐)</li>
+          <li>뷰티 구미·미용 From Within 폭발</li>
+          <li>어린이 구미 인기 증가</li>
+        </ul></div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-item">
+        <div class="tl-head future">▶ 미래 (2026~2030)</div>
+        <div class="tl-body"><ul>
+          <li>SEA 시장 $128억 목표 (2030)</li>
+          <li>개인화·AI 영양 솔루션 진입</li>
+          <li>VN 온라인 판매 규제 정비</li>
+          <li>CMO 협업·현지 제조 확대</li>
+        </ul></div>
+      </div>
+    </div>
+    <p class="source-note">출처: BCG/NutraIngredients SEA Supplement Market 2025, Source of Asia F&B Industry Report 2025, Mordor Intelligence SEA Nutraceuticals, Grand View Research SEA Dietary Supplements, TMO Group SEA Supplement Expansion 2025</p>
+  </div>
+</div>
+
+<!-- SECTION 2: MIDDLE EAST & AFRICA -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">2</div>
+    <h2>국가별 섹션 ⑥⑦ 중동 & 아프리카 🌙🌍</h2>
+    <span class="sub">Middle East & Africa — GCC + Sub-Saharan Africa</span>
+  </div>
+  <div class="sec-body">
+    <div class="country-header">
+      <div class="country-flag">🌙🌍</div>
+      <div class="country-title">
+        <h3>중동·아프리카 — CAGR 7.51%, 당뇨/만성질환 대응 수요 & 할랄 인증 필수</h3>
+        <p>MEA 뉴트라슈티컬 시장 $251.6억 (2025) → $482.8억 (2034) | GCC 시장: 사우디 22.5% 최대 점유</p>
+      </div>
+    </div>
+
+    <div class="trend-tags">
+      <span class="ttag hot">🔥 할랄 인증 기능성 제품</span>
+      <span class="ttag hot">🔥 당뇨/혈당 관리 (성인 17% 당뇨)</span>
+      <span class="ttag up">📈 사우디 Vision 2030 예방 의료</span>
+      <span class="ttag up">📈 비타민D·철분 보충</span>
+      <span class="ttag new">✨ 아프리카 로컬 허브 (바오밥, 모링가)</span>
+      <span class="ttag watch">👀 국가별 상이한 규제 체계</span>
+    </div>
+
+    <div class="country-grid">
+      <div class="cg-card">
+        <h4>🇸🇦 사우디아라비아 (GCC 1위)</h4>
+        <ul>
+          <li>Vision 2030 예방 의료 정책 → 뉴트라슈티컬 직접 지원</li>
+          <li>할랄 인증 국내 제조 장려 → 수입 대체 생산 시설 투자</li>
+          <li>당뇨 성인 17% (MENA 평균 대비 높음) → 혈당 관리 수요</li>
+          <li>e-커머스 $80억 예상 (Dubai 상공회의소 2025)</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>🇦🇪 UAE (혁신 허브·유통 게이트웨이)</h4>
+        <ul>
+          <li>고도 도시화 + 고소득 외국인 근로자 → 프리미엄 건기식 수요</li>
+          <li>아프리카·중동 전역 재배포(redistribution) 물류 허브 역할</li>
+          <li>GE Services & Trading: Arab Health 2025에서 항노화·식물성 영양 신브랜드 3종 론칭</li>
+          <li>기능성 음료 CAGR 10.3% (MEA 최고속 성장 세그먼트)</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>🌍 아프리카 신흥 시장 (케냐·이집트·남아공)</h4>
+        <ul>
+          <li><strong>케냐</strong>: Zolt Nutrition의 바오밥·모링가 기반 기능성 파우더 스타트업 성장</li>
+          <li><strong>이집트</strong>: EIPICO·Pharco Nutraceuticals 수출 확대 전략</li>
+          <li><strong>남아공</strong>: MEA 최대 뉴트라슈티컬 시장, 비건·글루텐프리·할랄 복합 수요</li>
+          <li>비전염성 질환(NCD) 사망 37%: 예방적 영양 수요 폭발</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>📦 제형 & 원료 트렌드</h4>
+        <ul>
+          <li>정제(태블릿): 시장 점유 31.55% (친숙성·가성비)</li>
+          <li>캡슐: CAGR 7.49% (생체이용률 인식 개선)</li>
+          <li>파우더: 기능성 음료 혼합용 성장</li>
+          <li>비타민·미네랄: 시장 66.3% 점유 (기본 영양 소재 압도적)</li>
+          <li>허브 보충제: CAGR 8.08% (전통 의학 신뢰 + 과학 근거 융합)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="source-note">출처: Market Data Forecast MEA Nutraceuticals 2025-2034, IMARC GCC Nutraceuticals Market, Mordor Intelligence MEA Dietary Supplements, GII Research MEA Dietary Supplement Market Report 2025</p>
+  </div>
+</div>
+
+<!-- SECTION 3: FORMULATION TRENDS -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">3</div>
+    <h2>제형별 트렌드</h2>
+    <span class="sub">Formulation Trends — 글로벌 비교</span>
+  </div>
+  <div class="sec-body">
+    <div class="form-grid">
+      <div class="form-card">
+        <div class="form-icon">🍬</div>
+        <div class="form-name">기능성 구미 (Gummy)</div>
+        <div class="form-growth">+21.4%</div>
+        <div class="form-note">EU 콜라겐 구미 CAGR / 글로벌 $257억</div>
+        <div class="form-bar"><div class="form-bar-fill" style="width:85%"></div></div>
+        <p style="font-size:11px;color:#718096;margin-top:8px;">US·EU·SEA·CN 전방위 폭발. 청년층 타깃 최강 제형. 수면·뷰티·면역·소화 올라운더</p>
+      </div>
+      <div class="form-card">
+        <div class="form-icon">🥤</div>
+        <div class="form-name">RTD 드링크·샷 (Liquid)</div>
+        <div class="form-growth">+10.1%</div>
+        <div class="form-note">EU 드링크샷 CAGR / 콜라겐·프로바이오틱스</div>
+        <div class="form-bar"><div class="form-bar-fill" style="width:70%"></div></div>
+        <p style="font-size:11px;color:#718096;margin-top:8px;">CN·SEA 중심. 콜라겐 미용 드링크, 프로바이오틱스 RTD. WellFine 주력 카테고리와 직접 연결</p>
+      </div>
+      <div class="form-card">
+        <div class="form-icon">📦</div>
+        <div class="form-name">스틱파우치·워터파우더</div>
+        <div class="form-growth">+15%</div>
+        <div class="form-note">한국·중국 1인가구·직장인 타깃</div>
+        <div class="form-bar"><div class="form-bar-fill" style="width:75%"></div></div>
+        <p style="font-size:11px;color:#718096;margin-top:8px;">WellFine 젤리스틱과 직접 연결. 편의성 극대화 제형. 동남아 "Press&Shake" 혁신 등장</p>
+      </div>
+      <div class="form-card">
+        <div class="form-icon">💊</div>
+        <div class="form-name">캡슐·소프트젤</div>
+        <div class="form-growth">+7.5%</div>
+        <div class="form-note">MEA CAGR / 중장년·약국 채널 강세</div>
+        <div class="form-bar"><div class="form-bar-fill" style="width:50%"></div></div>
+        <p style="font-size:11px;color:#718096;margin-top:8px;">글로벌 기본 제형. 비스글리시네이트 미네랄, 비타민K2+D3 복합 등 고기능성 소프트젤 성장</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <h4 style="color:var(--green1);margin-bottom:12px;">🆕 신흥 혁신 제형 (Future Watch)</h4>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
+      <div class="cg-card">
+        <h4>3D 프린팅 개인화 구미</h4>
+        <p>Nourished: 5,000가지 조합, 10가지 성분 적층. UK·EU·일본·인도 확장. AI 기반 성분 추천 + 3D 프린팅 생산</p>
+      </div>
+      <div class="cg-card">
+        <h4>Press & Shake 캡 음료</h4>
+        <p>SEA 특화 혁신: 캡에 활성 성분 탑재 후 물병 압착으로 섞는 방식. 편의성+신선도 극대화</p>
+      </div>
+      <div class="cg-card">
+        <h4>기능성 에너지 드링크 (카페인 프리)</h4>
+        <p>한국: 카페인 부작용 없는 에너지 부스팅 음료 개발 증가. 엘더베리+B비타민+테아닌 복합</p>
+      </div>
+    </div>
+    <p class="source-note">출처: ConfectioneryNews Functional Gummy Market 2025, Mordor Intelligence Gummy Market, Sirio Europe, BCG SEA Supplement Report, Innova Market Insights</p>
+  </div>
+</div>
+
+<!-- SECTION 4: KEY INGREDIENTS -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">4</div>
+    <h2>주목 기능성 원료 동향</h2>
+    <span class="sub">Key Functional Ingredients — Global Radar 2025</span>
+  </div>
+  <div class="sec-body">
+    <table class="ing-table">
+      <tr>
+        <th>원료명</th>
+        <th>시장 동향</th>
+        <th>주요 시장</th>
+        <th>열기</th>
+      </tr>
+      <tr>
+        <td><strong>마린 콜라겐 펩타이드</strong><br><small>(Marine Collagen Peptide)</small></td>
+        <td>Beauty-From-Within 핵심. Rousselot 3월 고순도 마린 콜라겐 중국 출시. EU 드링크샷 CAGR 10%. US 구미형 폭발. SEA 뷰티 No.1</td>
+        <td><span class="pill pill-cn">중국</span><span class="pill pill-eu">유럽</span><span class="pill pill-sea">SEA</span></td>
+        <td><span class="badge badge-high">🔺 HOT</span></td>
+      </tr>
+      <tr>
+        <td><strong>마그네슘 L-트레오네이트</strong><br><small>(Magtein)</small></td>
+        <td>EFSA Novel Food 승인(EU 2024말), 뇌 혈관 장벽 통과 유일 마그네슘. 수면·인지·기분 복합 효능. 미국·유럽 급성장</td>
+        <td><span class="pill pill-us">미국</span><span class="pill pill-eu">유럽</span></td>
+        <td><span class="badge badge-high">🔺 HOT</span></td>
+      </tr>
+      <tr>
+        <td><strong>프로바이오틱스·포스트바이오틱스</strong><br><small>(Synbiotics)</small></td>
+        <td>EU 2025.3 건강 표시 승인. Pre+Pro+Post 삼총사 복합 제품 표준화. 장-뇌 축(Gut-Brain Axis) 연구 가속</td>
+        <td><span class="pill pill-eu">유럽</span><span class="pill pill-cn">중국</span><span class="pill pill-kr">한국</span></td>
+        <td><span class="badge badge-high">🔺 HOT</span></td>
+      </tr>
+      <tr>
+        <td><strong>기능성 버섯 (라이온스메인·차가·레이시)</strong></td>
+        <td>인지 기능·면역·적응소(Adaptogen). Mintel Ingredientscape AI: 최고속 성장 원료. 파우더·캡슐·구미 다양 제형</td>
+        <td><span class="pill pill-us">미국</span><span class="pill pill-eu">유럽</span></td>
+        <td><span class="badge badge-med">→ 성장</span></td>
+      </tr>
+      <tr>
+        <td><strong>아시와간다 (Ashwagandha)</strong></td>
+        <td>스트레스·수면·코르티솔 조절. Innova: 13% YoY 성장. 전세계 구미·캡슐·RTD 포함. 2030세대 스트레스 관리 1순위</td>
+        <td><span class="pill pill-us">미국</span><span class="pill pill-eu">유럽</span><span class="pill pill-sea">SEA</span></td>
+        <td><span class="badge badge-med">→ 성장</span></td>
+      </tr>
+      <tr>
+        <td><strong>NMN (니코틴아마이드 모노뉴클레오타이드)</strong></td>
+        <td>항노화·세포 에너지(NAD+). 일본 Meiji 콜라겐+NMN 복합 신제품. 한국 저속노화 시장 핵심 원료로 부상</td>
+        <td><span class="pill pill-kr">한국</span><span class="pill pill-cn">중국</span><span class="pill pill-us">미국</span></td>
+        <td><span class="badge badge-med">→ 성장</span></td>
+      </tr>
+      <tr>
+        <td><strong>해조류 DHA (Algal Oil)</strong></td>
+        <td>비건 오메가3 주류화. Vitafoods 2025 핵심 트렌드. 어류 알러지·지속가능성 소비자 대응</td>
+        <td><span class="pill pill-eu">유럽</span><span class="pill pill-us">미국</span></td>
+        <td><span class="badge badge-med">→ 성장</span></td>
+      </tr>
+      <tr>
+        <td><strong>GLP-1 지원 원료 복합제</strong></td>
+        <td>단백질+콜라겐+프로바이오틱스+섬유질 복합. 비만치료제 연계 신시장. 미국 선두, 한국·EU 후속 진입</td>
+        <td><span class="pill pill-us">미국</span><span class="pill pill-kr">한국</span><span class="pill pill-eu">유럽</span></td>
+        <td><span class="badge badge-high">🔺 신시장</span></td>
+      </tr>
+    </table>
+    <p class="source-note">출처: Innova Market Insights Ingredient Radar 2025, Mintel GNPD Product Launches, Vitafoods Europe 2025 Brand Intelligence, PubMed 기능성 원료 임상 데이터, Mordor Intelligence 원료별 시장 보고서</p>
+  </div>
+</div>
+
+<!-- SECTION 5: PIPELINE -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">5</div>
+    <h2>주요 기업 신제품 출시 파이프라인</h2>
+    <span class="sub">Key Company Product Pipeline — 2024H2~2025</span>
+  </div>
+  <div class="sec-body">
+    <table class="pipeline-table">
+      <tr>
+        <th>기업명</th>
+        <th>출시/예정 제품</th>
+        <th>제형</th>
+        <th>핵심 원료</th>
+        <th>타겟 시장</th>
+      </tr>
+      <tr>
+        <td><strong>Rousselot</strong></td>
+        <td>고순도 마린 콜라겐 펩타이드 신제품 (2025.3)</td>
+        <td>음료·보충제 원료</td>
+        <td>마린 콜라겐 (고용해성·중성 맛)</td>
+        <td><span class="pill pill-cn">중국</span></td>
+      </tr>
+      <tr>
+        <td><strong>GELITA AG</strong></td>
+        <td>관절·뼈 건강 생체활성 콜라겐 펩타이드 (2025.1)</td>
+        <td>파우더·캡슐 원료</td>
+        <td>Type II 콜라겐 펩타이드</td>
+        <td><span class="pill pill-cn">중국</span></td>
+      </tr>
+      <tr>
+        <td><strong>Nourished (UK)</strong></td>
+        <td>3D 프린팅 개인화 구미 스택 - 콜라겐+장 건강 복합</td>
+        <td>Gummy Stack (3D 프린팅)</td>
+        <td>난각막 콜라겐 + 프리·프로·포스트 바이오틱스</td>
+        <td><span class="pill pill-eu">유럽</span><span class="pill pill-us">미국</span></td>
+      </tr>
+      <tr>
+        <td><strong>Meiji (일본)</strong></td>
+        <td>NMN+콜라겐 복합 뷰티·항노화 보충제 (2025.9)</td>
+        <td>정제/캡슐</td>
+        <td>NMN + 콜라겐 펩타이드</td>
+        <td><span class="pill pill-cn">중국</span><span class="pill pill-kr">한국</span></td>
+      </tr>
+      <tr>
+        <td><strong>Rohto Pharmaceutical</strong></td>
+        <td>MOCOLA: 20ml 콜라겐 드링크+비타민 정제 복합 (2025.6)</td>
+        <td>RTD 드링크 + 정제 세트</td>
+        <td>콜라겐 + 비타민 C/E</td>
+        <td><span class="pill pill-eu">유럽</span></td>
+      </tr>
+      <tr>
+        <td><strong>Smoothie King (미국)</strong></td>
+        <td>GLP-1 Support 메뉴 라인업</td>
+        <td>RTD 스무디</td>
+        <td>고단백(20g+) + 프리바이오틱스</td>
+        <td><span class="pill pill-us">미국</span></td>
+      </tr>
+      <tr>
+        <td><strong>Sirio Pharma (태국 공장)</strong></td>
+        <td>SEA 전용 구미 생산 시설 ($4천만 투자, 2024)</td>
+        <td>구미 전품목</td>
+        <td>현지 뷰티·어린이 영양 특화</td>
+        <td><span class="pill pill-sea">SEA</span></td>
+      </tr>
+      <tr>
+        <td><strong>Herbalife</strong></td>
+        <td>생체측정 기반 AI 맞춤 영양 플랫폼 ($25~30M 인수)</td>
+        <td>개인화 보충제</td>
+        <td>다성분 맞춤 블렌드</td>
+        <td><span class="pill pill-sea">SEA</span><span class="pill pill-us">미국</span></td>
+      </tr>
+      <tr>
+        <td><strong>FutureCeuticals × Global Calcium</strong></td>
+        <td>FruiteX-B (칼슘 프룩토보레이트) SEA 확장 (2024.11)</td>
+        <td>캡슐·정제 원료</td>
+        <td>특허 칼슘 복합 (뼈·관절 건강)</td>
+        <td><span class="pill pill-sea">SEA</span></td>
+      </tr>
+    </table>
+    <p class="source-note">출처: Company Press Releases, NutraIngredients, NutraceuticalBusinessReview, Mordor Intelligence Competitive Landscape, Spherical Insights China Collagen Market</p>
+  </div>
+</div>
+
+<!-- SECTION 6: TREND TRAJECTORY -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">6</div>
+    <h2>과거→현재→미래 글로벌 트렌드 추이</h2>
+    <span class="sub">Global Trend Trajectory 2020 → 2025 → 2030</span>
+  </div>
+  <div class="sec-body">
+    <table class="ing-table">
+      <tr>
+        <th>트렌드 축</th>
+        <th>과거 (2020~2022)</th>
+        <th>현재 (2023~2025)</th>
+        <th>미래 (2026~2030)</th>
+      </tr>
+      <tr>
+        <td><strong>소비자 동기</strong></td>
+        <td>면역 강화 (코로나) 중심, 반응적 소비</td>
+        <td>예방·웰니스 병행, '정밀 소비' 전환</td>
+        <td>완전 예방·최적화, AI 개인 건강 관리</td>
+      </tr>
+      <tr>
+        <td><strong>핵심 카테고리</strong></td>
+        <td>면역, 종합비타민, 홍삼·프로폴리스</td>
+        <td>장 건강, 피부·뷰티, 수면·멘탈, 혈당관리</td>
+        <td>노화 지연, GLP-1 연계, 인지 기능, 마이크로바이옴</td>
+      </tr>
+      <tr>
+        <td><strong>선호 제형</strong></td>
+        <td>캡슐·정제 (의약품 이미지)</td>
+        <td>구미·RTD·스틱파우치 (식품 이미지)</td>
+        <td>3D 프린팅 맞춤 구미, 기능성 스낵/음료 경계 소멸</td>
+      </tr>
+      <tr>
+        <td><strong>주요 원료</strong></td>
+        <td>비타민C·D, 아연, 유산균 1세대</td>
+        <td>콜라겐, 마그네슘, 아시와간다, NMN, 포스트바이오틱스</td>
+        <td>세포 수준 항노화(NAD+, 스퍼미딘), AI 최적화 복합 원료</td>
+      </tr>
+      <tr>
+        <td><strong>유통 채널</strong></td>
+        <td>오프라인 약국·방판 중심, 온라인 초기</td>
+        <td>온라인 60~70% 지배, TikTok 라이브커머스 부상</td>
+        <td>소셜커머스+AI 추천 완전 융합, 구독 모델 표준화</td>
+      </tr>
+      <tr>
+        <td><strong>성분 과학</strong></td>
+        <td>기본 임상 지원, 표준화 추출물</td>
+        <td>생체이용률 강화, 특허 원료 (Magtein, Verisol 등)</td>
+        <td>정밀 발효, AI 성분 최적화, 개인 유전체 맞춤 영양</td>
+      </tr>
+    </table>
+    <p class="source-note">출처: Mintel Global Food & Drink Trends 2025 & Future Predictions, Innova Market Insights Top 10 Trends 2025, IMARC Group Global Functional Food Market 2025-2033</p>
+  </div>
+</div>
+
+<!-- SECTION 7: REGULATORY -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">7</div>
+    <h2>규제 동향 요약</h2>
+    <span class="sub">Regulatory Update — 2025년 3월 주요 변경사항</span>
+  </div>
+  <div class="sec-body">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div class="cg-card">
+        <h4>🇪🇺 유럽 (EU/EFSA)</h4>
+        <ul>
+          <li><strong>2025.3:</strong> EU 집행위 프로바이오틱스 건강 기능 표시 공식 승인</li>
+          <li><strong>2024말:</strong> Magtein (Mg L-트레오네이트) EFSA Novel Food 승인</li>
+          <li>Clean-label 요건 강화 (인공 색소·방부제 규제 지속)</li>
+          <li>지속가능성 레이블링 의무화 논의 진행 중</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>🇨🇳 중국 (SAMR/NMPA)</h4>
+        <ul>
+          <li>24개 허용 기능성 기능 카테고리 내 제품 클레임 제한</li>
+          <li>TCM 원료 건강식품 원료 목록 첫 포함 (규제 혁신)</li>
+          <li>Blue Hat 인증: 신규 고객에게 신뢰도 높음 → 수출 시 필수</li>
+          <li>CBEC 경로 여전히 유효 (Blue Hat 없이도 판매 가능)</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>🇮🇩 인도네시아 (BPOM)</h4>
+        <ul>
+          <li><strong>2025.3:</strong> BPOM 규정 제6호 — 유통 전 <strong>안정성 시험 의무화</strong></li>
+          <li>건강 보충제 등록 절차 강화</li>
+          <li>미등록 어린이 프로바이오틱스 제품 단속 강화 (2025.1)</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>🇻🇳 베트남 (MoH)</h4>
+        <ul>
+          <li>Circular 29/2023: 영양 표시 개정 (2026.1.1 시행)</li>
+          <li>온라인 판매 규정 미정비 상태 → 단속 리스크 존재</li>
+          <li>기능성식품 등록 소요 기간 6~12개월 (사전 계획 필수)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="source-note">출처: Technavio EU Functional F&B Market 2025, Mordor Intelligence China Regulatory Analysis, BPOM Official Gazette 2025, Vietnam MoH Circular 29/2023</p>
+  </div>
+</div>
+
+<!-- SECTION 8: WELLFINE SPECIALIZED ANALYSIS -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">8</div>
+    <h2>WellFine 제품군 특화 집중 분석</h2>
+    <span class="sub">WellFine Product-Specific Strategic Intelligence — 콜라겐·단백질·액상칼슘·젤리스틱·파우치류</span>
+  </div>
+  <div class="sec-body">
+    <div class="wf-section">
+      <h3>🌿 WellFine 글로벌 사업 전략 인텔리전스</h3>
+      <p class="sub">1~7섹션 데이터를 WellFine 주력 제품군과 교차 분석 | 수출 우선순위: CN → US/EU → TH/VN/ID → TW</p>
+      <div class="wf-grid">
+        <div class="wf-card">
+          <h4>💧 콜라겐 (파우더·음료)</h4>
+          <ul>
+            <li>중국: 2025.3 Rousselot 마린 콜라겐 출시 → 시장 열기 최고조. 2024~2025 여성 구매 증가율 +49% YoY</li>
+            <li>미국: GLP-1 연계 콜라겐 RTD 신시장 형성. '오젬픽 페이스' 대응 탄력 강조</li>
+            <li>유럽: 콜라겐 드링크샷 CAGR 10%, 구미 CAGR 21.4%. 마린 콜라겐 청정 라벨 요구</li>
+            <li>SEA: 태국·인도네시아 뷰티 콜라겐 No.1 카테고리. 가격 경쟁력 중요</li>
+            <li><strong>★ 핵심 액션: MSC 인증 마린 콜라겐 원료 적용 + CN 마케팅 Beauty-From-Within 포지셔닝</strong></li>
+          </ul>
+        </div>
+        <div class="wf-card">
+          <h4>🦴 액상 칼슘 (Liquid Calcium)</h4>
+          <ul>
+            <li>중국: Tmall 7대 투자 트랙 2위 '칼슘·철·아연 복합' 포함. 2024년 해당 카테고리 두자릿수~100% 성장</li>
+            <li>SEA: FutureCeuticals × Global Calcium, SEA 칼슘 시장 파트너십 구축 (2024.11). FruiteX-B 특허 칼슘 성분 주목</li>
+            <li>중동: 어린이·청소년 성장 지원 + 시니어 골밀도 유지 이중 수요</li>
+            <li>한국: 어린이 성장 액상 칼슘 온라인 검색량 꾸준 유지</li>
+            <li><strong>★ 핵심 액션: 중국 Tmall 어린이 성장 트랙 공략. 비타민D3+K2 복합 액상 칼슘 포지셔닝 강화</strong></li>
+          </ul>
+        </div>
+        <div class="wf-card">
+          <h4>💪 단백질 (파우더·음료)</h4>
+          <ul>
+            <li>중국: 밀레니얼 Z세대 스타 원료 1위. 근력+에너지+체중관리 복합 포지셔닝</li>
+            <li>미국: GLP-1 사용자용 고단백(20g+) 제품 급수요</li>
+            <li>SEA: 스포츠 영양 CAGR 8.2%, 피트니스 트렌드 Z세대 확산</li>
+            <li>MEA: 단백질·아미노산 시장 성장 중</li>
+            <li><strong>★ 핵심 액션: SEA·CN 스포츠 영양 시장 진입 시 GLP-1 보완 단백질 + 콜라겐 복합제 검토</strong></li>
+          </ul>
+        </div>
+        <div class="wf-card">
+          <h4>🍬 젤리스틱 파우치 (Jelly Stick)</h4>
+          <ul>
+            <li>한국: 젤리스틱 제형이 2025년 가장 빠른 성장 제형으로 확인. 편의성·휴대성 소비자 니즈 완벽 부합</li>
+            <li>중국: 젊은 세대 구강 액상·젤리형 급선호 ("의약품 이미지 탈피")</li>
+            <li>SEA: Sirio Pharma SEA 구미·젤리 생산 $4천만 투자 확인. 태국 뷰티 구미 강세</li>
+            <li>글로벌: 기능성 구미·젤리 시장 $257억 → $381억 (2030). 최강 성장 제형</li>
+            <li><strong>★ 핵심 액션: WellFine 젤리스틱을 CN·SEA 뷰티 콜라겐 포맷으로 리포지셔닝. 청년층 패키징 리뉴얼</strong></li>
+          </ul>
+        </div>
+        <div class="wf-card">
+          <h4>🥛 액상 파우치류 (Liquid Pouch)</h4>
+          <ul>
+            <li>한국: 워터파우더(물에 타먹는 1인용 포) 1인가구·직장인 트렌드로 급성장</li>
+            <li>중국: 인스턴트 프로바이오틱스 사쉐(Sachet) Tmall 더블11 베스트셀러</li>
+            <li>SEA: 베트남 온라인 건기식 구매 의향 75.1%. 소분 파우치 인기</li>
+            <li>Innova: '편의성' 건기식 키워드 지속 상위권</li>
+            <li><strong>★ 핵심 액션: 현지 언어 표시 + 1회분 소포장 파우치 SEA 공략. 콜라겐+칼슘 복합 파우치 개발 검토</strong></li>
+          </ul>
+        </div>
+        <div class="wf-card">
+          <h4>📋 병류 제품 (Bottle-type)</h4>
+          <ul>
+            <li>유럽: 콜라겐 RTD 드링크 (병/앰플) CAGR 10.08%로 가장 빠른 유럽 콜라겐 제형 성장</li>
+            <li>일본·한국: 20ml 콜라겐 샷 매우 친숙. Rohto MOCOLA 한국 트렌드 참조 EU 출시</li>
+            <li>중국: RTD 짜먹는 콜라겐·프로바이오틱스 프리미엄 시장 성장</li>
+            <li>MEA: UAE 기능성 음료 CAGR 10.3%로 빠른 성장</li>
+            <li><strong>★ 핵심 액션: 20ml 콜라겐 샷 포맷 EU·CN 동시 공략 검토. K-Beauty Origin 스토리 마케팅 활용</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="opportunity-box">
+        <h4>🎯 WellFine 즉시 대응 가능 기회 (2025 Q2~Q3)</h4>
+        <p>
+          <strong>[중국 1순위]</strong> Tmall 어린이 칼슘 트랙 + 여성 마린 콜라겐 Beauty-From-Within → 이중 채널 공략 가능. Blue Hat 인증 취득 또는 CBEC 경로로 즉시 진입 가능성 검토 요망.<br><br>
+          <strong>[SEA 병행]</strong> 태국 뷰티 구미 수요 + 인도네시아 어린이 성장 구미 → WellFine 젤리스틱을 현지 니즈에 맞춘 제형으로 포지셔닝. Shopee/Lazada CBEC + TikTok Shop 라이브커머스 이중 채널.<br><br>
+          <strong>[미국 기회]</strong> GLP-1 사용자용 '콜라겐+단백질+프로바이오틱스' 복합 RTD 파우치는 현재 WellFine 제품 포트폴리오와 직접 매칭. 미국 시장 진입 시 이 포지셔닝 최우선 검토.<br><br>
+          <strong>[유럽 중기]</strong> 마린 콜라겐 20ml 샷 포맷 + EFSA 승인 원료 조합(Magtein+Collagen+Vit.C) → 독일·영국 프리미엄 드럭스토어 공략 가능. MSC 인증 원료 + 청정 라벨이 관건.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-grid">
+    <div>
+      <h4>📚 이번 호 주요 참고 자료</h4>
+      <ul>
+        <li>Innova Market Insights Top 10 Trends 2025 (공개 자료)</li>
+        <li>Mintel Global Food & Drink Trends 2025 (공개 자료)</li>
+        <li>Mintel China Health Supplements Market Report 2025</li>
+        <li>Fortune Business Insights Global F&B Market 2025</li>
+        <li>Mordor Intelligence Regional Market Reports (다수)</li>
+        <li>한국건강기능식품협회 2025 시장현황 및 소비자 실태조사</li>
+        <li>Technavio, IMARC Group, Grand View Research</li>
+      </ul>
+    </div>
+    <div>
+      <h4>📊 데이터 신뢰도 등급</h4>
+      <ul>
+        <li>🟢 <strong>고신뢰</strong>: 정부 공식 데이터, 협회 공식 자료</li>
+        <li>🟡 <strong>중신뢰</strong>: Innova/Mintel 공개 인사이트</li>
+        <li>🟠 <strong>참고용</strong>: 시장 조사 기관 유료 보고서 요약</li>
+        <li>⚠️ Mintel GNPD 개별 제품 데이터 미포함 (유료 구독 필요)</li>
+        <li>✅ 기업 공식 보도자료 직접 인용</li>
+      </ul>
+    </div>
+    <div>
+      <h4>📅 다음 호 예고 (4주차)</h4>
+      <ul>
+        <li>🔜 SupplySide West 2025 주요 원료 신제품 현황</li>
+        <li>🔜 중국 Blue Hat 인증 최신 변경사항</li>
+        <li>🔜 베트남 기능성 식품 규제 2026년 변경 예고 분석</li>
+        <li>🔜 WellFine 제품군 경쟁사 분석 심화편</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    WellFine 글로벌사업팀 · Green Food Maker | 본 보고서는 공개 자료 기반 분석이며 투자·법적 조언이 아닙니다 | Vol.1 · 2025년 3월 3주차
+  </div>
+</div>
+
+</body>
+</html>
