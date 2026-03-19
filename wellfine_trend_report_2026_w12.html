@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WellFine 글로벌 건기식·기능성식품 주간 트렌드 보고서 | 2026년 3월 4주차 (Vol.2)</title>
+<style>
+  :root {
+    --green1:#2E6B3E;--green2:#4A9B60;--green3:#A8D5B5;
+    --cream:#F5F2EA;--white:#FFFFFF;--dark:#1A2A1E;
+    --mid:#4A5568;--light:#718096;--accent:#E8A028;
+    --red:#C53030;--blue:#2B6CB0;--border:#D4E8DC;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Malgun Gothic','맑은 고딕','Apple SD Gothic Neo',sans-serif;background:#F0EDE5;color:var(--dark);line-height:1.7;font-size:14px;}
+
+  /* COVER */
+  .cover{background:var(--green1);color:white;padding:50px 60px;position:relative;overflow:hidden;}
+  .cover::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.04);}
+  .cover-badge{display:inline-block;background:var(--accent);color:white;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:1px;margin-bottom:16px;}
+  .cover h1{font-size:28px;font-weight:700;line-height:1.4;margin-bottom:8px;}
+  .cover h2{font-size:16px;font-weight:400;opacity:.85;margin-bottom:30px;}
+  .cover-meta{display:flex;gap:32px;flex-wrap:wrap;}
+  .cover-meta-item .label{font-size:11px;opacity:.6;text-transform:uppercase;letter-spacing:1px;}
+  .cover-meta-item .value{font-size:14px;font-weight:600;margin-top:2px;}
+  .cover-tags{margin-top:24px;display:flex;gap:8px;flex-wrap:wrap;}
+  .cover-tag{background:rgba(255,255,255,0.12);padding:4px 12px;border-radius:12px;font-size:12px;}
+  .new-badge{background:#E8A028;color:white;padding:2px 8px;border-radius:8px;font-size:11px;font-weight:700;margin-left:6px;}
+
+  /* LAYOUT */
+  .container{max-width:1100px;margin:0 auto;padding:0 20px;}
+  .section{margin:28px 0;}
+
+  /* SECTION HEADER */
+  .sec-header{background:var(--green1);color:white;padding:14px 24px;border-radius:8px 8px 0 0;display:flex;align-items:center;gap:12px;}
+  .sec-header .num{background:var(--accent);color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;}
+  .sec-header h2{font-size:16px;font-weight:700;}
+  .sec-header .sub{font-size:12px;opacity:.75;margin-left:auto;}
+  .sec-body{background:white;border-radius:0 0 8px 8px;border:1px solid var(--border);border-top:none;padding:24px;}
+
+  /* EXEC CARDS */
+  .exec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px;}
+  .exec-card{background:var(--cream);border-radius:8px;padding:16px;border-left:4px solid var(--green2);}
+  .exec-card .ec-label{font-size:11px;color:var(--light);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+  .exec-card .ec-value{font-size:22px;font-weight:700;color:var(--green1);}
+  .exec-card .ec-note{font-size:12px;color:var(--mid);margin-top:4px;}
+  .highlight-box{background:linear-gradient(135deg,#EDF7F0,#D4EED9);border-radius:8px;padding:16px 20px;border:1px solid var(--green3);margin-bottom:16px;}
+  .highlight-box h4{color:var(--green1);font-size:13px;font-weight:700;margin-bottom:8px;}
+  .highlight-box p{font-size:13px;color:var(--mid);}
+  .alert-box{background:#FFF5F5;border:1px solid #FED7D7;border-radius:8px;padding:14px 18px;margin:12px 0;}
+  .alert-box h4{color:var(--red);font-size:13px;font-weight:700;margin-bottom:6px;}
+  .key-insights{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .ki-item{display:flex;gap:10px;padding:12px;background:#FAFAFA;border-radius:6px;border:1px solid #EEE;}
+  .ki-icon{font-size:20px;flex-shrink:0;}
+  .ki-text strong{display:block;font-size:13px;color:var(--dark);}
+  .ki-text span{font-size:12px;color:var(--light);}
+
+  /* COUNTRY */
+  .country-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--border);}
+  .country-flag{font-size:28px;}
+  .country-title h3{font-size:17px;font-weight:700;color:var(--green1);}
+  .country-title p{font-size:12px;color:var(--light);}
+  .country-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .cg-card{background:var(--cream);border-radius:6px;padding:14px;}
+  .cg-card h4{font-size:12px;font-weight:700;color:var(--green1);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;}
+  .cg-card p,.cg-card li{font-size:13px;color:var(--mid);margin-bottom:4px;}
+  .cg-card ul{padding-left:16px;}
+  .trend-tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0;}
+  .ttag{padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;}
+  .ttag.hot{background:#FFF0E0;color:#C05621;}
+  .ttag.up{background:#E6F7EC;color:#276749;}
+  .ttag.new{background:#EBF4FF;color:#2B6CB0;}
+  .ttag.warn{background:#FFF5F5;color:#C53030;}
+
+  /* TABLES */
+  .ing-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+  .ing-table th{background:var(--green1);color:white;padding:8px 12px;text-align:left;font-weight:600;}
+  .ing-table td{padding:8px 12px;border-bottom:1px solid #EEE;vertical-align:top;}
+  .ing-table tr:hover td{background:#F9FBF9;}
+  .badge{display:inline-block;padding:2px 8px;border-radius:8px;font-size:11px;font-weight:600;}
+  .badge-high{background:#FED7D7;color:#C53030;}
+  .badge-med{background:#FEFCBF;color:#975A16;}
+  .badge-low{background:#C6F6D5;color:#276749;}
+  .badge-new{background:#EBF4FF;color:#2B6CB0;}
+  .pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;}
+  .pill-cn{background:#FFE4E4;color:#C53030;}
+  .pill-us{background:#DBEAFE;color:#1E40AF;}
+  .pill-eu{background:#EDE9FE;color:#5B21B6;}
+  .pill-sea{background:#D1FAE5;color:#065F46;}
+  .pill-mea{background:#FEF3C7;color:#92400E;}
+  .pill-kr{background:#FCE7F3;color:#9D174D;}
+
+  /* TIMELINE */
+  .timeline{display:flex;gap:0;margin:16px 0;}
+  .tl-item{flex:1;}
+  .tl-head{padding:8px 14px;text-align:center;font-size:12px;font-weight:700;color:white;}
+  .tl-head.past{background:var(--light);}
+  .tl-head.now{background:var(--green2);}
+  .tl-head.future{background:var(--green1);}
+  .tl-body{background:#FAFAFA;border:1px solid #DDD;border-top:none;padding:12px 14px;min-height:100px;font-size:12px;color:var(--mid);}
+  .tl-body ul{padding-left:14px;}
+  .tl-body li{margin-bottom:4px;}
+  .tl-arrow{display:flex;align-items:center;color:var(--green2);font-size:22px;padding:0 4px;margin-top:28px;flex-shrink:0;}
+
+  /* FORM GRID */
+  .form-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .form-card{text-align:center;background:var(--cream);border-radius:8px;padding:16px 10px;border:2px solid transparent;}
+  .form-card:hover{border-color:var(--green3);}
+  .form-icon{font-size:32px;margin-bottom:8px;}
+  .form-name{font-size:13px;font-weight:700;color:var(--dark);margin-bottom:4px;}
+  .form-growth{font-size:20px;font-weight:700;color:var(--green1);}
+  .form-note{font-size:11px;color:var(--light);margin-top:4px;}
+  .form-bar{height:4px;background:#DDD;border-radius:2px;margin-top:8px;overflow:hidden;}
+  .form-bar-fill{height:100%;border-radius:2px;background:var(--green2);}
+
+  /* CHINA REG SPECIAL */
+  .reg-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0;}
+  .reg-card{border-radius:8px;padding:16px;border:2px solid var(--border);}
+  .reg-card.blue{border-color:#3182CE;background:#EBF8FF;}
+  .reg-card.cbec{border-color:#38A169;background:#F0FFF4;}
+  .reg-card.warn{border-color:#E53E3E;background:#FFF5F5;}
+  .reg-card.new{border-color:#D69E2E;background:#FFFFF0;}
+  .reg-card h4{font-size:13px;font-weight:700;margin-bottom:10px;}
+  .reg-card.blue h4{color:#2B6CB0;}
+  .reg-card.cbec h4{color:#276749;}
+  .reg-card.warn h4{color:#C53030;}
+  .reg-card.new h4{color:#975A16;}
+  .reg-card ul{padding-left:16px;}
+  .reg-card li{font-size:12px;color:var(--mid);margin-bottom:4px;}
+
+  /* WELLFINE COLLAGEN */
+  .wf-section{background:linear-gradient(135deg,var(--green1),#1A4A2A);color:white;border-radius:8px;padding:24px;margin-top:20px;}
+  .wf-section h3{font-size:18px;font-weight:700;margin-bottom:4px;}
+  .wf-section .sub{opacity:.75;font-size:13px;margin-bottom:20px;}
+  .collagen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .col-card{background:rgba(255,255,255,0.1);border-radius:8px;padding:16px;}
+  .col-card h4{font-size:13px;font-weight:700;margin-bottom:10px;color:var(--green3);}
+  .col-card p,.col-card li{font-size:12px;opacity:.9;margin-bottom:4px;}
+  .col-card ul{padding-left:16px;}
+  .opportunity-box{background:rgba(232,160,40,0.2);border-radius:8px;padding:16px;margin-top:16px;border:1px solid rgba(232,160,40,0.4);}
+  .opportunity-box h4{color:var(--accent);font-size:14px;font-weight:700;margin-bottom:8px;}
+  .opportunity-box p{font-size:13px;opacity:.9;}
+
+  /* PIPELINE TABLE */
+  .pipeline-table{width:100%;border-collapse:collapse;font-size:13px;}
+  .pipeline-table th{background:var(--green1);color:white;padding:9px 12px;text-align:left;font-weight:600;font-size:12px;}
+  .pipeline-table td{padding:9px 12px;border-bottom:1px solid #EEE;vertical-align:top;}
+  .pipeline-table tr:nth-child(even) td{background:#F9FBF9;}
+
+  .divider{height:1px;background:var(--border);margin:20px 0;}
+  .source-note{font-size:11px;color:var(--light);font-style:italic;margin-top:12px;padding-top:10px;border-top:1px dashed #DDD;}
+
+  /* FOOTER */
+  .footer{background:var(--dark);color:white;padding:24px 40px;margin-top:40px;}
+  .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;max-width:1100px;margin:0 auto;}
+  .footer h4{font-size:13px;font-weight:700;color:var(--green3);margin-bottom:8px;}
+  .footer p,.footer li{font-size:12px;opacity:.7;margin-bottom:3px;}
+  .footer ul{padding-left:16px;}
+  .footer-bottom{text-align:center;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);font-size:11px;opacity:.5;}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="container">
+    <div class="cover-badge">🌿 WELLFINE GLOBAL INTELLIGENCE — Vol.2</div>
+    <h1>글로벌 건강기능식품·기능성식품<br>주간 트렌드 보고서</h1>
+    <h2>Global Health Functional Food & Nutraceutical Weekly Trend Report</h2>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><div class="label">발행호수</div><div class="value">Vol. 2 (2026년 3월 4주차)</div></div>
+      <div class="cover-meta-item"><div class="label">보고서 기준일</div><div class="value">2026년 3월 24일</div></div>
+      <div class="cover-meta-item"><div class="label">작성</div><div class="value">WellFine 글로벌사업팀</div></div>
+      <div class="cover-meta-item"><div class="label">데이터 소스</div><div class="value">Mordor Intelligence, FMI, CIRS, Shanghai Jungle 外</div></div>
+    </div>
+    <div class="cover-tags">
+      <span class="cover-tag">🇰🇷 한국</span>
+      <span class="cover-tag">🇺🇸 미국</span>
+      <span class="cover-tag">🇪🇺 유럽</span>
+      <span class="cover-tag">🇨🇳 중국</span>
+      <span class="cover-tag">🌏 동남아시아</span>
+      <span class="cover-tag">🌙 중동</span>
+      <span class="cover-tag">🌍 아프리카</span>
+      <span class="cover-tag">🔴 섹션7: 중국 규제 심층</span>
+      <span class="cover-tag">💊 섹션8: 콜라겐 집중분석</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- SECTION 1: EXECUTIVE SUMMARY -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">1</div>
+    <h2>글로벌 시장 핵심 요약</h2>
+    <span class="sub">Executive Summary | 2026년 3월 기준</span>
+  </div>
+  <div class="sec-body">
+    <div class="exec-grid">
+      <div class="exec-card">
+        <div class="ec-label">글로벌 기능성식품·음료 시장</div>
+        <div class="ec-value">$4,376억</div>
+        <div class="ec-note">2026년 기준 / CAGR 10.65% → 2034년 $9,832억 목표</div>
+      </div>
+      <div class="exec-card">
+        <div class="ec-label">글로벌 콜라겐 보충제 시장</div>
+        <div class="ec-value">$27.5억</div>
+        <div class="ec-note">2026년 기준 / CAGR 9% → 2030년 $38.5억 목표</div>
+      </div>
+      <div class="exec-card">
+        <div class="ec-label">중국 CBEC 긍정 목록</div>
+        <div class="ec-value">1,400+</div>
+        <div class="ec-note">2026년 기준 품목 수 / 콜라겐 펩타이드·프로바이오틱스·단백질 포함</div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>📌 이번 주 최대 이슈</h4>
+      <p>중국 SAMR이 <strong>2026년 1월 15일 '뼈·관절 건강 유지' 기능 표시를 신규 승인</strong>하며 2023년 이후 처음으로 건강식품 기능 카테고리가 확대됐습니다. 이는 WellFine 액상 칼슘 및 콜라겐 제품의 중국 기능 표시 전략에 직접 영향을 미치는 중요한 변화입니다. 또한 <strong>중국 2026년 2월 라이브스트리밍 건기식 광고 규제 강화</strong>로 Douyin 마케팅 전략 조정이 필요합니다.</p>
+    </div>
+
+    <div class="key-insights">
+      <div class="ki-item">
+        <div class="ki-icon">🦴</div>
+        <div class="ki-text">
+          <strong>중국 뼈·관절 건강 기능 표시 신규 승인</strong>
+          <span>2026.1.15 SAMR 공식 발효 — 2023년 이후 최초 신규 기능 카테고리. 칼슘·콜라겐 제품 기능 표시 활용 가능성 급부상</span>
+        </div>
+      </div>
+      <div class="ki-item">
+        <div class="ki-icon">💧</div>
+        <div class="ki-text">
+          <strong>콜라겐 시장 2026년 전환점</strong>
+          <span>글로벌 $27.5억(2026) → $38.5억(2030), CAGR 9%. 마린 콜라겐 CAGR 11.9%로 최고속. 액상샷·구미 제형이 파우더 추월 가속</span>
+        </div>
+      </div>
+      <div class="ki-item">
+        <div class="ki-icon">📱</div>
+        <div class="ki-text">
+          <strong>중국 라이브스트리밍 건기식 광고 규제 강화</strong>
+          <span>2026년 2월 새 규정 시행 — Douyin 라이브 건기식 광고 심의 강화. 기능성 클레임 표현 제한 확대</span>
+        </div>
+      </div>
+      <div class="ki-item">
+        <div class="ki-icon">🌿</div>
+        <div class="ki-text">
+          <strong>재조합 콜라겐(Recombinant Collagen) 상업화</strong>
+          <span>L'Oréal 2025.2 중국 재조합 콜라겐 제품 2세대 출시. 정밀 발효 기술 할랄·BSE 우려 해소 → 중동·무슬림 시장 콜라겐 진입 가속</span>
+        </div>
+      </div>
+    </div>
+    <p class="source-note">📚 주요 참고 자료: CIRS Group China SAMR Catalog Update Jan 2026, Mordor Intelligence Collagen Market 2026-2031, FMI Collagen Supplement Report Jan 2026, Shanghai Jungle China Supplement Regulations Feb 2026, Research & Markets Collagen Supplements 2026</p>
+  </div>
+</div>
+
+<!-- SECTION 2: COUNTRY — KOREA -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">2</div>
+    <h2>국가별 섹션 ① 한국 🇰🇷</h2>
+    <span class="sub">Korea | 2026년 3월 기준</span>
+  </div>
+  <div class="sec-body">
+    <div class="trend-tags">
+      <span class="ttag hot">🔥 저속노화 시장 본격화</span>
+      <span class="ttag hot">🔥 콜라겐+NMN 복합 프리미엄</span>
+      <span class="ttag up">📈 GLP-1 보완 영양제 지속 성장</span>
+      <span class="ttag up">📈 여성 인너뷰티 (이너뷰티 시장)</span>
+      <span class="ttag new">✨ 뼈·관절 건강 기능성 제품 관심</span>
+    </div>
+    <div class="country-grid">
+      <div class="cg-card">
+        <h4>📊 2026년 국내 시장 동향</h4>
+        <ul>
+          <li>건기식 시장 5.96조원 박스권 → 2026년 소폭 성장 전망</li>
+          <li>콜라겐 이너뷰티 시장: 2030세대 여성 핵심 카테고리</li>
+          <li>NMN+콜라겐 복합 항노화 제품 출시 가속 (Meiji 2025.9 일본 선행)</li>
+          <li>온라인 비중 70%+ 유지, 쿠팡 로켓배송 건기식 점유 확대</li>
+          <li>약국 채널: 고기능성 콜라겐 앰플·샷 프리미엄 포지셔닝</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>💊 주목 원료·제형 트렌드</h4>
+        <ul>
+          <li><strong>마린 콜라겐 펩타이드</strong>: 피부·관절 이중 효능 마케팅</li>
+          <li><strong>콜라겐+히알루론산+비타민C</strong> 복합 RTD 드링크</li>
+          <li><strong>젤리스틱 콜라겐</strong>: 20~30대 직장인 타깃 간편 섭취</li>
+          <li>저속노화: NMN+콜라겐+레스베라트롤 복합 프리미엄 제품</li>
+          <li>GLP-1 연계: 콜라겐+단백질 복합 체중관리 솔루션</li>
+        </ul>
+      </div>
+    </div>
+    <p class="source-note">출처: 한국건강기능식품협회 2025 실태조사, Coherent Market Insights 콜라겐 시장 2026</p>
+  </div>
+</div>
+
+<!-- SECTION 2: USA -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">2</div>
+    <h2>국가별 섹션 ② 미국 🇺🇸</h2>
+    <span class="sub">United States | 2026년 3월 기준</span>
+  </div>
+  <div class="sec-body">
+    <div class="trend-tags">
+      <span class="ttag hot">🔥 콜라겐 액상샷 주류화 (Elasten 진출)</span>
+      <span class="ttag hot">🔥 GLP-1 보완 콜라겐 RTD 급성장</span>
+      <span class="ttag up">📈 남성 콜라겐 시장 진입 (18~29세)</span>
+      <span class="ttag new">✨ 재조합 콜라겐·정밀발효 기술 상업화</span>
+    </div>
+    <div class="country-grid">
+      <div class="cg-card">
+        <h4>🆕 2025~2026 주요 출시·동향</h4>
+        <ul>
+          <li><strong>Elasten (독일 1위 액상 콜라겐)</strong>: 2025.11 미국 시장 진출</li>
+          <li><strong>Elemis Pro-Collagen Skin Future</strong>: 식품등급 히알루론산+비타민+항산화 복합 누트리코스메틱 (2025.11)</li>
+          <li><strong>GNC Premier Collagen</strong>: 과학 기반 소 + 마린 복합 펩타이드 (2025.1)</li>
+          <li>Lemme Glow (코트니 카다시안): 쿠팡 통해 한국 상륙 (2025.9) — 미국→한국 역진출 사례</li>
+          <li>콜라겐 건강음료 (Collagen Water): 편의점·약국 입점 가속</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>📊 미국 콜라겐 시장 인사이트</h4>
+        <ul>
+          <li>미국 소비자 구매 이유: 피부건강 60%+, 관절지원 40%, 근육회복 25%</li>
+          <li>남성 18~29세: 뷰티 보충제 최고 참여도 — 젠더 뉴트럴 마케팅 기회</li>
+          <li>GLP-1 사용자: 피부 탄력 저하(Ozempic Face) 대응 콜라겐 RTD 수요</li>
+          <li>온라인 구매 60%+ (Amazon, D2C 구독 모델)</li>
+          <li>파우더 52.8% 점유 / 구미·정제 58.7% B2C 급성장</li>
+        </ul>
+      </div>
+    </div>
+    <p class="source-note">출처: FMI Global Collagen Supplement Outlook Jan 2026, Coherent Market Insights Collagen Supplements 2025-2032, Persistence Market Research</p>
+  </div>
+</div>
+
+<!-- SECTION 2: EUROPE -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">2</div>
+    <h2>국가별 섹션 ③ 유럽 🇪🇺</h2>
+    <span class="sub">Europe | 2026년 3월 기준</span>
+  </div>
+  <div class="sec-body">
+    <div class="trend-tags">
+      <span class="ttag hot">🔥 콜라겐 드링크샷 CAGR 8.55%</span>
+      <span class="ttag up">📈 MSC 인증 마린 콜라겐 Clean Label</span>
+      <span class="ttag up">📈 재조합 콜라겐 EU 진입 본격화</span>
+      <span class="ttag new">✨ 콜라겐+프리바이오틱스 Synbiotic 복합</span>
+    </div>
+    <div class="country-grid">
+      <div class="cg-card">
+        <h4>🏆 유럽 콜라겐 시장 현황 (2026)</h4>
+        <ul>
+          <li>유럽 콜라겐 보충제 시장: $1.85억(2025) → $1.96억(2026)</li>
+          <li>드링크·샷 CAGR 10.08% — 가장 빠른 성장 제형</li>
+          <li>구미 CAGR 21.4% — 18~30세 여성 74% 선택</li>
+          <li>UK: 구미 반복 구매 +38% (밀레니얼)</li>
+          <li>HTL Biotechnology (프랑스): 재조합 인간 콜라겐 플랫폼 확보 → 2026 상용화 진행 중</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>🧪 신원료·규제 동향</h4>
+        <ul>
+          <li>Rousselot Nextida: 특정 기능 타깃 콜라겐 펩타이드 조합 플랫폼 확장</li>
+          <li>탄소중립 인증(Carbon Neutral) 소 콜라겐: 독일·UK 프리미엄 포지셔닝</li>
+          <li>MSC 인증 마린 콜라겐: EU 클린라벨 소비자 최우선 선택지</li>
+          <li>EFSA: 콜라겐 기능 표시 과학적 근거 요건 강화 추세</li>
+          <li>비건 콜라겐 부스터(식물성 원료): Algenist 등 확장</li>
+        </ul>
+      </div>
+    </div>
+    <p class="source-note">출처: Mordor Intelligence Europe Collagen Supplements Market 2025-2030, Market Data Forecast Europe Collagen Supplement Market 2025-2033</p>
+  </div>
+</div>
+
+<!-- SECTION 2: CHINA -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">2</div>
+    <h2>국가별 섹션 ④ 중국 🇨🇳</h2>
+    <span class="sub">China | 2026년 3월 기준 — 섹션 7과 연계</span>
+  </div>
+  <div class="sec-body">
+    <div class="trend-tags">
+      <span class="ttag hot">🔥 뼈·관절 건강 기능 표시 신규 승인 (2026.1)</span>
+      <span class="ttag hot">🔥 라이브스트리밍 건기식 광고 규제 강화 (2026.2)</span>
+      <span class="ttag up">📈 재조합 콜라겐 Beauty-From-Within</span>
+      <span class="ttag up">📈 CBEC 1,400+ 품목 허용</span>
+      <span class="ttag warn">⚠️ 수입 건강식품 등록 8년 동결 해제 (신규 기회)</span>
+    </div>
+    <div class="country-grid">
+      <div class="cg-card">
+        <h4>🌟 2026년 최신 콜라겐 동향</h4>
+        <ul>
+          <li><strong>L'Oréal Age Perfect Collagen Royal</strong> 2세대 출시 (2025.2) — 재조합 콜라겐 중국 시장 선점</li>
+          <li>중국 콜라겐 시장: $25억(2024) → $73억(2035), CAGR 10.23%</li>
+          <li>마린 콜라겐: 뷰티·Beauty-From-Within 핵심 원료 1위 유지</li>
+          <li>콜라겐 펩타이드: CBEC 긍정 목록 포함 → 별도 Blue Hat 없이 수출 가능</li>
+          <li>Tmall·JD.com: 콜라겐 드링크·파우더·구미 카테고리 YoY 성장 지속</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>📱 유통 채널 변화 (2026)</h4>
+        <ul>
+          <li>Douyin(틱톡) 라이브커머스: 2026.2 광고 규제 강화 → 클레임 표현 재검토 필요</li>
+          <li>Tmall Global (CBEC): 여전히 가장 빠른 시장 진입 경로</li>
+          <li>WeChat 미니프로그램: 프리미엄 콜라겐 D2C 성장</li>
+          <li>약국·체인점: Blue Hat 인증 제품 신뢰도 강화 채널</li>
+          <li>오프라인 회원제 창고형 마트(샘스클럽 등): 수입 콜라겐 번들 인기</li>
+        </ul>
+      </div>
+    </div>
+    <p class="source-note">출처: Spherical Insights China Collagen Market, CIRS Group China SAMR Update Jan 2026, Daxue Consulting China Health Supplement</p>
+  </div>
+</div>
+
+<!-- SECTION 2: SEA -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">2</div>
+    <h2>국가별 섹션 ⑤ 동남아시아 🌏</h2>
+    <span class="sub">Southeast Asia | 2026년 3월 기준</span>
+  </div>
+  <div class="sec-body">
+    <div class="trend-tags">
+      <span class="ttag hot">🔥 베트남 새 식품안전법령 Decree 46/2026 시행</span>
+      <span class="ttag up">📈 태국·인도네시아 콜라겐 뷰티 No.1 카테고리 유지</span>
+      <span class="ttag new">✨ 인도네시아 할랄 콜라겐 (마린·식물성) 수요</span>
+    </div>
+    <div class="country-grid">
+      <div class="cg-card">
+        <h4>🇻🇳 베트남 신규 규제 이슈</h4>
+        <ul>
+          <li><strong>Decree 46/2026/ND-CP</strong> 시행 — 기존 Decree 15/2018 대체</li>
+          <li>식품 안전 관리 강화, 기능성 식품 표시 요건 업데이트</li>
+          <li>온라인 건기식 판매 규정 정비 진행 중 → 2026년 내 추가 세부 지침 예정</li>
+          <li>CBEC 경로: Shopee·Lazada 여전히 유효 (단기 전략)</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>🇮🇩 인도네시아 콜라겐 시장</h4>
+        <ul>
+          <li>인도네시아: 할랄 마린 콜라겐 수요 급증 (돼지 성분 배제 필수)</li>
+          <li>정밀발효 재조합 콜라겐: BSE·할랄 문제 동시 해소 → 2026 진입 확대</li>
+          <li>BPOM 신규 안정성 시험 의무화(2025.3) 적용 → 진입 전 서류 준비 필요</li>
+          <li>TikTok Shop: 콜라겐 뷰티 카테고리 최고 매출 채널 지위 강화</li>
+        </ul>
+      </div>
+    </div>
+    <p class="source-note">출처: ChemLinked Global Food Regulation Highlights 2026, Mordor Intelligence SEA Nutraceuticals Market, BCG SEA Supplement Report</p>
+  </div>
+</div>
+
+<!-- SECTION 2: MEA -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">2</div>
+    <h2>국가별 섹션 ⑥⑦ 중동 & 아프리카 🌙🌍</h2>
+    <span class="sub">Middle East & Africa | 2026년 3월 기준</span>
+  </div>
+  <div class="sec-body">
+    <div class="trend-tags">
+      <span class="ttag hot">🔥 할랄 마린 콜라겐 GCC 수요 급증</span>
+      <span class="ttag up">📈 UAE 기능성 음료 CAGR 10.3%</span>
+      <span class="ttag new">✨ 재조합 콜라겐 할랄·BSE 문제 해소 솔루션</span>
+    </div>
+    <div class="country-grid">
+      <div class="cg-card">
+        <h4>🌙 GCC 콜라겐 시장 기회</h4>
+        <ul>
+          <li>MEA 콜라겐 시장: 도시 소비자 안티에이징·웰니스 수요 급증</li>
+          <li>할랄 인증 마린 콜라겐(생선 기반): 무슬림 소비자 최적 솔루션</li>
+          <li>재조합 콜라겐: BSE + 할랄 이중 우려 해소 → GCC 시장 진입 가속</li>
+          <li>UAE e-커머스 $80억 예상 (2025 두바이 상공회의소)</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>🌍 아프리카 신흥 콜라겐 시장</h4>
+        <ul>
+          <li>이집트: 피부과·뷰티 인플루언서 콜라겐 음료·파우더 소셜 마케팅 주도</li>
+          <li>남아공: 수입 콜라겐 프리미엄 브랜드 접근성 증가</li>
+          <li>케냐: 소득 상승 계층 중심 콜라겐 보충제 수요 태동</li>
+          <li>공통 니즈: 가격 경쟁력 있는 소분 파우치·스틱 제형 선호</li>
+        </ul>
+      </div>
+    </div>
+    <p class="source-note">출처: Market Data Forecast MEA Nutraceuticals 2025-2034, Mordor Intelligence Collagen Market 2026</p>
+  </div>
+</div>
+
+<!-- SECTION 3: FORMULATION -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">3</div>
+    <h2>제형별 트렌드 — 콜라겐 중심</h2>
+    <span class="sub">Formulation Trends | 콜라겐 제형 글로벌 비교 2026</span>
+  </div>
+  <div class="sec-body">
+    <div class="form-grid">
+      <div class="form-card">
+        <div class="form-icon">🥃</div>
+        <div class="form-name">액상 샷 (20ml)</div>
+        <div class="form-growth">+8.55%</div>
+        <div class="form-note">글로벌 CAGR / 최고 단가</div>
+        <div class="form-bar"><div class="form-bar-fill" style="width:82%"></div></div>
+        <p style="font-size:11px;color:#718096;margin-top:8px;">K-Beauty 원조 포맷. EU 진출 활발. 한국·일본·중국 친숙. WellFine 병류 제품과 직결</p>
+      </div>
+      <div class="form-card">
+        <div class="form-icon">🍬</div>
+        <div class="form-name">콜라겐 구미</div>
+        <div class="form-growth">+21.4%</div>
+        <div class="form-note">EU CAGR / 18~30세 여성 주도</div>
+        <div class="form-bar"><div class="form-bar-fill" style="width:90%"></div></div>
+        <p style="font-size:11px;color:#718096;margin-top:8px;">전 세계 B2C 가장 빠른 성장. WellFine 젤리스틱과 직결. SEA 뷰티 구미 No.1</p>
+      </div>
+      <div class="form-card">
+        <div class="form-icon">🫙</div>
+        <div class="form-name">파우더 (스틱)</div>
+        <div class="form-growth">52.8%</div>
+        <div class="form-note">전체 시장 점유율 / 운동·바이오해커</div>
+        <div class="form-bar"><div class="form-bar-fill" style="width:75%"></div></div>
+        <p style="font-size:11px;color:#718096;margin-top:8px;">여전히 최대 시장. 스무디·커피 믹스 편의성. 클린라벨 파우더 수요 강세</p>
+      </div>
+      <div class="form-card">
+        <div class="form-icon">💊</div>
+        <div class="form-name">캡슐·정제</div>
+        <div class="form-growth">+6.4%</div>
+        <div class="form-note">글로벌 CAGR / 약국 채널 강세</div>
+        <div class="form-bar"><div class="form-bar-fill" style="width:55%"></div></div>
+        <p style="font-size:11px;color:#718096;margin-top:8px;">중장년·약국 채널. MEA·중국 약사 추천 채널에서 여전히 강세</p>
+      </div>
+    </div>
+    <p class="source-note">출처: Mordor Intelligence Global Collagen Market 2026-2031, FMI Collagen Supplement Market 2026-2036, Research & Markets Collagen Supplements 2026</p>
+  </div>
+</div>
+
+<!-- SECTION 4: INGREDIENTS -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">4</div>
+    <h2>주목 기능성 원료 동향</h2>
+    <span class="sub">Key Functional Ingredients — 2026년 3월 글로벌 레이더</span>
+  </div>
+  <div class="sec-body">
+    <table class="ing-table">
+      <tr>
+        <th>원료명</th>
+        <th>2026년 시장 동향</th>
+        <th>주요 시장</th>
+        <th>열기</th>
+      </tr>
+      <tr>
+        <td><strong>마린 콜라겐 펩타이드</strong></td>
+        <td>CAGR 11.9% 최고속 성장. 아태지역 뷰티 선호 1위. 할랄 친화적. MSC 인증 클린라벨 트렌드</td>
+        <td><span class="pill pill-cn">중국</span><span class="pill pill-eu">유럽</span><span class="pill pill-sea">SEA</span></td>
+        <td><span class="badge badge-high">🔺 HOT</span></td>
+      </tr>
+      <tr>
+        <td><strong>재조합 콜라겐 (Recombinant)</strong></td>
+        <td>L'Oréal 중국 2세대 출시. BSE·할랄 이중 해소. 정밀발효 기술 5~8% 시장 점유 2031년 목표</td>
+        <td><span class="pill pill-cn">중국</span><span class="pill pill-eu">유럽</span><span class="pill pill-mea">중동</span></td>
+        <td><span class="badge badge-new">🆕 신흥</span></td>
+      </tr>
+      <tr>
+        <td><strong>Type II 콜라겐 (닭 연골)</strong></td>
+        <td>중국 2026.1 뼈·관절 건강 기능 표시 승인 — Type II 콜라겐 직접 수혜. 관절 건강 제품 신규 포지셔닝 가능</td>
+        <td><span class="pill pill-cn">중국</span><span class="pill pill-us">미국</span></td>
+        <td><span class="badge badge-high">🔺 주목</span></td>
+      </tr>
+      <tr>
+        <td><strong>NMN + 콜라겐 복합</strong></td>
+        <td>Meiji 일본 2025.9 출시 → 한국·중국 확산 예정. 항노화+뷰티 이중 포지셔닝 프리미엄</td>
+        <td><span class="pill pill-kr">한국</span><span class="pill pill-cn">중국</span></td>
+        <td><span class="badge badge-med">→ 성장</span></td>
+      </tr>
+      <tr>
+        <td><strong>콜라겐+프로바이오틱스 복합</strong></td>
+        <td>장-피부 축(Gut-Skin Axis) 과학 근거 강화. Nourished 3D구미 콜라겐+Synbiotics 런칭 → 글로벌 확산</td>
+        <td><span class="pill pill-eu">유럽</span><span class="pill pill-us">미국</span><span class="pill pill-kr">한국</span></td>
+        <td><span class="badge badge-med">→ 성장</span></td>
+      </tr>
+      <tr>
+        <td><strong>히알루론산 + 콜라겐</strong></td>
+        <td>피부 수분+탄력 복합 효능. 아시아 RTD 드링크 기본 조합. EU 뷰티 샷 필수 배합</td>
+        <td><span class="pill pill-kr">한국</span><span class="pill pill-cn">중국</span><span class="pill pill-eu">유럽</span></td>
+        <td><span class="badge badge-med">→ 표준</span></td>
+      </tr>
+    </table>
+    <p class="source-note">출처: Grand View Research Collagen Market 2025-2033, Mordor Intelligence Global Collagen Market 2026, FMI Global Collagen Supplement Jan 2026</p>
+  </div>
+</div>
+
+<!-- SECTION 5: PIPELINE -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">5</div>
+    <h2>주요 기업 신제품 출시 파이프라인</h2>
+    <span class="sub">Key Company Pipeline — 2025H2~2026 콜라겐 중심</span>
+  </div>
+  <div class="sec-body">
+    <table class="pipeline-table">
+      <tr>
+        <th>기업명</th>
+        <th>출시 제품</th>
+        <th>제형</th>
+        <th>핵심 원료</th>
+        <th>시장</th>
+      </tr>
+      <tr>
+        <td><strong>L'Oréal</strong></td>
+        <td>Age Perfect Collagen Royal 2세대 (2025.2)</td>
+        <td>재조합 콜라겐 보충제</td>
+        <td>재조합 인간 콜라겐</td>
+        <td><span class="pill pill-cn">중국</span></td>
+      </tr>
+      <tr>
+        <td><strong>Elemis (UK)</strong></td>
+        <td>Pro-Collagen Skin Future Supplements (2025.11)</td>
+        <td>캡슐 누트리코스메틱</td>
+        <td>식품등급 히알루론산+비타민+항산화</td>
+        <td><span class="pill pill-us">미국</span><span class="pill pill-eu">유럽</span></td>
+      </tr>
+      <tr>
+        <td><strong>Elasten (독일)</strong></td>
+        <td>액상 콜라겐 미국 시장 진출 (2025.11)</td>
+        <td>RTD 액상 샷</td>
+        <td>가수분해 콜라겐 펩타이드</td>
+        <td><span class="pill pill-us">미국</span></td>
+      </tr>
+      <tr>
+        <td><strong>Meiji (일본)</strong></td>
+        <td>NMN+콜라겐 뷰티·항노화 (2025.9)</td>
+        <td>정제/캡슐</td>
+        <td>NMN + 콜라겐 펩타이드</td>
+        <td><span class="pill pill-cn">중국</span><span class="pill pill-kr">한국</span></td>
+      </tr>
+      <tr>
+        <td><strong>GNC (미국)</strong></td>
+        <td>Premier Collagen Line (2025.1)</td>
+        <td>파우더·캡슐·구미 멀티포맷</td>
+        <td>소+마린 복합 콜라겐 펩타이드</td>
+        <td><span class="pill pill-us">미국</span></td>
+      </tr>
+      <tr>
+        <td><strong>Cell Fusion C (한국)</strong></td>
+        <td>이너뷰티 선케어 보충제 라인 (2024.12)</td>
+        <td>캡슐</td>
+        <td>콜라겐+UV방어 복합 원료</td>
+        <td><span class="pill pill-kr">한국</span></td>
+      </tr>
+      <tr>
+        <td><strong>Nourished (UK)</strong></td>
+        <td>Collagen+ Gut 3D 구미 스택 확장</td>
+        <td>3D 프린팅 구미</td>
+        <td>난각막 콜라겐+Pre·Pro·Post바이오틱스</td>
+        <td><span class="pill pill-eu">유럽</span><span class="pill pill-us">미국</span></td>
+      </tr>
+    </table>
+    <p class="source-note">출처: Coherent Market Insights Collagen Supplements Market 2025, FMI Collagen Supplement Report Jan 2026, NutraIngredients Product Launch Database</p>
+  </div>
+</div>
+
+<!-- SECTION 6: TREND TRAJECTORY -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">6</div>
+    <h2>과거→현재→미래 콜라겐 트렌드 추이</h2>
+    <span class="sub">Collagen Market Trajectory 2020 → 2026 → 2031</span>
+  </div>
+  <div class="sec-body">
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-head past">◀ 과거 (2020~2023)</div>
+        <div class="tl-body"><ul>
+          <li>소 콜라겐 파우더 중심</li>
+          <li>피부 미용 단일 효능</li>
+          <li>프리미엄 니치 시장</li>
+          <li>RTD 음료 초기 단계</li>
+          <li>아시아 중심 소비</li>
+        </ul></div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-item">
+        <div class="tl-head now">● 현재 (2024~2026)</div>
+        <div class="tl-body"><ul>
+          <li><strong>마린 콜라겐 주류화</strong></li>
+          <li>피부+관절+장 건강 복합</li>
+          <li>구미·액상샷 B2C 폭발</li>
+          <li>재조합 콜라겐 상업화 시작</li>
+          <li>글로벌 전방위 확산</li>
+          <li>GLP-1 연계 신시장</li>
+        </ul></div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-item">
+        <div class="tl-head future">▶ 미래 (2027~2031)</div>
+        <div class="tl-body"><ul>
+          <li>정밀발효 콜라겐 표준화</li>
+          <li>AI 맞춤 콜라겐 블렌드</li>
+          <li>기능성 식품 경계 소멸</li>
+          <li>뼈·관절·인지 기능 복합</li>
+          <li>중동·아프리카 주류화</li>
+          <li>$21.1억 시장 목표(2031)</li>
+        </ul></div>
+      </div>
+    </div>
+    <table class="ing-table" style="margin-top:16px;">
+      <tr><th>트렌드 축</th><th>과거 (2020~2023)</th><th>현재 (2024~2026)</th><th>미래 (2027~2031)</th></tr>
+      <tr><td><strong>주요 원료 유형</strong></td><td>소 콜라겐 (Type I/III)</td><td>마린 콜라겐+재조합 콜라겐 병행</td><td>정밀발효 재조합 콜라겐 표준화</td></tr>
+      <tr><td><strong>핵심 제형</strong></td><td>파우더 (용기형)</td><td>구미·RTD샷·스틱파우치</td><td>기능성 식품 내 콜라겐 통합 (초콜릿·커피 등)</td></tr>
+      <tr><td><strong>효능 포지셔닝</strong></td><td>피부 미용 단일</td><td>피부+관절+장+항노화 복합</td><td>피부+관절+뇌건강+면역 4중 효능</td></tr>
+      <tr><td><strong>주요 소비 지역</strong></td><td>한국·일본·중국</td><td>글로벌 전방위 (US·EU 고속 성장)</td><td>중동·아프리카 주류화 + 인도 신흥</td></tr>
+    </table>
+    <p class="source-note">출처: Mordor Intelligence Global Collagen Market Jan 2026, FMI Collagen Market Outlook 2025-2035, FoodNavigator "Why Collagen is set to dominate 2026" Dec 2025</p>
+  </div>
+</div>
+
+<!-- SECTION 7: CHINA REGULATION DEEP DIVE -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">7</div>
+    <h2>🔴 규제 특집 — 중국 건강식품 규제 심층 분석</h2>
+    <span class="sub">China Health Food Regulation Deep Dive | 2026년 최신 기준</span>
+  </div>
+  <div class="sec-body">
+
+    <div class="alert-box">
+      <h4>🚨 2026년 1월 신규 기능 카테고리 승인 — WellFine 즉시 검토 필요</h4>
+      <p>2026년 1월 15일 SAMR이 <strong>'뼈·관절 건강 유지 (통증·강직 완화 / 연골 손상 감소)'</strong> 기능 표시를 공식 승인했습니다. 이는 2023년 이후 처음으로 추가된 신규 기능 카테고리로, WellFine의 액상 칼슘 및 콜라겐 제품이 이 기능 표시를 활용할 수 있는 가능성이 열렸습니다.</p>
+    </div>
+
+    <h4 style="color:var(--green1);margin:16px 0 12px;">📋 중국 건강식품 규제 이중 트랙 비교</h4>
+    <div class="reg-grid">
+      <div class="reg-card blue">
+        <h4>💙 Blue Hat 등록 (Registration / 注册)</h4>
+        <ul>
+          <li>대상: 특정 기능 건강식품 (면역강화, 뼈·관절 건강 등 24개 기능)</li>
+          <li>소요 기간: <strong>2~5년</strong> (임상시험 포함 가능)</li>
+          <li>비용: 제품당 <strong>약 100만~500만 위안</strong></li>
+          <li>수입 제품: SAMR 직접 등록 (지역 기관 불가)</li>
+          <li>장점: 공식 기능 표시 클레임 허용</li>
+          <li>단점: 기간·비용 높음. 2018~2025년 수입품 실질 동결</li>
+          <li>⚠️ 2025년 5개 수입 제품 최초 승인 — 8년 동결 해제</li>
+        </ul>
+      </div>
+      <div class="reg-card cbec">
+        <h4>💚 CBEC 경로 (Cross-Border eCommerce)</h4>
+        <ul>
+          <li>대상: CBEC 긍정 목록(1,400+개 품목, 2026 기준) 내 제품</li>
+          <li>소요 기간: <strong>즉시 ~ 수주</strong> (플랫폼 입점 기준)</li>
+          <li>비용: 플랫폼 입점 비용만 (인증 비용 없음)</li>
+          <li>허용 채널: Tmall Global, JD Worldwide, Kaola 등</li>
+          <li>장점: Blue Hat 없이 개인수입 방식으로 판매 가능</li>
+          <li>단점: 기능 클레임 표시 불가. 구매 한도(건당 5천위안, 연 2.6만위안)</li>
+          <li>✅ 콜라겐 펩타이드 CBEC 긍정 목록 포함 확인 (2026)</li>
+        </ul>
+      </div>
+      <div class="reg-card warn">
+        <h4>🔴 2026년 2월 라이브스트리밍 규제 강화</h4>
+        <ul>
+          <li>Douyin·Taobao Live 건강식품 광고 심의 강화</li>
+          <li>금지 표현 확대: "치료", "예방", "처방", 과장 효능 클레임</li>
+          <li>Blue Hat 없는 제품: 기능성 표현 광고 원천 금지</li>
+          <li>위반 시: 제품 강제 삭제 + 스토어 정지 + 벌금</li>
+          <li>⚠️ 기존 라이브 광고 스크립트 즉시 점검 필요</li>
+          <li>✅ 허용 표현: "영양 보충", "일상 건강 관리", "뷰티 케어"</li>
+        </ul>
+      </div>
+      <div class="reg-card new">
+        <h4>🆕 신규 기능 카테고리 (2026.1.15 발효)</h4>
+        <ul>
+          <li>승인 기능: <strong>뼈·관절 건강 유지</strong></li>
+          <li>세부: ① 통증·강직 완화 ② 연골 손상 감소</li>
+          <li>2023년 실시 규정 이후 <strong>최초 신규 기능 추가</strong></li>
+          <li>평가 방법: 동물 기능 평가 + 인체 소비 시험 병행</li>
+          <li>적용 원료: Type II 콜라겐, 글루코사민, 칼슘 복합 등</li>
+          <li>✅ WellFine 액상 칼슘 + 콜라겐 제품 기능 표시 검토 대상</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <h4 style="color:var(--green1);margin-bottom:12px;">🗺️ WellFine 중국 진입 전략 의사결정 트리</h4>
+    <table class="ing-table">
+      <tr><th>시나리오</th><th>추천 경로</th><th>소요 기간</th><th>기능 표시 가능</th><th>비고</th></tr>
+      <tr>
+        <td>빠른 시장 테스트</td>
+        <td><span class="badge badge-low">CBEC</span></td>
+        <td>즉시</td>
+        <td>❌ 기능 클레임 불가</td>
+        <td>콜라겐·칼슘 CBEC 목록 확인</td>
+      </tr>
+      <tr>
+        <td>비타민·칼슘 보충제</td>
+        <td><span class="badge badge-med">Filing (备案)</span></td>
+        <td>6~12개월</td>
+        <td>△ 영양 보충 표시만</td>
+        <td>임상시험 불필요. SAMR 신고</td>
+      </tr>
+      <tr>
+        <td>기능성 표시 획득 (뼈·관절)</td>
+        <td><span class="badge badge-high">Blue Hat 등록</span></td>
+        <td>2~5년</td>
+        <td>✅ 공식 기능 표시 허용</td>
+        <td>2026년 뼈·관절 기능 신규 승인 활용</td>
+      </tr>
+    </table>
+    <p class="source-note">출처: CIRS Group China SAMR Catalog Update Jan 15 2026, Shanghai Jungle China Supplement Regulations Feb 2026 (as of Feb 2026), ChemLinked China Ends 8-Year Freeze Aug 2025, ZMUni 2024 Health Food Review</p>
+  </div>
+</div>
+
+<!-- SECTION 8: WELLFINE COLLAGEN ANALYSIS -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">8</div>
+    <h2>WellFine 콜라겐 제품군 특화 집중 분석</h2>
+    <span class="sub">WellFine Collagen Product Intelligence | CN → SEA → US/EU 순</span>
+  </div>
+  <div class="sec-body">
+    <div class="wf-section">
+      <h3>💧 WellFine 콜라겐 글로벌 기회 지도</h3>
+      <p class="sub">1~7섹션 데이터 × WellFine 콜라겐(파우더·음료·젤리스틱·파우치·병류) 교차 분석 | 2026년 기준</p>
+
+      <div class="collagen-grid">
+        <div class="col-card">
+          <h4>🇨🇳 중국 — 최우선 공략</h4>
+          <ul>
+            <li>CBEC 경로: 콜라겐 펩타이드 긍정 목록 포함 → <strong>즉시 Tmall Global 진입 가능</strong></li>
+            <li>2026.1 뼈·관절 기능 승인 → 액상 칼슘+콜라겐 복합 Blue Hat 검토</li>
+            <li>L'Oréal 재조합 콜라겐 선점 → WellFine은 <strong>마린 콜라겐 클린라벨</strong> 차별화 필요</li>
+            <li>Douyin 광고 규제 → 클레임 재검토 후 "뷰티 케어" 표현으로 전환</li>
+            <li>타깃: Tmall Global 여성 25~40세 뷰티 카테고리</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <h4>🌏 동남아 — 즉시 성장 채널</h4>
+          <ul>
+            <li>태국·인도네시아: 뷰티 콜라겐 No.1 카테고리 → WellFine 젤리스틱 직접 매칭</li>
+            <li>인도네시아: 할랄 마린 콜라겐 필수 → MSC 인증 + 할랄 인증 병행 검토</li>
+            <li>베트남 Decree 46/2026 시행 → 기존 CBEC 경로 유효 (단기 유지)</li>
+            <li>TikTok Shop: 뷰티 콜라겐 라이브커머스 최고 매출 채널</li>
+            <li>1회분 소포장 스틱 파우치: 가격 민감 시장 최적 포맷</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <h4>🇺🇸🇪🇺 US/EU — 중기 전략</h4>
+          <ul>
+            <li>미국: GLP-1 사용자 콜라겐+단백질 RTD — "Ozempic Face" 대응 포지셔닝</li>
+            <li>유럽: 마린 콜라겐 20ml 샷 + MSC 인증 → 드럭스토어 프리미엄 채널</li>
+            <li>EU EFSA 클린라벨: 인공첨가물 제로 + MSC 인증 필수</li>
+            <li>Elasten(독일) 미국 진출 사례 → K-Beauty Origin 스토리 역활용</li>
+            <li>콜라겐+프로바이오틱스 복합 구미: EU 젊은 여성 신규 타깃</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="opportunity-box">
+        <h4>🎯 WellFine 콜라겐 2026 Q2~Q3 즉시 액션 아이템</h4>
+        <p>
+          <strong>[긴급 — CN CBEC]</strong> 콜라겐 펩타이드 CBEC 긍정 목록 포함 확인 완료 → Tmall Global 파트너사 접촉 즉시 진행. WellFine 콜라겐 파우더 or 젤리스틱을 중국 뷰티 카테고리로 포지셔닝 테스트 가능.<br><br>
+          <strong>[중기 — CN Blue Hat]</strong> 2026.1 뼈·관절 기능 승인 → 액상 칼슘+Type II 콜라겐 복합 제품으로 Blue Hat 등록 검토. 에이전트 선정 후 3개월 내 Filing 또는 Registration 트랙 결정.<br><br>
+          <strong>[즉시 — SEA]</strong> 인도네시아 진입 시 할랄 인증 마린 콜라겐 원료 교체 검토. 태국은 기존 포맷으로 TikTok Shop CBEC 진입. 1회분 소포장(15ml 파우치) SEA 전용 SKU 개발 검토.<br><br>
+          <strong>[중기 — EU]</strong> MSC 인증 마린 콜라겐 원료 전환 + EU 클린라벨 적용 → 독일·영국 온라인 채널 파일럿. K-Beauty Origin 스토리 마케팅 활용.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-grid">
+    <div>
+      <h4>📚 이번 호 주요 참고 자료</h4>
+      <ul>
+        <li>CIRS Group China SAMR Catalog Update (Jan 15, 2026)</li>
+        <li>Shanghai Jungle China Supplement Regulations (Feb 2026)</li>
+        <li>FMI Global Collagen Supplement Outlook (Jan 27, 2026)</li>
+        <li>Mordor Intelligence Global Collagen Market 2026-2031</li>
+        <li>Research & Markets Collagen Supplements Market 2026</li>
+        <li>FoodNavigator "Why Collagen is set to dominate 2026" (Dec 2025)</li>
+        <li>ChemLinked China Food Regulatory Highlights 2026</li>
+      </ul>
+    </div>
+    <div>
+      <h4>📊 데이터 신뢰도 등급</h4>
+      <ul>
+        <li>🟢 <strong>A급</strong>: SAMR 공식 고시 (1월 15일 발효), ChemLinked 법령 데이터</li>
+        <li>🟡 <strong>B급</strong>: Mordor Intelligence, FMI 시장 보고서 (2026 최신)</li>
+        <li>🟠 <strong>C급</strong>: FoodNavigator 업계 분석, NutraIngredients</li>
+        <li>⚠️ Mintel GNPD 개별 제품 데이터 미포함 (유료 구독 필요)</li>
+      </ul>
+    </div>
+    <div>
+      <h4>📅 다음 호 예고 (Vol.3 — 3월 5주차)</h4>
+      <ul>
+        <li>🔜 섹션7 특집: 동남아 규제 비교 (BPOM·VN·Thai FDA)</li>
+        <li>🔜 섹션8 집중: 젤리스틱·파우치 SEA 시장 전략</li>
+        <li>🔜 베트남 Decree 46/2026 상세 분석</li>
+        <li>🔜 인도네시아 할랄 건기식 인증 가이드</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    WellFine 글로벌사업팀 · Green Food Maker | Vol.2 · 2026년 3월 4주차 | 본 보고서는 공개 자료 기반 분석이며 투자·법적 조언이 아닙니다
+  </div>
+</div>
+
+</body>
+</html>
