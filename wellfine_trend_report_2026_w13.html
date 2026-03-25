@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WellFine 글로벌 건기식·기능성식품 주간 트렌드 보고서 | 2026년 3월 5주차 (Vol.3)</title>
+<style>
+  :root{
+    --green1:#2E6B3E;--green2:#4A9B60;--green3:#A8D5B5;
+    --cream:#F5F2EA;--dark:#1A2A1E;--mid:#4A5568;
+    --light:#718096;--accent:#E8A028;--red:#C53030;
+    --blue:#2B6CB0;--border:#D4E8DC;--orange:#DD6B20;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Malgun Gothic','맑은 고딕','Apple SD Gothic Neo',sans-serif;background:#F0EDE5;color:var(--dark);line-height:1.7;font-size:14px;}
+
+  .cover{background:linear-gradient(135deg,#1A4A2A,var(--green1));color:white;padding:50px 60px;position:relative;overflow:hidden;}
+  .cover::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.04);}
+  .cover-badge{display:inline-block;background:var(--accent);color:white;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:1px;margin-bottom:16px;}
+  .cover h1{font-size:28px;font-weight:700;line-height:1.4;margin-bottom:8px;}
+  .cover h2{font-size:16px;font-weight:400;opacity:.85;margin-bottom:30px;}
+  .cover-meta{display:flex;gap:32px;flex-wrap:wrap;}
+  .cover-meta-item .label{font-size:11px;opacity:.6;text-transform:uppercase;letter-spacing:1px;}
+  .cover-meta-item .value{font-size:14px;font-weight:600;margin-top:2px;}
+  .cover-tags{margin-top:24px;display:flex;gap:8px;flex-wrap:wrap;}
+  .cover-tag{background:rgba(255,255,255,0.12);padding:4px 12px;border-radius:12px;font-size:12px;}
+
+  .container{max-width:1100px;margin:0 auto;padding:0 20px;}
+  .section{margin:28px 0;}
+  .sec-header{background:var(--green1);color:white;padding:14px 24px;border-radius:8px 8px 0 0;display:flex;align-items:center;gap:12px;}
+  .sec-header .num{background:var(--accent);color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;}
+  .sec-header h2{font-size:16px;font-weight:700;}
+  .sec-header .sub{font-size:12px;opacity:.75;margin-left:auto;}
+  .sec-body{background:white;border-radius:0 0 8px 8px;border:1px solid var(--border);border-top:none;padding:24px;}
+
+  .exec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px;}
+  .exec-card{background:var(--cream);border-radius:8px;padding:16px;border-left:4px solid var(--green2);}
+  .exec-card .ec-label{font-size:11px;color:var(--light);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+  .exec-card .ec-value{font-size:22px;font-weight:700;color:var(--green1);}
+  .exec-card .ec-note{font-size:12px;color:var(--mid);margin-top:4px;}
+  .highlight-box{background:linear-gradient(135deg,#EDF7F0,#D4EED9);border-radius:8px;padding:16px 20px;border:1px solid var(--green3);margin-bottom:16px;}
+  .highlight-box h4{color:var(--green1);font-size:13px;font-weight:700;margin-bottom:8px;}
+  .highlight-box p{font-size:13px;color:var(--mid);}
+  .alert-box{background:#FFF5F5;border:1px solid #FED7D7;border-radius:8px;padding:14px 18px;margin:12px 0;}
+  .alert-box h4{color:var(--red);font-size:13px;font-weight:700;margin-bottom:6px;}
+  .alert-box p{font-size:12px;color:var(--mid);}
+  .warn-orange{background:#FFFAF0;border:1px solid #F6AD55;border-radius:8px;padding:14px 18px;margin:12px 0;}
+  .warn-orange h4{color:var(--orange);font-size:13px;font-weight:700;margin-bottom:6px;}
+  .key-insights{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .ki-item{display:flex;gap:10px;padding:12px;background:#FAFAFA;border-radius:6px;border:1px solid #EEE;}
+  .ki-icon{font-size:20px;flex-shrink:0;}
+  .ki-text strong{display:block;font-size:13px;color:var(--dark);}
+  .ki-text span{font-size:12px;color:var(--light);}
+
+  .trend-tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0;}
+  .ttag{padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;}
+  .ttag.hot{background:#FFF0E0;color:#C05621;}
+  .ttag.up{background:#E6F7EC;color:#276749;}
+  .ttag.new{background:#EBF4FF;color:#2B6CB0;}
+  .ttag.warn{background:#FFF5F5;color:#C53030;}
+  .ttag.orange{background:#FFFAF0;color:#C05621;}
+
+  .country-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .cg-card{background:var(--cream);border-radius:6px;padding:14px;}
+  .cg-card h4{font-size:12px;font-weight:700;color:var(--green1);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;}
+  .cg-card p,.cg-card li{font-size:13px;color:var(--mid);margin-bottom:4px;}
+  .cg-card ul{padding-left:16px;}
+
+  .ing-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+  .ing-table th{background:var(--green1);color:white;padding:8px 12px;text-align:left;font-weight:600;}
+  .ing-table td{padding:8px 12px;border-bottom:1px solid #EEE;vertical-align:top;}
+  .ing-table tr:hover td{background:#F9FBF9;}
+  .badge{display:inline-block;padding:2px 8px;border-radius:8px;font-size:11px;font-weight:600;}
+  .badge-high{background:#FED7D7;color:#C53030;}
+  .badge-med{background:#FEFCBF;color:#975A16;}
+  .badge-low{background:#C6F6D5;color:#276749;}
+  .badge-ok{background:#EBF4FF;color:#2B6CB0;}
+  .pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;}
+  .pill-vn{background:#D1FAE5;color:#065F46;}
+  .pill-th{background:#EBF4FF;color:#2B6CB0;}
+  .pill-id{background:#FEF3C7;color:#92400E;}
+  .pill-sea{background:#F0FFF4;color:#276749;}
+  .pill-cn{background:#FFE4E4;color:#C53030;}
+  .pill-kr{background:#FCE7F3;color:#9D174D;}
+  .pill-eu{background:#EDE9FE;color:#5B21B6;}
+  .pill-us{background:#DBEAFE;color:#1E40AF;}
+
+  /* SEA REG GRID */
+  .sea-reg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0;}
+  .sea-card{border-radius:8px;padding:16px;border:2px solid;}
+  .sea-card.vn{border-color:#38A169;background:#F0FFF4;}
+  .sea-card.th{border-color:#3182CE;background:#EBF8FF;}
+  .sea-card.id{border-color:#D69E2E;background:#FFFFF0;}
+  .sea-card h4{font-size:13px;font-weight:700;margin-bottom:10px;}
+  .sea-card.vn h4{color:#276749;}
+  .sea-card.th h4{color:#2B6CB0;}
+  .sea-card.id h4{color:#975A16;}
+  .sea-card ul{padding-left:16px;}
+  .sea-card li{font-size:12px;color:var(--mid);margin-bottom:4px;}
+  .sea-card .status{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;margin-bottom:8px;}
+  .status-warn{background:#FED7D7;color:#C53030;}
+  .status-ok{background:#C6F6D5;color:#276749;}
+  .status-watch{background:#FEFCBF;color:#975A16;}
+
+  /* JELLY STICK SPECIAL */
+  .jelly-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0;}
+  .jelly-card{background:var(--cream);border-radius:10px;padding:16px;text-align:center;border:2px solid transparent;}
+  .jelly-card:hover{border-color:var(--green3);}
+  .jelly-icon{font-size:32px;margin-bottom:8px;}
+  .jelly-name{font-size:13px;font-weight:700;color:var(--dark);margin-bottom:4px;}
+  .jelly-val{font-size:20px;font-weight:700;color:var(--green1);}
+  .jelly-note{font-size:11px;color:var(--light);margin-top:4px;}
+  .jelly-bar{height:4px;background:#DDD;border-radius:2px;margin-top:8px;overflow:hidden;}
+  .jelly-bar-fill{height:100%;border-radius:2px;background:var(--green2);}
+
+  .timeline{display:flex;gap:0;margin:16px 0;}
+  .tl-item{flex:1;}
+  .tl-head{padding:8px 14px;text-align:center;font-size:12px;font-weight:700;color:white;}
+  .tl-head.past{background:var(--light);}
+  .tl-head.now{background:var(--green2);}
+  .tl-head.future{background:var(--green1);}
+  .tl-body{background:#FAFAFA;border:1px solid #DDD;border-top:none;padding:12px 14px;min-height:100px;font-size:12px;color:var(--mid);}
+  .tl-body ul{padding-left:14px;}
+  .tl-body li{margin-bottom:4px;}
+  .tl-arrow{display:flex;align-items:center;color:var(--green2);font-size:22px;padding:0 4px;margin-top:28px;flex-shrink:0;}
+
+  /* WELLFINE WF SECTION */
+  .wf-section{background:linear-gradient(135deg,var(--green1),#1A4A2A);color:white;border-radius:8px;padding:24px;margin-top:20px;}
+  .wf-section h3{font-size:18px;font-weight:700;margin-bottom:4px;}
+  .wf-section .sub{opacity:.75;font-size:13px;margin-bottom:20px;}
+  .wf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .wf-card{background:rgba(255,255,255,0.1);border-radius:8px;padding:16px;}
+  .wf-card h4{font-size:13px;font-weight:700;margin-bottom:10px;color:var(--green3);}
+  .wf-card p,.wf-card li{font-size:12px;opacity:.9;margin-bottom:4px;}
+  .wf-card ul{padding-left:16px;}
+  .opportunity-box{background:rgba(232,160,40,0.2);border-radius:8px;padding:16px;margin-top:16px;border:1px solid rgba(232,160,40,0.4);}
+  .opportunity-box h4{color:var(--accent);font-size:14px;font-weight:700;margin-bottom:8px;}
+  .opportunity-box p{font-size:13px;opacity:.9;}
+
+  .pipeline-table{width:100%;border-collapse:collapse;font-size:13px;}
+  .pipeline-table th{background:var(--green1);color:white;padding:9px 12px;text-align:left;font-weight:600;font-size:12px;}
+  .pipeline-table td{padding:9px 12px;border-bottom:1px solid #EEE;vertical-align:top;}
+  .pipeline-table tr:nth-child(even) td{background:#F9FBF9;}
+
+  .divider{height:1px;background:var(--border);margin:20px 0;}
+  .source-note{font-size:11px;color:var(--light);font-style:italic;margin-top:12px;padding-top:10px;border-top:1px dashed #DDD;}
+
+  .footer{background:var(--dark);color:white;padding:24px 40px;margin-top:40px;}
+  .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;max-width:1100px;margin:0 auto;}
+  .footer h4{font-size:13px;font-weight:700;color:var(--green3);margin-bottom:8px;}
+  .footer p,.footer li{font-size:12px;opacity:.7;margin-bottom:3px;}
+  .footer ul{padding-left:16px;}
+  .footer-bottom{text-align:center;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);font-size:11px;opacity:.5;}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="container">
+    <div class="cover-badge">🌿 WELLFINE GLOBAL INTELLIGENCE — Vol.3</div>
+    <h1>글로벌 건강기능식품·기능성식품<br>주간 트렌드 보고서</h1>
+    <h2>Global Health Functional Food & Nutraceutical Weekly Trend Report</h2>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><div class="label">발행호수</div><div class="value">Vol. 3 (2026년 3월 5주차)</div></div>
+      <div class="cover-meta-item"><div class="label">보고서 기준일</div><div class="value">2026년 3월 31일</div></div>
+      <div class="cover-meta-item"><div class="label">작성</div><div class="value">WellFine 글로벌사업팀</div></div>
+      <div class="cover-meta-item"><div class="label">데이터 소스</div><div class="value">ChemLinked, RegASK, InCorp Vietnam, TMO Group 外</div></div>
+    </div>
+    <div class="cover-tags">
+      <span class="cover-tag">🇰🇷 한국</span>
+      <span class="cover-tag">🇺🇸 미국</span>
+      <span class="cover-tag">🇪🇺 유럽</span>
+      <span class="cover-tag">🇨🇳 중국</span>
+      <span class="cover-tag">🌏 동남아시아</span>
+      <span class="cover-tag">🌙 중동</span>
+      <span class="cover-tag">🌍 아프리카</span>
+      <span class="cover-tag">🟠 섹션7: 동남아 규제 심층</span>
+      <span class="cover-tag">🍬 섹션8: 젤리스틱·파우치 집중</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- SECTION 1 -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">1</div>
+    <h2>글로벌 시장 핵심 요약</h2>
+    <span class="sub">Executive Summary | 2026년 3월 기준</span>
+  </div>
+  <div class="sec-body">
+    <div class="exec-grid">
+      <div class="exec-card">
+        <div class="ec-label">동남아 건기식 시장 규모</div>
+        <div class="ec-value">$110억</div>
+        <div class="ec-note">2024년 기준 / YoY +7.1% / 2030년 $128억 목표</div>
+      </div>
+      <div class="exec-card">
+        <div class="ec-label">베트남 Decree 46 유예 기간</div>
+        <div class="ec-value">~4월 16일</div>
+        <div class="ec-note">2026.2.4~4.16 시행 유예 / 기존 Decree 15 계속 적용</div>
+      </div>
+      <div class="exec-card">
+        <div class="ec-label">글로벌 기능성 구미·젤리 시장</div>
+        <div class="ec-value">$257억</div>
+        <div class="ec-note">2025년 기준 / 2030년 $381억 목표 / CAGR ~8%</div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>📌 이번 주 최대 이슈</h4>
+      <p>베트남 <strong>Decree 46/2026이 시행 10일 만에 사실상 전면 유예</strong>됐습니다. 전국 항구에 700건 이상 통관 지연 사태가 발생한 후, 정부는 2월 4일 Resolution 09를 통해 <strong>4월 16일까지 시행을 연기</strong>했습니다. 현재 기존 Decree 15/2018이 계속 적용됩니다. 또한 태국 FDA가 <strong>건기식 광고 단속을 강화</strong>하며 온라인 플랫폼의 허위·과장 클레임에 대한 제재를 확대하고 있습니다.</p>
+    </div>
+
+    <div class="key-insights">
+      <div class="ki-item">
+        <div class="ki-icon">🇻🇳</div>
+        <div class="ki-text">
+          <strong>베트남 Decree 46 4월 16일까지 유예</strong>
+          <span>시행 즉시 통관 대란 발생 → 정부 긴급 유예. 4월 16일 이후 재시행 예정이나 추가 지연 가능성. 현재 CBEC 진입 경로는 안전</span>
+        </div>
+      </div>
+      <div class="ki-item">
+        <div class="ki-icon">🇹🇭</div>
+        <div class="ki-text">
+          <strong>태국 건기식 광고 단속 강화 (2026.3)</strong>
+          <span>Thai FDA 온라인 허위·과장 클레임 제재 확대. TikTok·Shopee 제품 설명 재검토 필요. 사전 심의 없이 기능성 표현 사용 금지</span>
+        </div>
+      </div>
+      <div class="ki-item">
+        <div class="ki-icon">🇮🇩</div>
+        <div class="ki-text">
+          <strong>인도네시아 건기식 원료 목록 초안 발표</strong>
+          <span>BPOM, 건기식용 의약품 원료 목록 초안 공개 (2026.1 ChemLinked 확인). 콜라겐·칼슘 포함 여부 확인 필요</span>
+        </div>
+      </div>
+      <div class="ki-item">
+        <div class="ki-icon">🍬</div>
+        <div class="ki-text">
+          <strong>젤리·구미 제형 SEA 내 폭발적 성장 지속</strong>
+          <span>태국 뷰티 구미 No.1, 인도네시아 어린이 구미 1위. TikTok Shop 라이브커머스 최고 매출 제형. WellFine 젤리스틱 직접 기회</span>
+        </div>
+      </div>
+    </div>
+    <p class="source-note">📚 주요 참고 자료: RegASK Vietnam Decree 46 Suspension Feb 2026, Vietnam Briefing Feb 2026, ChemLinked Global Regulation Highlights Jan 2026, TMO Group Asia Supplements Market Expansion, Yahoo Finance Thailand FDA Crackdown Mar 2026</p>
+  </div>
+</div>
+
+<!-- SECTION 2: COUNTRIES -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">2</div>
+    <h2>국가별 섹션 — 7개국 업데이트</h2>
+    <span class="sub">2026년 3월 5주차 기준</span>
+  </div>
+  <div class="sec-body">
+
+    <!-- 한국 -->
+    <div style="margin-bottom:24px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid var(--border);">
+        <span style="font-size:24px;">🇰🇷</span>
+        <div><h3 style="font-size:16px;font-weight:700;color:var(--green1);">한국 — 젤리스틱·파우치 1분기 성장 견인</h3>
+        <p style="font-size:12px;color:var(--light);">2026년 건기식 시장 완만한 성장세 전환 기대 / 젤리 제형 급성장 지속</p></div>
+      </div>
+      <div class="country-grid">
+        <div class="cg-card">
+          <h4>📊 최신 동향</h4>
+          <ul>
+            <li>한국 MFDS: 2026년 건기식 9개 기능성 원료 재평가 계획 발표 (히알루론산, Rhodiola rosea 추출물 등 포함)</li>
+            <li>젤리스틱·구미 제형: 온라인 검색량 전분기 대비 15%+ 증가</li>
+            <li>GLP-1 보완 건기식: 콜라겐+단백질 RTD 파우치 신제품 출시 가속</li>
+            <li>저속노화: NMN, 스퍼미딘 복합 젤리스틱 프리미엄 출시 증가</li>
+          </ul>
+        </div>
+        <div class="cg-card">
+          <h4>🔮 주목 이슈</h4>
+          <ul>
+            <li>MFDS 히알루론산 재평가 → 기능성 인정 유지 예상이나 용량 조정 가능</li>
+            <li>젤리스틱 포맷: 20~35세 여성 직장인 '일상 루틴' 제품으로 포지셔닝 강화</li>
+            <li>기능성 음료 경계 붕괴: 편의점 건기식 음료 출시 활발 (파우치→캔 전환)</li>
+            <li>식약처: 개별인정형 신규 기능성 원료 승인 계속 진행 중</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 미국 -->
+    <div style="margin-bottom:24px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid var(--border);">
+        <span style="font-size:24px;">🇺🇸</span>
+        <div><h3 style="font-size:16px;font-weight:700;color:var(--green1);">미국 — 기능성 구미 품질 논란 + 프리바이오틱 음료 주류화</h3>
+        <p style="font-size:12px;color:var(--light);">구미 유효성분 미달 적발 사례 증가 / 소비자 신뢰도 이슈 부상</p></div>
+      </div>
+      <div class="country-grid">
+        <div class="cg-card">
+          <h4>⚠️ 구미 품질 논란 이슈</h4>
+          <ul>
+            <li>유명 피트니스 인플루언서 James Smith, 크레아틴 구미 유효성분 미달 적발 공개</li>
+            <li>FDA 구미 건기식 표시·광고 단속 강화 예고</li>
+            <li>소비자: 과학적 근거 없는 구미 제품 불신 증가 → <strong>임상 데이터 있는 브랜드 프리미엄화</strong></li>
+            <li>기회: 품질 검증된 젤리스틱·구미 제품 차별화 가능</li>
+          </ul>
+        </div>
+        <div class="cg-card">
+          <h4>📈 2026년 시장 흐름</h4>
+          <ul>
+            <li>Poppi(PepsiCo 인수) 프리바이오틱 소다: 편의점·슈퍼마켓 대규모 입점 진행 중</li>
+            <li>GLP-1 보완 파우치 시장: 단백질+프로바이오틱스 소포장 파우치 급증</li>
+            <li>2026 US Human Foods Program 신규 지침 발표 → 건기식 표시 규정 명확화</li>
+            <li>관세 이슈: 한국산 건기식(HS 2106.90) KORUS FTA 혜택 유지 확인</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 유럽 -->
+    <div style="margin-bottom:24px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid var(--border);">
+        <span style="font-size:24px;">🇪🇺</span>
+        <div><h3 style="font-size:16px;font-weight:700;color:var(--green1);">유럽 — EU 식품첨가물 규정 2026 업데이트</h3>
+        <p style="font-size:12px;color:var(--light);">EU 식품첨가물·포장재 규정 강화 / 클린라벨 압력 지속 증가</p></div>
+      </div>
+      <div class="country-grid">
+        <div class="cg-card">
+          <h4>📋 2026 EU 규제 동향</h4>
+          <ul>
+            <li>EU Food Additive 2026 규정 업데이트 (ChemLinked 1월 확인)</li>
+            <li>PPWR(포장·포장재 폐기물 규정): 과포장 금지 → 건기식 파우치·스틱 포장 재설계 필요</li>
+            <li>비스페놀A(BPA) 식품 접촉 재료 금지 → 파우치·병 포장재 전환 요구</li>
+            <li>클린라벨 압력 강화: 인공 첨가물 없는 천연 젤화제(펙틴·한천) 구미 급증</li>
+          </ul>
+        </div>
+        <div class="cg-card">
+          <h4>🍬 유럽 젤리·구미 시장</h4>
+          <ul>
+            <li>FOS 감미료 구미: 저혈당 천연 대안 → EU 젊은 소비자 선호</li>
+            <li>펙틴 기반 비건 구미: 동물성 젤라틴 대체 → EU 채식주의 소비자 타깃</li>
+            <li>스페인 Infarma 2025 화제: 뼈 모양 칼슘 구미, 페릴라오일 비건 오메가3 구미</li>
+            <li>콜라겐 구미 CAGR 21.4% 유지 → 유럽 최고속 성장 건기식 제형 지속</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 중국 -->
+    <div style="margin-bottom:24px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid var(--border);">
+        <span style="font-size:24px;">🇨🇳</span>
+        <div><h3 style="font-size:16px;font-weight:700;color:var(--green1);">중국 — SAMR 젤리·캔디형 건기식 허용 범위 확대 검토 중</h3>
+        <p style="font-size:12px;color:var(--light);">2024.10 SAMR, 구미·젤리 제형 건기식 신고 범위 확대 초안 발표</p></div>
+      </div>
+      <div class="country-grid">
+        <div class="cg-card">
+          <h4>🆕 젤리·구미 제형 규제 완화 방향</h4>
+          <ul>
+            <li>SAMR 2024.10 초안: 캔디·초콜릿·젤리 제형 건기식 신고 디렉토리 확대 제안</li>
+            <li>현재: 정제·캡슐·파우더·구강액·과립·연질캡슐만 허용</li>
+            <li>확대 예정: 젤리·구미 제형 포함 시 WellFine 젤리스틱 CBEC 판매 가속 가능</li>
+            <li>청년층 선호 → 젤리형 건기식 시장 폭발 예상</li>
+          </ul>
+        </div>
+        <div class="cg-card">
+          <h4>📱 Tmall/Douyin 2026 Q1 트렌드</h4>
+          <ul>
+            <li>젤리형 콜라겐 파우치: Douyin 뷰티 카테고리 매출 급증</li>
+            <li>인스턴트 프로바이오틱스 사쉐: 편의성·휴대성 수요 지속</li>
+            <li>아동용 젤리형 건기식: 칼슘·DHA·유산균 복합 제품 Tmall 베스트셀러</li>
+            <li>Douyin 광고 규제 강화 → 콘텐츠 마케팅(정보성 영상) 전환 필요</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 동남아·중동·아프리카 -->
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid var(--border);">
+        <span style="font-size:24px;">🌏🌙🌍</span>
+        <div><h3 style="font-size:16px;font-weight:700;color:var(--green1);">동남아·중동·아프리카 — 섹션7 심층 규제와 연계</h3>
+        <p style="font-size:12px;color:var(--light);">동남아 규제 변화 급격 / 중동 할랄 젤리 시장 성장 / 아프리카 가격 민감 소포장 수요</p></div>
+      </div>
+      <div class="country-grid">
+        <div class="cg-card">
+          <h4>🌙 중동 — 할랄 젤리 건기식</h4>
+          <ul>
+            <li>돼지 젤라틴 배제 필수 → 어류 콜라겐·펙틴·한천 기반 젤리 허용</li>
+            <li>GCC: 할랄 인증 비타민 구미 수요 급증 (어린이 타깃)</li>
+            <li>UAE: 기능성 음료+젤리스틱 복합 세트 프리미엄 채널 성장</li>
+          </ul>
+        </div>
+        <div class="cg-card">
+          <h4>🌍 아프리카 — 소포장 파우치 전략</h4>
+          <ul>
+            <li>케냐·이집트: 가격 민감 → 1회분 소포장(5~10ml) 파우치 최적 포맷</li>
+            <li>바오밥·모링가 함유 기능성 파우치: 현지 브랜드와 협업 기회</li>
+            <li>남아공: 수입 프리미엄 구미·젤리 온라인 판매 채널 확대</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="source-note">출처: ChemLinked Global Food Regulation Highlights Jan 2026, TMO Group Asia Supplements, Vietnam Briefing Feb 2026, RegASK Vietnam Suspension Feb 2026</p>
+  </div>
+</div>
+
+<!-- SECTION 3: FORMULATION -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">3</div>
+    <h2>제형별 트렌드 — 젤리·파우치·구미 중심</h2>
+    <span class="sub">Formulation Trends | 2026년 글로벌 비교</span>
+  </div>
+  <div class="sec-body">
+    <div class="jelly-grid">
+      <div class="jelly-card">
+        <div class="jelly-icon">🍬</div>
+        <div class="jelly-name">기능성 구미 (Gummy)</div>
+        <div class="jelly-val">+21.4%</div>
+        <div class="jelly-note">EU 콜라겐 구미 CAGR / 글로벌 $257억</div>
+        <div class="jelly-bar"><div class="jelly-bar-fill" style="width:90%"></div></div>
+        <p style="font-size:11px;color:#718096;margin-top:8px;">전 세계 최고속 건기식 제형. 비건 구미(펙틴) 급성장. 할랄 구미 중동 수요</p>
+      </div>
+      <div class="jelly-card">
+        <div class="jelly-icon">📦</div>
+        <div class="jelly-name">젤리스틱 파우치</div>
+        <div class="jelly-val">+18%</div>
+        <div class="jelly-note">한국·중국 젤리형 건기식 성장률 추정</div>
+        <div class="jelly-bar"><div class="jelly-bar-fill" style="width:82%"></div></div>
+        <p style="font-size:11px;color:#718096;margin-top:8px;">WellFine 주력 포맷. 한국 2030세대 No.1 선호 제형. SEA TikTok Shop 핵심</p>
+      </div>
+      <div class="jelly-card">
+        <div class="jelly-icon">🥤</div>
+        <div class="jelly-name">소분 파우치 (RTD)</div>
+        <div class="jelly-val">+15%</div>
+        <div class="jelly-note">SEA·아프리카 1회분 소포장 성장</div>
+        <div class="jelly-bar"><div class="jelly-bar-fill" style="width:75%"></div></div>
+        <p style="font-size:11px;color:#718096;margin-top:8px;">가격 민감 시장 공략 최적. 아프리카 소포장 전략. 중동 할랄 파우치</p>
+      </div>
+      <div class="jelly-card">
+        <div class="jelly-icon">💧</div>
+        <div class="jelly-name">워터파우더 (스틱)</div>
+        <div class="jelly-val">+12%</div>
+        <div class="jelly-note">한국·일본 1인가구 편의성 수요</div>
+        <div class="jelly-bar"><div class="jelly-bar-fill" style="width:60%"></div></div>
+        <p style="font-size:11px;color:#718096;margin-top:8px;">물에 타먹는 단회용 파우더. 전해질·비타민 복합 인기. SEA 신흥</p>
+      </div>
+    </div>
+    <p class="source-note">출처: Mordor Intelligence Functional Gummy Market, Innova Market Insights SEA Supplement Packaging Trends, BCG SEA Supplement Market Report</p>
+  </div>
+</div>
+
+<!-- SECTION 4: INGREDIENTS -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">4</div>
+    <h2>주목 기능성 원료 동향</h2>
+    <span class="sub">Key Ingredients — 2026년 3월 SEA 특화 레이더</span>
+  </div>
+  <div class="sec-body">
+    <table class="ing-table">
+      <tr><th>원료</th><th>SEA 시장 동향</th><th>제형 연결</th><th>열기</th></tr>
+      <tr>
+        <td><strong>프로바이오틱스 (유산균)</strong></td>
+        <td>ASEAN 프로바이오틱스 시장 CAGR 9.61%. 베트남 온라인 구매 75.1%. 인도네시아 BPOM 안정성 시험 의무화 적용</td>
+        <td>젤리스틱·파우치·구미</td>
+        <td><span class="badge badge-high">🔺 HOT</span></td>
+      </tr>
+      <tr>
+        <td><strong>강황 (Turmeric)</strong></td>
+        <td>태국 정부 지정 허브 챔피언 3종 중 1위. 항염·소화 기능. 태국 FDA 444종 식물성 원료 목록 포함</td>
+        <td>파우치·캡슐·젤리</td>
+        <td><span class="badge badge-high">🔺 HOT</span></td>
+      </tr>
+      <tr>
+        <td><strong>콜라겐 펩타이드 (마린)</strong></td>
+        <td>태국·인도네시아 뷰티 No.1 원료. 인도네시아 할랄 마린 콜라겐 선호. SEA 젤리스틱·파우치 연결</td>
+        <td>젤리스틱·파우치·RTD</td>
+        <td><span class="badge badge-high">🔺 HOT</span></td>
+      </tr>
+      <tr>
+        <td><strong>칼슘 (Calcium)</strong></td>
+        <td>FruiteX-B(특허 칼슘) SEA 파트너십 (2024.11). 어린이 성장·시니어 골밀도. 인도네시아·베트남 수요</td>
+        <td>젤리스틱·구미·RTD</td>
+        <td><span class="badge badge-med">→ 성장</span></td>
+      </tr>
+      <tr>
+        <td><strong>안드로그라피스</strong></td>
+        <td>태국 정부 지정 허브 챔피언 2번. 면역·항균. 태국 전통 의학에서 현대 보충제로 전환</td>
+        <td>파우치·캡슐</td>
+        <td><span class="badge badge-med">→ 성장</span></td>
+      </tr>
+      <tr>
+        <td><strong>Jamu 허브 복합 (인도네시아)</strong></td>
+        <td>Jamu 전통 허브 현대화. 인도네시아 MZ세대 카페형 Jamu 소비 급증. 기능성 파우치 포맷 연결</td>
+        <td>RTD 파우치·젤리스틱</td>
+        <td><span class="badge badge-med">→ 신흥</span></td>
+      </tr>
+    </table>
+    <p class="source-note">출처: Mordor Intelligence ASEAN Probiotic Supplements 2025, Food Research Lab ASEAN Nutraceutical Regulation 2025, ChemLinked Thailand/Indonesia Supplement Regulation</p>
+  </div>
+</div>
+
+<!-- SECTION 5: PIPELINE -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">5</div>
+    <h2>주요 기업 신제품 출시 파이프라인</h2>
+    <span class="sub">SEA 중심 제품 파이프라인 | 2025H2~2026</span>
+  </div>
+  <div class="sec-body">
+    <table class="pipeline-table">
+      <tr>
+        <th>기업명</th><th>출시 제품·동향</th><th>제형</th><th>시장</th>
+      </tr>
+      <tr>
+        <td><strong>Sirio Pharma</strong></td>
+        <td>태국 Chonburi 구미 생산공장 ($4천만 투자, 2024) — 2026년 본격 가동. SEA 전용 뷰티·어린이 구미 공급 확대</td>
+        <td>구미 전품목</td>
+        <td><span class="pill pill-sea">SEA</span></td>
+      </tr>
+      <tr>
+        <td><strong>Aayush Wellness (인도)</strong></td>
+        <td>싱가포르 자회사 설립 ($7,800 투자, 2025.6) — SEA 전역 뉴트라슈티컬 판매 확대 계획</td>
+        <td>다형태</td>
+        <td><span class="pill pill-sea">SEA</span></td>
+      </tr>
+      <tr>
+        <td><strong>Herbalife</strong></td>
+        <td>생체측정 AI 맞춤 영양 플랫폼 인수($25~30M) → SEA 직접판매 채널과 디지털 융합</td>
+        <td>개인화 파우치</td>
+        <td><span class="pill pill-sea">SEA</span><span class="pill pill-us">US</span></td>
+      </tr>
+      <tr>
+        <td><strong>FutureCeuticals × Global Calcium</strong></td>
+        <td>FruiteX-B 칼슘 프룩토보레이트 SEA 확장 (2024.11) — 태국·인도네시아 뼈·관절 건강 표적</td>
+        <td>캡슐·구미 원료</td>
+        <td><span class="pill pill-th">태국</span><span class="pill pill-id">인도네시아</span></td>
+      </tr>
+      <tr>
+        <td><strong>Brenntag × Esprit Care</strong></td>
+        <td>말레이시아 CMO 파트너십 (2024.12) — SEA 뉴트라 제조 현지화 가속</td>
+        <td>위탁 생산</td>
+        <td><span class="pill pill-sea">SEA</span></td>
+      </tr>
+      <tr>
+        <td><strong>Cool Vita (인도네시아)</strong></td>
+        <td>TikTok 라이브스트리밍·미니드라마 PPL로 건기식 마케팅 현지화 성공 사례 → 벤치마크 필요</td>
+        <td>비타민·구미</td>
+        <td><span class="pill pill-id">인도네시아</span></td>
+      </tr>
+    </table>
+    <p class="source-note">출처: Grand View Research SEA Nutraceuticals Market, BCG/NutraIngredients SEA Supplement Market Nov 2025, Mordor Intelligence ASEAN Probiotic Supplements</p>
+  </div>
+</div>
+
+<!-- SECTION 6: TREND -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">6</div>
+    <h2>과거→현재→미래 — 젤리·파우치 제형 트렌드 추이</h2>
+    <span class="sub">Jelly·Pouch Formulation Trajectory 2020 → 2026 → 2031</span>
+  </div>
+  <div class="sec-body">
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-head past">◀ 과거 (2018~2022)</div>
+        <div class="tl-body"><ul>
+          <li>한국 젤리스틱 1세대 등장</li>
+          <li>캡슐·정제 중심 아시아 시장</li>
+          <li>구미 = 어린이 비타민 인식</li>
+          <li>RTD 파우치 기능성 개념 초기</li>
+        </ul></div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-item">
+        <div class="tl-head now">● 현재 (2023~2026)</div>
+        <div class="tl-body"><ul>
+          <li><strong>젤리스틱·파우치 2030 주류 제형</strong></li>
+          <li>비건 구미(펙틴) EU 표준화</li>
+          <li>할랄 구미 중동·SEA 급성장</li>
+          <li>TikTok Shop 젤리 최고 매출</li>
+          <li>중국 SAMR 젤리 확대 검토</li>
+        </ul></div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-item">
+        <div class="tl-head future">▶ 미래 (2027~2031)</div>
+        <div class="tl-body"><ul>
+          <li>3D 프린팅 맞춤 구미 표준화</li>
+          <li>기능성 식품 경계 소멸 (초콜릿·젤리 통합)</li>
+          <li>AI 최적화 맞춤 파우치 구독</li>
+          <li>생분해 포장재 의무화 추세</li>
+          <li>글로벌 $381억 구미 시장</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <table class="ing-table" style="margin-top:16px;">
+      <tr><th>트렌드 축</th><th>과거</th><th>현재 (2026)</th><th>미래</th></tr>
+      <tr><td><strong>주요 제형 소재</strong></td><td>동물성 젤라틴</td><td>어류 콜라겐·펙틴·한천 병행</td><td>발효 정밀 바이오소재 구미</td></tr>
+      <tr><td><strong>타깃 소비자</strong></td><td>어린이 비타민</td><td>2030 여성·직장인·피트니스족</td><td>전 연령 라이프스타일 통합</td></tr>
+      <tr><td><strong>유통 채널</strong></td><td>약국·오프라인</td><td>TikTok Shop·Shopee·Lazada</td><td>AI 추천 구독 D2C</td></tr>
+      <tr><td><strong>핵심 기능</strong></td><td>단일 기능</td><td>뷰티+관절+장 건강 복합</td><td>AI 맞춤 다기능 스택</td></tr>
+    </table>
+    <p class="source-note">출처: Mordor Intelligence Functional Gummy Market 2025-2030, ConfectioneryNews Functional Gummy Sept 2025, BCG SEA Supplement Report Nov 2025</p>
+  </div>
+</div>
+
+<!-- SECTION 7: SEA REGULATION DEEP DIVE -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">7</div>
+    <h2>🟠 규제 특집 — 동남아시아 3국 규제 심층 비교</h2>
+    <span class="sub">SEA Regulation Deep Dive | 베트남·태국·인도네시아 | 2026년 3월 기준</span>
+  </div>
+  <div class="sec-body">
+
+    <div class="alert-box">
+      <h4>🚨 긴급 — 베트남 Decree 46, 4월 16일까지 유예 중</h4>
+      <p>2026년 1월 26일 시행된 Decree 46/2026이 통관 대란으로 인해 2월 4일부터 4월 16일까지 전면 유예됐습니다. 현재 기존 Decree 15/2018이 계속 적용됩니다. <strong>4월 16일 이후 재시행 예정이나 추가 연장 가능성 있음.</strong> 베트남 수출 계획 중인 경우 4월 중순 이후 규제 재개 여부를 반드시 확인하세요.</p>
+    </div>
+
+    <div class="sea-reg-grid">
+      <div class="sea-card vn">
+        <span class="status status-warn">⚠️ 유예 중 (4.16까지)</span>
+        <h4>🇻🇳 베트남 — Decree 46/2026</h4>
+        <ul>
+          <li><strong>현 상황</strong>: Decree 15/2018 계속 적용 (4.16까지)</li>
+          <li><strong>Decree 46 핵심 변화</strong>: 자체신고 → 정부 사전심사 방식으로 전환</li>
+          <li>건기식 포함 모든 가공식품: 적합성 선언 등록 의무화 예정</li>
+          <li>수입 건기식: 항구 도착 전 사전 검사 신청서 제출 예정</li>
+          <li>라벨링: 알레르기 원료 의무 표시 (Codex 기준 참조)</li>
+          <li>GMP 의무화: 건기식 생산 시설 GMP 인증 필수</li>
+          <li>유효기간: 위생 등록 5년 (갱신 2개월 전 신청)</li>
+          <li><strong>WellFine 대응</strong>: CBEC 경로 당분간 유지. 4.16 이후 모니터링</li>
+        </ul>
+      </div>
+      <div class="sea-card th">
+        <span class="status status-watch">👀 광고 단속 강화</span>
+        <h4>🇹🇭 태국 — Thai FDA 규제 현황</h4>
+        <ul>
+          <li><strong>2026.3 신규</strong>: Thai FDA 온라인 건기식 광고 허위·과장 단속 강화</li>
+          <li>TikTok·Shopee 제품 설명 클레임 재검토 필요</li>
+          <li>건강 기능 표시: 사전 FDA 평가 필수 (클레임 심사)</li>
+          <li>2025 개정: 비타민·미네랄 허용 수준 ASEAN 기준 상향</li>
+          <li>식물성 원료 444종 승인 목록 (강황·안드로그라피스 포함)</li>
+          <li>라벨: 원산지·제조일·유효기간·성분량 표시 의무</li>
+          <li>수입 제품: 현지 대리인(importer) 통한 등록 필수</li>
+          <li><strong>WellFine 대응</strong>: 광고 클레임 검토 후 TikTok 마케팅 진행</li>
+        </ul>
+      </div>
+      <div class="sea-card id">
+        <span class="status status-watch">📋 신규 원료 목록 검토 중</span>
+        <h4>🇮🇩 인도네시아 — BPOM 규제 현황</h4>
+        <ul>
+          <li><strong>2026.1 신규</strong>: 건기식용 의약품 원료 목록 초안 발표 (공청회 진행 중)</li>
+          <li>2025.3 안정성 시험 의무화 (BPOM 규정 제6호) 적용 중</li>
+          <li>마케팅 허가(Marketing Authorization) + 국경 수입 인증 필수</li>
+          <li>라벨: 객관적·완전·비오해성 원칙. 원산지·성분·용량 표시</li>
+          <li>할랄 인증: BPJPH 필수 (돼지 성분 함유 시 판매 불가)</li>
+          <li>클레임 3종: 일반·기능성·질병위험감소 (각각 다른 서류 요구)</li>
+          <li>등록 기간: 6~12개월 소요 (일반 가공식품 기준)</li>
+          <li><strong>WellFine 대응</strong>: 마린 콜라겐+할랄 인증 우선 확보. 현지 importer 선정</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <h4 style="color:var(--green1);margin-bottom:12px;">🗺️ SEA 3국 비교 — WellFine 진입 전략 매트릭스</h4>
+    <table class="ing-table">
+      <tr>
+        <th>항목</th>
+        <th>🇻🇳 베트남</th>
+        <th>🇹🇭 태국</th>
+        <th>🇮🇩 인도네시아</th>
+      </tr>
+      <tr>
+        <td><strong>즉시 진입 가능 경로</strong></td>
+        <td>✅ CBEC (Shopee/Lazada) — 유예 중 기회</td>
+        <td>✅ 현지 importer 통한 정식 등록</td>
+        <td>⚠️ 현지 importer + BPOM 등록 필수</td>
+      </tr>
+      <tr>
+        <td><strong>소요 기간</strong></td>
+        <td>CBEC: 즉시 / 정식 등록: 6~12개월</td>
+        <td>3~6개월 (건기식 분류 시)</td>
+        <td>6~12개월 + 안정성 시험</td>
+      </tr>
+      <tr>
+        <td><strong>할랄 인증 필요</strong></td>
+        <td>권장 (필수 아님)</td>
+        <td>권장 (무슬림 소비자 비율 5%)</td>
+        <td>✅ 필수 (무슬림 87%)</td>
+      </tr>
+      <tr>
+        <td><strong>젤리스틱 판매 가능</strong></td>
+        <td>✅ (식품으로 분류 시)</td>
+        <td>✅ (FDA 라벨 검토 후)</td>
+        <td>✅ (BPOM 등록 후)</td>
+      </tr>
+      <tr>
+        <td><strong>TikTok Shop 활용</strong></td>
+        <td>✅ 적극 활용</td>
+        <td>✅ 광고 클레임 주의</td>
+        <td>✅ 최고 성장 채널</td>
+      </tr>
+      <tr>
+        <td><strong>시장 성장률</strong></td>
+        <td><span class="badge badge-high">CAGR 10.1%</span></td>
+        <td><span class="badge badge-med">CAGR 9.0%</span></td>
+        <td><span class="badge badge-high">CAGR 9.6%</span></td>
+      </tr>
+    </table>
+    <p class="source-note">출처: RegASK Vietnam Decree 46 Feb 2026, InCorp Vietnam Jan 2026, Viet An Law Feb 2026, ChemLinked Thailand FDA Mar 2026, ChemLinked Indonesia BPOM Jan 2026, Food Research Lab ASEAN Regulation 2025</p>
+  </div>
+</div>
+
+<!-- SECTION 8: WELLFINE JELLY STICK -->
+<div class="section">
+  <div class="sec-header">
+    <div class="num">8</div>
+    <h2>WellFine 젤리스틱·파우치 특화 집중 분석</h2>
+    <span class="sub">WellFine Jelly Stick & Pouch Intelligence | CN → SEA → US/EU 순</span>
+  </div>
+  <div class="sec-body">
+    <div class="wf-section">
+      <h3>🍬 WellFine 젤리스틱·파우치 글로벌 기회 지도</h3>
+      <p class="sub">1~7섹션 × WellFine 젤리스틱·파우치·액상 파우치 교차 분석 | 2026년 기준</p>
+
+      <div class="wf-grid">
+        <div class="wf-card">
+          <h4>🇨🇳 중국 — 젤리 제형 규제 확대 기회</h4>
+          <ul>
+            <li>SAMR 2024.10 초안: 젤리·구미 건기식 신고 범위 확대 검토 → 확정 시 WellFine 젤리스틱 중국 건기식 포지셔닝 가능</li>
+            <li>현재: CBEC 경로 식품으로 젤리스틱 판매 가능</li>
+            <li>Douyin 뷰티 젤리: 콜라겐 젤리 파우치 베스트셀러 — WellFine 콜라겐 젤리스틱 포지셔닝</li>
+            <li>아동 칼슘 젤리스틱: Tmall 어린이 성장 트랙 직접 연결</li>
+            <li><strong>★ 즉시 액션</strong>: Tmall Global CBEC 등록 + 콜라겐 젤리스틱 뷰티 카테고리 출시</li>
+          </ul>
+        </div>
+        <div class="wf-card">
+          <h4>🌏 동남아 — TikTok Shop 진입 전략</h4>
+          <ul>
+            <li><strong>태국</strong>: 뷰티 콜라겐 젤리스틱 No.1 수요. 광고 클레임 검토 후 TikTok Shop 런칭. Sirio Pharma 태국 구미 공장 파트너십 검토</li>
+            <li><strong>인도네시아</strong>: 할랄 마린 콜라겐 젤리스틱 → BPJPH 인증 후 Shopee/Tokopedia 진입. BPOM 등록 현지 importer 발굴 필요</li>
+            <li><strong>베트남</strong>: Decree 46 유예 중 CBEC 경로로 즉시 진입 가능. 4월 16일 이후 규제 재개 대비 서류 사전 준비</li>
+            <li><strong>★ 공통 액션</strong>: 1회분 소포장 젤리스틱(10~15ml) SEA 전용 SKU 개발</li>
+          </ul>
+        </div>
+        <div class="wf-card">
+          <h4>🇺🇸🇪🇺 US/EU — 프리미엄 포지셔닝</h4>
+          <ul>
+            <li><strong>미국</strong>: 구미 품질 논란 역이용 → 임상 데이터 기반 WellFine 젤리스틱 차별화. "Korean Clinical-Grade Jelly" 포지셔닝</li>
+            <li><strong>유럽</strong>: 펙틴 기반 비건 젤리스틱 → EU 채식 소비자 타깃. BPA-free 포장재 전환 필수</li>
+            <li>EU PPWR 포장재 규정: 재활용 가능 소재 사용 검토 필요</li>
+            <li><strong>★ 중기 액션</strong>: 비건 펙틴 젤리스틱 EU 버전 개발 + 임상 데이터 확보</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="opportunity-box">
+        <h4>🎯 WellFine 젤리스틱·파우치 2026 Q2 즉시 실행 계획</h4>
+        <p>
+          <strong>[즉시 — VN CBEC]</strong> 베트남 Decree 46 유예 기간(~4.16) 활용 → Shopee Vietnam CBEC 채널 젤리스틱 콜라겐 시범 판매. 4.16 이후 규제 재개 대비 서류(제품 사양서·성분표·라벨 베트남어) 사전 준비.<br><br>
+          <strong>[1개월 내 — TH TikTok]</strong> 태국 TikTok Shop 젤리스틱 런칭. 광고 문구에서 "의료·치료" 표현 제거 후 "뷰티 케어·피부 광채" 표현으로 교체. 현지 뷰티 인플루언서 협업 계획 수립.<br><br>
+          <strong>[2~3개월 내 — ID 준비]</strong> 인도네시아 현지 importer 발굴 → BPOM 등록 절차 시작. 할랄 인증(BPJPH) 마린 콜라겐 원료 전환 검토. 단회용 소포장 10ml 젤리스틱 인도네시아 전용 SKU 기획.<br><br>
+          <strong>[중기 — CN 규제 모니터링]</strong> SAMR 젤리 제형 확대 초안 최종 확정 시점 모니터링. 확정 즉시 Blue Hat Filing 또는 CBEC 건기식 포지셔닝 전환 실행.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-grid">
+    <div>
+      <h4>📚 이번 호 주요 참고 자료</h4>
+      <ul>
+        <li>RegASK Vietnam Decree 46 Suspension (Feb 2026)</li>
+        <li>Vietnam Briefing Decree 46 Bottlenecks (Feb 2026)</li>
+        <li>InCorp Vietnam New Food Safety Regulation (Feb 2026)</li>
+        <li>ChemLinked Global Reg Highlights Jan 2026</li>
+        <li>Yahoo Finance Thailand FDA Crackdown (Mar 2026)</li>
+        <li>Food Research Lab ASEAN Nutraceutical Reg 2025</li>
+        <li>TMO Group Asia Supplements Market Expansion</li>
+        <li>Mordor Intelligence ASEAN Probiotic Supplements</li>
+      </ul>
+    </div>
+    <div>
+      <h4>📊 데이터 신뢰도</h4>
+      <ul>
+        <li>🟢 <strong>A급</strong>: 베트남 정부 공식 법령, BPOM 공식 규정</li>
+        <li>🟡 <strong>B급</strong>: RegASK, ChemLinked 법령 분석</li>
+        <li>🟠 <strong>C급</strong>: TMO Group, BCG 업계 보고서</li>
+        <li>⚠️ 태국 FDA 광고 단속 세부 내용 추가 확인 권장</li>
+      </ul>
+    </div>
+    <div>
+      <h4>📅 다음 호 예고 (Vol.4 — 4월 1주차)</h4>
+      <ul>
+        <li>🔜 섹션7 특집: US/EU 규제 심층 (FDA DSHEA·EFSA)</li>
+        <li>🔜 섹션8 집중: 액상 칼슘·단백질</li>
+        <li>🔜 미국 관세 이슈와 한국산 건기식 영향</li>
+        <li>🔜 베트남 Decree 46 재시행 여부 업데이트</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    WellFine 글로벌사업팀 · Green Food Maker | Vol.3 · 2026년 3월 5주차 | 본 보고서는 공개 자료 기반 분석이며 투자·법적 조언이 아닙니다
+  </div>
+</div>
+
+</body>
+</html>
