@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WellFine 글로벌 건기식·기능성식품 주간 트렌드 보고서 | 2026년 4월 1주차 (Vol.4)</title>
+<style>
+  :root{
+    --green1:#2E6B3E;--green2:#4A9B60;--green3:#A8D5B5;
+    --cream:#F5F2EA;--dark:#1A2A1E;--mid:#4A5568;
+    --light:#718096;--accent:#E8A028;--red:#C53030;
+    --blue:#2B6CB0;--purple:#553C9A;--border:#D4E8DC;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Malgun Gothic','맑은 고딕','Apple SD Gothic Neo',sans-serif;background:#F0EDE5;color:var(--dark);line-height:1.7;font-size:14px;}
+
+  .cover{background:linear-gradient(135deg,#1C3A5E,#2B6CB0);color:white;padding:50px 60px;position:relative;overflow:hidden;}
+  .cover::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.04);}
+  .cover-badge{display:inline-block;background:var(--accent);color:white;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:1px;margin-bottom:16px;}
+  .cover h1{font-size:28px;font-weight:700;line-height:1.4;margin-bottom:8px;}
+  .cover h2{font-size:16px;font-weight:400;opacity:.85;margin-bottom:30px;}
+  .cover-meta{display:flex;gap:32px;flex-wrap:wrap;}
+  .cover-meta-item .label{font-size:11px;opacity:.6;text-transform:uppercase;letter-spacing:1px;}
+  .cover-meta-item .value{font-size:14px;font-weight:600;margin-top:2px;}
+  .cover-tags{margin-top:24px;display:flex;gap:8px;flex-wrap:wrap;}
+  .cover-tag{background:rgba(255,255,255,0.12);padding:4px 12px;border-radius:12px;font-size:12px;}
+
+  .container{max-width:1100px;margin:0 auto;padding:0 20px;}
+  .section{margin:28px 0;}
+  .sec-header{background:var(--green1);color:white;padding:14px 24px;border-radius:8px 8px 0 0;display:flex;align-items:center;gap:12px;}
+  .sec-header .num{background:var(--accent);color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;}
+  .sec-header h2{font-size:16px;font-weight:700;}
+  .sec-header .sub{font-size:12px;opacity:.75;margin-left:auto;}
+  .sec-body{background:white;border-radius:0 0 8px 8px;border:1px solid var(--border);border-top:none;padding:24px;}
+
+  .exec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px;}
+  .exec-card{background:var(--cream);border-radius:8px;padding:16px;border-left:4px solid var(--green2);}
+  .exec-card .ec-label{font-size:11px;color:var(--light);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+  .exec-card .ec-value{font-size:22px;font-weight:700;color:var(--green1);}
+  .exec-card .ec-note{font-size:12px;color:var(--mid);margin-top:4px;}
+
+  .highlight-box{background:linear-gradient(135deg,#EBF8FF,#BEE3F8);border-radius:8px;padding:16px 20px;border:1px solid #90CDF4;margin-bottom:16px;}
+  .highlight-box h4{color:var(--blue);font-size:13px;font-weight:700;margin-bottom:8px;}
+  .highlight-box p{font-size:13px;color:var(--mid);}
+  .alert-box{background:#FFF5F5;border:1px solid #FED7D7;border-radius:8px;padding:14px 18px;margin:12px 0;}
+  .alert-box h4{color:var(--red);font-size:13px;font-weight:700;margin-bottom:6px;}
+  .good-box{background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;padding:14px 18px;margin:12px 0;}
+  .good-box h4{color:#276749;font-size:13px;font-weight:700;margin-bottom:6px;}
+  .key-insights{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .ki-item{display:flex;gap:10px;padding:12px;background:#FAFAFA;border-radius:6px;border:1px solid #EEE;}
+  .ki-icon{font-size:20px;flex-shrink:0;}
+  .ki-text strong{display:block;font-size:13px;color:var(--dark);}
+  .ki-text span{font-size:12px;color:var(--light);}
+
+  .trend-tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0;}
+  .ttag{padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;}
+  .ttag.hot{background:#FFF0E0;color:#C05621;}
+  .ttag.up{background:#E6F7EC;color:#276749;}
+  .ttag.new{background:#EBF4FF;color:#2B6CB0;}
+  .ttag.warn{background:#FFF5F5;color:#C53030;}
+
+  .country-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .cg-card{background:var(--cream);border-radius:6px;padding:14px;}
+  .cg-card h4{font-size:12px;font-weight:700;color:var(--green1);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;}
+  .cg-card p,.cg-card li{font-size:13px;color:var(--mid);margin-bottom:4px;}
+  .cg-card ul{padding-left:16px;}
+
+  .ing-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+  .ing-table th{background:var(--green1);color:white;padding:8px 12px;text-align:left;font-weight:600;}
+  .ing-table td{padding:8px 12px;border-bottom:1px solid #EEE;vertical-align:top;}
+  .ing-table tr:hover td{background:#F9FBF9;}
+  .badge{display:inline-block;padding:2px 8px;border-radius:8px;font-size:11px;font-weight:600;}
+  .badge-high{background:#FED7D7;color:#C53030;}
+  .badge-med{background:#FEFCBF;color:#975A16;}
+  .badge-low{background:#C6F6D5;color:#276749;}
+  .badge-new{background:#EBF4FF;color:#2B6CB0;}
+  .pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;}
+  .pill-cn{background:#FFE4E4;color:#C53030;}
+  .pill-us{background:#DBEAFE;color:#1E40AF;}
+  .pill-eu{background:#EDE9FE;color:#5B21B6;}
+  .pill-sea{background:#D1FAE5;color:#065F46;}
+  .pill-kr{background:#FCE7F3;color:#9D174D;}
+
+  /* REG COMPARE GRID */
+  .reg-compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0;}
+  .reg-box{border-radius:8px;padding:18px;border:2px solid;}
+  .reg-box.us{border-color:#3182CE;background:#EBF8FF;}
+  .reg-box.eu{border-color:#6B46C1;background:#FAF5FF;}
+  .reg-box h4{font-size:14px;font-weight:700;margin-bottom:12px;}
+  .reg-box.us h4{color:#2B6CB0;}
+  .reg-box.eu h4{color:#553C9A;}
+  .reg-box ul{padding-left:16px;}
+  .reg-box li{font-size:12px;color:var(--mid);margin-bottom:5px;}
+  .reg-box .status{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;margin-bottom:10px;}
+  .status-good{background:#C6F6D5;color:#276749;}
+  .status-warn{background:#FEFCBF;color:#975A16;}
+
+  /* CALCIUM SPECIAL */
+  .cal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0;}
+  .cal-card{background:var(--cream);border-radius:10px;padding:16px;text-align:center;border:2px solid transparent;}
+  .cal-card:hover{border-color:var(--green3);}
+  .cal-icon{font-size:32px;margin-bottom:8px;}
+  .cal-name{font-size:13px;font-weight:700;color:var(--dark);margin-bottom:4px;}
+  .cal-val{font-size:20px;font-weight:700;color:var(--green1);}
+  .cal-note{font-size:11px;color:var(--light);margin-top:4px;}
+  .cal-bar{height:4px;background:#DDD;border-radius:2px;margin-top:8px;overflow:hidden;}
+  .cal-bar-fill{height:100%;border-radius:2px;background:var(--green2);}
+
+  .timeline{display:flex;gap:0;margin:16px 0;}
+  .tl-item{flex:1;}
+  .tl-head{padding:8px 14px;text-align:center;font-size:12px;font-weight:700;color:white;}
+  .tl-head.past{background:var(--light);}
+  .tl-head.now{background:var(--green2);}
+  .tl-head.future{background:var(--green1);}
+  .tl-body{background:#FAFAFA;border:1px solid #DDD;border-top:none;padding:12px 14px;min-height:100px;font-size:12px;color:var(--mid);}
+  .tl-body ul{padding-left:14px;}
+  .tl-body li{margin-bottom:4px;}
+  .tl-arrow{display:flex;align-items:center;color:var(--green2);font-size:22px;padding:0 4px;margin-top:28px;flex-shrink:0;}
+
+  .wf-section{background:linear-gradient(135deg,var(--green1),#1A4A2A);color:white;border-radius:8px;padding:24px;margin-top:20px;}
+  .wf-section h3{font-size:18px;font-weight:700;margin-bottom:4px;}
+  .wf-section .sub{opacity:.75;font-size:13px;margin-bottom:20px;}
+  .wf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .wf-card{background:rgba(255,255,255,0.1);border-radius:8px;padding:16px;}
+  .wf-card h4{font-size:13px;font-weight:700;margin-bottom:10px;color:var(--green3);}
+  .wf-card p,.wf-card li{font-size:12px;opacity:.9;margin-bottom:4px;}
+  .wf-card ul{padding-left:16px;}
+  .opportunity-box{background:rgba(232,160,40,0.2);border-radius:8px;padding:16px;margin-top:16px;border:1px solid rgba(232,160,40,0.4);}
+  .opportunity-box h4{color:var(--accent);font-size:14px;font-weight:700;margin-bottom:8px;}
+  .opportunity-box p{font-size:13px;opacity:.9;}
+
+  .pipeline-table{width:100%;border-collapse:collapse;font-size:13px;}
+  .pipeline-table th{background:var(--green1);color:white;padding:9px 12px;text-align:left;font-weight:600;font-size:12px;}
+  .pipeline-table td{padding:9px 12px;border-bottom:1px solid #EEE;vertical-align:top;}
+  .pipeline-table tr:nth-child(even) td{background:#F9FBF9;}
+
+  .divider{height:1px;background:var(--border);margin:20px 0;}
+  .source-note{font-size:11px;color:var(--light);font-style:italic;margin-top:12px;padding-top:10px;border-top:1px dashed #DDD;}
+
+  .footer{background:var(--dark);color:white;padding:24px 40px;margin-top:40px;}
+  .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;max-width:1100px;margin:0 auto;}
+  .footer h4{font-size:13px;font-weight:700;color:var(--green3);margin-bottom:8px;}
+  .footer p,.footer li{font-size:12px;opacity:.7;margin-bottom:3px;}
+  .footer ul{padding-left:16px;}
+  .footer-bottom{text-align:center;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);font-size:11px;opacity:.5;}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="container">
+    <div class="cover-badge">🌿 WELLFINE GLOBAL INTELLIGENCE — Vol.4</div>
+    <h1>글로벌 건강기능식품·기능성식품<br>주간 트렌드 보고서</h1>
+    <h2>Global Health Functional Food & Nutraceutical Weekly Trend Report</h2>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><div class="label">발행호수</div><div class="value">Vol. 4 (2026년 4월 1주차)</div></div>
+      <div class="cover-meta-item"><div class="label">보고서 기준일</div><div class="value">2026년 4월 6일</div></div>
+      <div class="cover-meta-item"><div class="label">작성</div><div class="value">WellFine 글로벌사업팀</div></div>
+      <div class="cover-meta-item"><div class="label">데이터 소스</div><div class="value">FDA, EFSA, NutraIngredients, Medfiles, NLR 外</div></div>
+    </div>
+    <div class="cover-tags">
+      <span class="cover-tag">🇰🇷 한국</span><span class="cover-tag">🇺🇸 미국</span><span class="cover-tag">🇪🇺 유럽</span>
+      <span class="cover-tag">🇨🇳 중국</span><span class="cover-tag">🌏 동남아</span><span class="cover-tag">🌙 중동</span><span class="cover-tag">🌍 아프리카</span>
+      <span class="cover-tag">🔵 섹션7: US/EU 규제 심층</span><span class="cover-tag">🦴 섹션8: 액상칼슘·단백질 집중</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- SECTION 1 -->
+<div class="section">
+  <div class="sec-header"><div class="num">1</div><h2>글로벌 시장 핵심 요약</h2><span class="sub">Executive Summary | 2026년 4월 기준</span></div>
+  <div class="sec-body">
+    <div class="exec-grid">
+      <div class="exec-card">
+        <div class="ec-label">미국 건기식 시장 규모 (2032)</div>
+        <div class="ec-value">$1,172억</div>
+        <div class="ec-note">2026년 현재 CAGR 성장 지속 / DSHEA 라벨 규정 완화 추진 중</div>
+      </div>
+      <div class="exec-card">
+        <div class="ec-label">EU 비타민·미네랄 최대 함량 입법</div>
+        <div class="ec-value">2026년 결판</div>
+        <div class="ec-note">수년간 지연 끝에 2026년 최종 결정 예정 / 칼슘 함량 기준 영향</div>
+      </div>
+      <div class="exec-card">
+        <div class="ec-label">글로벌 액상 칼슘 시장</div>
+        <div class="ec-value">+100%</div>
+        <div class="ec-note">2024년 중국 Tmall 어린이 성장 트랙 YoY / SEA·MEA 성장 지속</div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>📌 이번 주 최대 이슈</h4>
+      <p>미국 FDA가 <strong>DSHEA 면책 문구(Disclaimer) 라벨 개혁을 발표</strong>했습니다. 모든 라벨 패널에 면책 문구를 반복 표시해야 했던 기존 규정을 완화하여 라벨 1개소에만 표시하면 되도록 조정, 한국 건기식 수출 시 라벨링 비용 절감 효과가 기대됩니다. 또한 <strong>상원의원이 건기식 의무 등록법(Dietary Supplement Listing Act of 2026)을 재발의</strong>하여 FDA 사전 등록 의무화 법안이 재점화됐습니다.</p>
+    </div>
+
+    <div class="key-insights">
+      <div class="ki-item">
+        <div class="ki-icon">🇺🇸</div>
+        <div class="ki-text">
+          <strong>FDA DSHEA 면책 문구 1개소 표시로 완화</strong>
+          <span>기존: 모든 라벨 패널 반복 표시 → 변경: 라벨 1개소만 표시. 한국→미국 수출 라벨 재설계 기회. 소송 리스크 감소</span>
+        </div>
+      </div>
+      <div class="ki-item">
+        <div class="ki-icon">📋</div>
+        <div class="ki-text">
+          <strong>Dietary Supplement Listing Act 2026 재발의</strong>
+          <span>FDA 사전 등록 의무화 법안. 2022·2024 연속 부결 후 재추진. 통과 시 미국 수출 절차 변경 예정. 모니터링 필수</span>
+        </div>
+      </div>
+      <div class="ki-item">
+        <div class="ki-icon">🇪🇺</div>
+        <div class="ki-text">
+          <strong>EU 비타민·미네랄 최대 함량 2026년 최종 결정 임박</strong>
+          <span>수년간 지연 끝에 2026년 결판 예고. 칼슘·비타민D·마그네슘 함량 기준 영향. EU 수출 제품 포뮬러 조정 가능성</span>
+        </div>
+      </div>
+      <div class="ki-item">
+        <div class="ki-icon">🏋️</div>
+        <div class="ki-text">
+          <strong>스포츠 영양 → 일상 활동 영양으로 확장</strong>
+          <span>NutraIngredients Mar 2026: "Sports nutrition beyond performance" 트렌드. 단백질 파우더·액상칼슘이 일반 소비자 시장으로 확대</span>
+        </div>
+      </div>
+    </div>
+    <p class="source-note">📚 주요 참고 자료: FDA DSHEA Disclaimer Letter 2025.12, Nat'l Law Review Jan 2026, Medfiles EU Food Supplements 2026 Jan 2026, NutraIngredients EU Supplement Regulation Jan 2026, EFSA Health Claims Database</p>
+  </div>
+</div>
+
+<!-- SECTION 2: COUNTRIES -->
+<div class="section">
+  <div class="sec-header"><div class="num">2</div><h2>국가별 섹션 — 7개국 업데이트</h2><span class="sub">2026년 4월 1주차 기준</span></div>
+  <div class="sec-body">
+
+    <!-- 한국 -->
+    <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        <span style="font-size:22px;">🇰🇷</span>
+        <h3 style="font-size:15px;font-weight:700;color:var(--green1);">한국 — 스포츠 영양 → 일반 소비자 단백질 시장 확대</h3>
+      </div>
+      <div class="trend-tags">
+        <span class="ttag up">📈 단백질 파우더 여성·중장년 소비 확대</span>
+        <span class="ttag up">📈 액상 칼슘 어린이·갱년기 이중 수요</span>
+        <span class="ttag hot">🔥 GLP-1 보완 단백질 RTD 신제품</span>
+      </div>
+      <div class="country-grid">
+        <div class="cg-card">
+          <h4>📊 최신 동향</h4>
+          <ul>
+            <li>단백질 보충제: 운동선수 → <strong>30~50대 여성·직장인</strong>으로 주력 소비층 이동</li>
+            <li>액상 칼슘: 어린이 성장 + 갱년기 골밀도 이중 수요 유지</li>
+            <li>GLP-1 보완 고단백(20g+) RTD 파우치 출시 가속</li>
+            <li>유청(Whey) 단백질 → 식물성(완두콩·쌀) 단백질 전환 수요 증가</li>
+          </ul>
+        </div>
+        <div class="cg-card">
+          <h4>🔮 주목 이슈</h4>
+          <ul>
+            <li>MFDS 9개 기능성 원료 재평가 진행 중 → 칼슘 관련 원료 포함 여부 확인 필요</li>
+            <li>식물성 단백질 친환경 트렌드 — 비건 인증 수요 증가</li>
+            <li>한국 관세청: 건기식 수출 통관 전자화 확대 → 서류 간소화</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 미국 -->
+    <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        <span style="font-size:22px;">🇺🇸</span>
+        <h3 style="font-size:15px;font-weight:700;color:var(--green1);">미국 — DSHEA 개혁 + GLP-1 단백질·칼슘 연계 시장</h3>
+      </div>
+      <div class="trend-tags">
+        <span class="ttag hot">🔥 FDA DSHEA 면책 문구 1개소 완화</span>
+        <span class="ttag hot">🔥 GLP-1 사용자 단백질+칼슘 보완제</span>
+        <span class="ttag warn">⚠️ 의무등록법(S.3677) 재발의 모니터링</span>
+      </div>
+      <div class="country-grid">
+        <div class="cg-card">
+          <h4>🆕 2026 규제 핵심 변화</h4>
+          <ul>
+            <li>FDA DSHEA Disclaimer: 각 패널마다 반복 → <strong>라벨 1회 표시</strong>로 완화 (2025.12 발표)</li>
+            <li>Dietary Supplement Listing Act 2026 (S.3677): 1월 재발의. FDA 사전 등록 의무화 추진</li>
+            <li>FDA 2026 Human Foods Program: 식품 화학 안전·GRAS 규정 집중</li>
+            <li>FDA 3월 공청회: 단백질·효소·미생물 성분 카테고리 정의 논의</li>
+          </ul>
+        </div>
+        <div class="cg-card">
+          <h4>💊 단백질·칼슘 시장 동향</h4>
+          <ul>
+            <li>GLP-1 사용자: 근육 손실 방지를 위한 <strong>고단백(25~30g) 액상 보충제</strong> 수요 폭발</li>
+            <li>칼슘+비타민D3+K2 복합: 뼈 건강 + 혈관 석회화 방지 포지셔닝</li>
+            <li>식물성 단백질: 완두콩·쌀·헴프 시드 RTD 시장 급성장</li>
+            <li>스포츠 영양 → 일상 액티브 소비자 확대</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 유럽 -->
+    <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        <span style="font-size:22px;">🇪🇺</span>
+        <h3 style="font-size:15px;font-weight:700;color:var(--green1);">유럽 — 비타민·미네랄 최대 함량 2026년 결판 + BioTech Act</h3>
+      </div>
+      <div class="trend-tags">
+        <span class="ttag warn">⚠️ 비타민·미네랄 최대 함량 입법 임박</span>
+        <span class="ttag new">✨ BioTech Act — EFSA 영양 평가 권한 확대</span>
+        <span class="ttag up">📈 UK-EU 식품보충제 규정 수렴 진행</span>
+      </div>
+      <div class="country-grid">
+        <div class="cg-card">
+          <h4>⚠️ 2026 EU 주요 규제 이슈</h4>
+          <ul>
+            <li><strong>비타민·미네랄 최대 함량 입법 2026년 결판</strong>: 칼슘·마그네슘·비타민D 함량 기준 영향 → EU 수출 제품 포뮬러 조정 가능성</li>
+            <li>BioTech Act 발의: EFSA 영양 평가 권한 확대 + 식품 안전 단순화</li>
+            <li>베르베린·히드록시구연산·회향 씨 제한 최종 결정 예정</li>
+            <li>EU-UK 규정 수렴: 2026년 딜 가능성 — UK 수출 규정 안정화 기대</li>
+          </ul>
+        </div>
+        <div class="cg-card">
+          <h4>✅ EU 허용 칼슘 건강 기능 표시 (기존 승인)</h4>
+          <ul>
+            <li>"Calcium contributes to normal bone development" (어린이·청소년 대상)</li>
+            <li>"Calcium is needed for the maintenance of normal bones"</li>
+            <li>"Calcium and vitamin D — reduction of risk of osteoporotic fractures"</li>
+            <li>칼슘+비타민D3: EU 허용 복합 건강 기능 표시 — WellFine 직접 활용 가능</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 중국·SEA·MEA 요약 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+      <div class="cg-card">
+        <h4>🇨🇳 중국</h4>
+        <ul>
+          <li>Tmall 어린이 칼슘·철·아연 트랙 YoY 두자릿수 성장 유지</li>
+          <li>단백질 파우더: 2024년 신고 전체 13% 점유 (신규 승인 이후)</li>
+          <li>Douyin 단백질·칼슘 RTD 파우치 뷰티 카테고리 연계 마케팅</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>🌏 동남아</h4>
+        <ul>
+          <li>베트남 Decree 46: 4월 16일 재시행 예정 — 최종 확인 필요</li>
+          <li>인도네시아: 어린이 성장 칼슘 구미·젤리 BPOM 등록 수요</li>
+          <li>태국: 단백질 보충제 피트니스 트렌드 Z세대 확산</li>
+        </ul>
+      </div>
+      <div class="cg-card">
+        <h4>🌙🌍 중동·아프리카</h4>
+        <ul>
+          <li>GCC: 비타민D 결핍 + 칼슘 보충제 상시 수요 (실내 생활 문화)</li>
+          <li>사우디 Vision 2030 예방 의료 — 단백질·칼슘 복합제 수요</li>
+          <li>아프리카: 단백질 강화 식품 영유아 영양 프로그램</li>
+        </ul>
+      </div>
+    </div>
+    <p class="source-note">출처: FDA DSHEA Letter Dec 2025, NLR Jan 2026, Medfiles EU Supplements 2026, NutraIngredients EU Reg Jan 2026, ZMUni China Health Food Review 2024</p>
+  </div>
+</div>
+
+<!-- SECTION 3: FORMULATION -->
+<div class="section">
+  <div class="sec-header"><div class="num">3</div><h2>제형별 트렌드 — 액상 칼슘·단백질 중심</h2><span class="sub">Formulation | 2026년 글로벌 비교</span></div>
+  <div class="sec-body">
+    <div class="cal-grid">
+      <div class="cal-card">
+        <div class="cal-icon">💧</div>
+        <div class="cal-name">액상 칼슘 (Liquid Calcium)</div>
+        <div class="cal-val">+100%</div>
+        <div class="cal-note">2024 Tmall 어린이 성장 카테고리 YoY</div>
+        <div class="cal-bar"><div class="cal-bar-fill" style="width:90%"></div></div>
+        <p style="font-size:11px;color:#718096;margin-top:8px;">WellFine 핵심 제품. 어린이 성장·시니어 골밀도 이중 타깃. SEA·중국·중동 수요</p>
+      </div>
+      <div class="cal-card">
+        <div class="cal-icon">🥛</div>
+        <div class="cal-name">단백질 RTD (Liquid Protein)</div>
+        <div class="cal-val">+8.2%</div>
+        <div class="cal-note">글로벌 스포츠 영양 CAGR / GLP-1 연계 급성장</div>
+        <div class="cal-bar"><div class="cal-bar-fill" style="width:75%"></div></div>
+        <p style="font-size:11px;color:#718096;margin-top:8px;">GLP-1 사용자 고단백 RTD 수요 폭발. 식물성 단백질 전환 가속. WellFine 파우치 직결</p>
+      </div>
+      <div class="cal-card">
+        <div class="cal-icon">🫙</div>
+        <div class="cal-name">단백질 파우더</div>
+        <div class="cal-val">+13%</div>
+        <div class="cal-note">중국 2024 건기식 신고 전체 점유율</div>
+        <div class="cal-bar"><div class="cal-bar-fill" style="width:70%"></div></div>
+        <p style="font-size:11px;color:#718096;margin-top:8px;">중국 2023년 신고 디렉토리 포함 후 급성장. 여성·일반 소비자 확장. WellFine 파우더 기회</p>
+      </div>
+    </div>
+    <p class="source-note">출처: ZMUni 2024 China Health Food Review, Global Market Insights Sports & Active Nutrition 2025, Fortune Business Insights Functional Food Market 2026</p>
+  </div>
+</div>
+
+<!-- SECTION 4: INGREDIENTS -->
+<div class="section">
+  <div class="sec-header"><div class="num">4</div><h2>주목 기능성 원료 동향</h2><span class="sub">Key Ingredients — 칼슘·단백질 중심 2026년 레이더</span></div>
+  <div class="sec-body">
+    <table class="ing-table">
+      <tr><th>원료</th><th>2026년 동향</th><th>주요 시장</th><th>열기</th></tr>
+      <tr>
+        <td><strong>액상 칼슘 (Ca + Vit.D3 + K2)</strong></td>
+        <td>삼중 복합이 표준화. 중국 Tmall 어린이 트랙 100% YoY. EU 허용 뼈 건강 표시 활용. 중동 비타민D 결핍 대응</td>
+        <td><span class="pill pill-cn">중국</span><span class="pill pill-eu">유럽</span><span class="pill pill-sea">SEA</span></td>
+        <td><span class="badge badge-high">🔺 HOT</span></td>
+      </tr>
+      <tr>
+        <td><strong>유청 단백질 (Whey Protein Isolate)</strong></td>
+        <td>GLP-1 사용자 근육 유지 핵심 원료. 중국 2023 신고 디렉토리 포함 후 급성장. WPC→WPI 고순도 전환 트렌드</td>
+        <td><span class="pill pill-us">미국</span><span class="pill pill-cn">중국</span><span class="pill pill-kr">한국</span></td>
+        <td><span class="badge badge-high">🔺 HOT</span></td>
+      </tr>
+      <tr>
+        <td><strong>완두콩·쌀 단백질 (Plant Protein)</strong></td>
+        <td>비건·채식 소비자 확대. EU 친환경 소비 트렌드. 할랄 인증 용이. 아미노산 프로파일 개선 기술 발전</td>
+        <td><span class="pill pill-eu">유럽</span><span class="pill pill-us">미국</span><span class="pill pill-sea">SEA</span></td>
+        <td><span class="badge badge-med">→ 성장</span></td>
+      </tr>
+      <tr>
+        <td><strong>FruiteX-B (칼슘 프룩토보레이트)</strong></td>
+        <td>SEA FutureCeuticals × Global Calcium 파트너십(2024.11). 특허 칼슘 복합. 뼈·관절 이중 효능. 중국 신규 기능 표시 연계 가능</td>
+        <td><span class="pill pill-sea">SEA</span><span class="pill pill-cn">중국</span></td>
+        <td><span class="badge badge-med">→ 성장</span></td>
+      </tr>
+      <tr>
+        <td><strong>콜라겐 펩타이드 + 칼슘 복합</strong></td>
+        <td>중국 2026.1 뼈·관절 기능 승인 수혜. 피부+뼈 이중 포지셔닝. 여성 타깃 뷰티+뼈건강 복합</td>
+        <td><span class="pill pill-cn">중국</span><span class="pill pill-kr">한국</span><span class="pill pill-eu">유럽</span></td>
+        <td><span class="badge badge-med">→ 성장</span></td>
+      </tr>
+      <tr>
+        <td><strong>MCT 오일 + 단백질</strong></td>
+        <td>케토·저탄수화물 다이어트 연계. GLP-1 대체 체중관리 솔루션. RTD 파우치 포맷 적합</td>
+        <td><span class="pill pill-us">미국</span><span class="pill pill-eu">유럽</span></td>
+        <td><span class="badge badge-low">↗ 신흥</span></td>
+      </tr>
+    </table>
+    <p class="source-note">출처: ZMUni China Health Food Review 2024, EFSA Health Claims Register, Mordor Intelligence Calcium Supplement Market, Global Market Insights Sports Nutrition 2026</p>
+  </div>
+</div>
+
+<!-- SECTION 5: PIPELINE -->
+<div class="section">
+  <div class="sec-header"><div class="num">5</div><h2>주요 기업 신제품 출시 파이프라인</h2><span class="sub">단백질·칼슘 중심 파이프라인 | 2025H2~2026</span></div>
+  <div class="sec-body">
+    <table class="pipeline-table">
+      <tr><th>기업명</th><th>출시 제품·동향</th><th>제형</th><th>시장</th></tr>
+      <tr>
+        <td><strong>Smoothie King (미국)</strong></td>
+        <td>GLP-1 Support 메뉴 — 고단백(20g+)+프리바이오틱스 RTD 확장</td>
+        <td>RTD 스무디</td>
+        <td><span class="pill pill-us">미국</span></td>
+      </tr>
+      <tr>
+        <td><strong>Arla Foods Ingredients</strong></td>
+        <td>Lacprodan ISO — 단백질 강화 주스 드링크 컨셉. 기능성 음료 단백질 원료</td>
+        <td>RTD 파우치·음료</td>
+        <td><span class="pill pill-eu">유럽</span></td>
+      </tr>
+      <tr>
+        <td><strong>FutureCeuticals × Global Calcium</strong></td>
+        <td>FruiteX-B 칼슘 프룩토보레이트 SEA 확장 (2024.11) — 관절+뼈 이중 효능</td>
+        <td>캡슐·구미 원료</td>
+        <td><span class="pill pill-sea">SEA</span></td>
+      </tr>
+      <tr>
+        <td><strong>Parag Milk Foods (인도)</strong></td>
+        <td>고단백·영양 강화 제품 다양화 (Gowardhan·Go 브랜드 2025.4)</td>
+        <td>RTD·파우더</td>
+        <td>아시아</td>
+      </tr>
+      <tr>
+        <td><strong>Sanitarium (호주)</strong></td>
+        <td>슈퍼플랜트 기반 식물성 단백질 강화 우유 대체품 신제품 (2025.7)</td>
+        <td>RTD</td>
+        <td><span class="pill pill-eu">유럽</span><span class="pill pill-us">미국</span></td>
+      </tr>
+    </table>
+    <p class="source-note">출처: Mordor Intelligence Functional Food Market 2026, Global Market Insights Sports Nutrition, Fortune Business Insights</p>
+  </div>
+</div>
+
+<!-- SECTION 6: TREND -->
+<div class="section">
+  <div class="sec-header"><div class="num">6</div><h2>과거→현재→미래 — 액상 칼슘·단백질 트렌드 추이</h2><span class="sub">Calcium & Protein Trajectory 2020 → 2026 → 2031</span></div>
+  <div class="sec-body">
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-head past">◀ 과거 (2018~2022)</div>
+        <div class="tl-body"><ul>
+          <li>탄산칼슘 정제·캡슐 중심</li>
+          <li>유청 단백질 = 운동선수 전용</li>
+          <li>칼슘 단독 제품 표준</li>
+          <li>액상 칼슘 고급 틈새 시장</li>
+        </ul></div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-item">
+        <div class="tl-head now">● 현재 (2023~2026)</div>
+        <div class="tl-body"><ul>
+          <li><strong>액상 칼슘 Tmall +100% YoY</strong></li>
+          <li>Ca+D3+K2 삼중 복합 표준화</li>
+          <li>단백질 = 여성·중장년 일상화</li>
+          <li>GLP-1 연계 고단백 RTD 급성장</li>
+          <li>식물성 단백질 주류화</li>
+        </ul></div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-item">
+        <div class="tl-head future">▶ 미래 (2027~2031)</div>
+        <div class="tl-body"><ul>
+          <li>AI 맞춤 칼슘·단백질 구독</li>
+          <li>정밀발효 단백질 상용화</li>
+          <li>뼈+피부+근육 통합 보충제</li>
+          <li>중동·아프리카 액상 칼슘 주류화</li>
+          <li>개인 유전체 기반 칼슘 처방</li>
+        </ul></div>
+      </div>
+    </div>
+    <p class="source-note">출처: ZMUni 2024 China Health Food Review, Fortune Business Insights Functional Food 2026, Mordor Intelligence Calcium Market</p>
+  </div>
+</div>
+
+<!-- SECTION 7: US/EU REGULATION DEEP DIVE -->
+<div class="section">
+  <div class="sec-header"><div class="num">7</div><h2>🔵 규제 특집 — 미국·유럽 규제 심층 분석</h2><span class="sub">US FDA & EU EFSA Regulation Deep Dive | 2026년 4월 기준</span></div>
+  <div class="sec-body">
+
+    <div class="reg-compare">
+      <div class="reg-box us">
+        <span class="status status-good">✅ 규제 완화 방향</span>
+        <h4>🇺🇸 미국 FDA — DSHEA 2026 주요 변화</h4>
+        <ul>
+          <li><strong>[완화] DSHEA Disclaimer 개혁 (2025.12 발표)</strong>: 모든 라벨 패널 반복 → 1개소만 표시. 라벨 비용 절감 + 소송 리스크 감소</li>
+          <li><strong>허용 표시 유형 (3가지)</strong>:
+            <br>① 구조·기능 표시 (Structure/Function): "calcium builds strong bones"
+            <br>② 영양소 결핍 표시: 비타민C와 괴혈병 관계
+            <br>③ 일반 웰빙 표시: 특정 영양소 섭취 후 일반적 건강 개선
+          </li>
+          <li><strong>[주의] Dietary Supplement Listing Act 2026 (S.3677)</strong>: FDA 사전 등록 의무화 법안 재발의. 2022·2024 연속 부결이나 재추진 모니터링 필수</li>
+          <li><strong>GMP 의무화</strong>: 현재 적용 중. 21 CFR Part 111 준수 확인 필요</li>
+          <li>FDA KORUS FTA: 한국산 건기식 관세 혜택 유지 (HS 2106.90 0%)</li>
+        </ul>
+      </div>
+      <div class="reg-box eu">
+        <span class="status status-warn">⚠️ 규제 강화 방향</span>
+        <h4>🇪🇺 유럽 EFSA — 2026 주요 변화</h4>
+        <ul>
+          <li><strong>[임박] 비타민·미네랄 최대 함량 입법 2026년 결판</strong>: EU 전체 통일 기준 설정 예정. 칼슘·마그네슘·비타민D 영향. 포뮬러 조정 필요 가능성</li>
+          <li><strong>BioTech Act 발의</strong>: EFSA 영양 평가 권한 확대. 식품 안전 단순화 목표</li>
+          <li><strong>베르베린·히드록시구연산 최종 규제 결정</strong> 예정 (2026년)</li>
+          <li><strong>허용 칼슘 건강 기능 표시 (기존 EFSA 승인)</strong>:
+            <br>• "필요한 뼈·치아 유지": 성인 일반 표시 가능
+            <br>• "뼈 정상 발달": 어린이·청소년 대상
+            <br>• "골다공증 위험 감소 (Ca+Vit.D)": 질병위험감소 표시
+          </li>
+          <li>Novel Food 승인 프로세스: 더욱 엄격·복잡해지는 추세. 전략적 사전 계획 필수</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <h4 style="color:var(--green1);margin-bottom:12px;">🗺️ WellFine US/EU 진입 라벨링 실전 가이드</h4>
+    <table class="ing-table">
+      <tr><th>항목</th><th>🇺🇸 미국 기준</th><th>🇪🇺 EU 기준</th><th>WellFine 적용</th></tr>
+      <tr>
+        <td><strong>면책 문구</strong></td>
+        <td>1개소 표시 (2025.12 완화). 문구: "This statement has not been evaluated by the FDA..."</td>
+        <td>건강 기능 표시 시 EFSA 승인 문구만 허용</td>
+        <td>미국: 라벨 뒷면 1회 표시. EU: EFSA 승인 칼슘 표시 문구 사용</td>
+      </tr>
+      <tr>
+        <td><strong>칼슘 건강 표시</strong></td>
+        <td>"calcium builds strong bones" (구조기능 표시)</td>
+        <td>"Calcium contributes to normal bone development" (EFSA 승인)</td>
+        <td>두 시장 모두 뼈 건강 표시 가능 — WellFine 액상칼슘 직접 적용</td>
+      </tr>
+      <tr>
+        <td><strong>단백질 함량 표시</strong></td>
+        <td>Supplement Facts Panel 의무. 1회 섭취량 당 단백질(g) 표시</td>
+        <td>영양 성분 표시 필수. 100g/100ml 기준 표시</td>
+        <td>미국·EU 표시 방식 다름 → 별도 라벨 버전 필요</td>
+      </tr>
+      <tr>
+        <td><strong>GMP 인증</strong></td>
+        <td>21 CFR Part 111 준수 의무 (미국 GMP)</td>
+        <td>EU GMP (2001/83/EC) 또는 ISO 22000</td>
+        <td>한국 MFDS GMP 인증 → 상호 인정 여부 확인 필요</td>
+      </tr>
+    </table>
+    <p class="source-note">출처: FDA DSHEA Disclaimer Letter Dec 2025, CHPA Statement Dec 2025, NLR Dietary Supplement Listing Act Jan 2026, EFSA Health Claims Register, Medfiles EU Food Supplements 2026 Jan 2026, NutraIngredients EU Reg Jan 2026</p>
+  </div>
+</div>
+
+<!-- SECTION 8: WELLFINE CALCIUM PROTEIN -->
+<div class="section">
+  <div class="sec-header"><div class="num">8</div><h2>WellFine 액상 칼슘·단백질 특화 집중 분석</h2><span class="sub">WellFine Calcium & Protein Intelligence | CN → SEA → US/EU 순</span></div>
+  <div class="sec-body">
+    <div class="wf-section">
+      <h3>🦴💪 WellFine 액상 칼슘·단백질 글로벌 기회 지도</h3>
+      <p class="sub">1~7섹션 × WellFine 액상 칼슘·단백질(파우더·음료·파우치) 교차 분석 | 2026년 기준</p>
+
+      <div class="wf-grid">
+        <div class="wf-card">
+          <h4>🇨🇳 중국 — 최우선 즉시 공략</h4>
+          <ul>
+            <li>Tmall 7대 트랙 2위: <strong>칼슘·철·아연 어린이 성장</strong> → 2024년 100% YoY</li>
+            <li>2026.1 뼈·관절 기능 승인 → 액상칼슘+콜라겐 복합 Blue Hat 검토 시작</li>
+            <li>단백질 파우더: 2023 신고 디렉토리 포함 후 전체 13% 점유 급성장</li>
+            <li>CBEC 경로: 칼슘+단백질 모두 긍정 목록 포함 → 즉시 Tmall Global 진입 가능</li>
+            <li><strong>★ 즉시 액션</strong>: WellFine 액상 칼슘 어린이 성장 Tmall Global 파일럿 → 동시에 단백질 파우더 CBEC 테스트</li>
+          </ul>
+        </div>
+        <div class="wf-card">
+          <h4>🌏 동남아 — 칼슘 현지화 전략</h4>
+          <ul>
+            <li><strong>인도네시아</strong>: FruiteX-B 칼슘 SEA 진입 파트너십 → WellFine 대안 칼슘 경쟁력 검토. 어린이 성장 칼슘 구미·RTD 수요 강세</li>
+            <li><strong>베트남</strong>: Decree 46 4.16 이후 정식 등록 준비. 어린이 액상 칼슘 CBEC 선진입</li>
+            <li><strong>태국</strong>: 단백질 보충제 피트니스 Z세대 확산 → WellFine 단백질 파우더 TikTok Shop</li>
+            <li><strong>★ 공통 액션</strong>: 1회분 소포장 10~15ml 액상 칼슘 RTD SEA 전용 SKU</li>
+          </ul>
+        </div>
+        <div class="wf-card">
+          <h4>🇺🇸🇪🇺 US/EU — 중기 프리미엄 전략</h4>
+          <ul>
+            <li><strong>미국</strong>: GLP-1 사용자 칼슘+단백질 복합 RTD — 근육·뼈 동시 케어 포지셔닝</li>
+            <li>FDA DSHEA Disclaimer 완화 → 라벨 비용 절감. 미국 시장 진입 부담 감소</li>
+            <li><strong>EU</strong>: EFSA 승인 칼슘 건강 표시 적용. 비타민D3+K2 복합 필수. 최대 함량 입법 확정 후 포뮬러 최종 결정</li>
+            <li><strong>★ 중기 액션</strong>: EU 최대 함량 입법 결과 확인 후 포뮬러 조정. 미국 라벨 리뉴얼 (Disclaimer 1개소 적용)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="opportunity-box">
+        <h4>🎯 WellFine 액상 칼슘·단백질 2026 Q2 즉시 실행 계획</h4>
+        <p>
+          <strong>[즉시 — CN Tmall Global]</strong> WellFine 액상 칼슘 어린이 성장 포지셔닝으로 Tmall Global CBEC 파일럿 런칭. "뼈 건강 유지" 표현 (2026.1 신규 기능 기준 참조) 적용 가능성 검토. 중국어 패키징 준비.<br><br>
+          <strong>[1개월 — SEA 소포장]</strong> 인도네시아·베트남 어린이 대상 1회분 10ml 액상 칼슘 RTD 소포장 SKU 기획. 할랄 인증 원료 구성 확인. Shopee 파일럿 시작.<br><br>
+          <strong>[2~3개월 — CN Blue Hat 검토]</strong> WellFine 액상 칼슘 + 콜라겐 복합 제품의 중국 Blue Hat 등록 가능성 타진. 뼈·관절 기능 신규 승인 기준 적합 원료 구성 검토. 현지 규제 에이전트 컨택.<br><br>
+          <strong>[중기 — US 라벨 개정]</strong> FDA DSHEA Disclaimer 개혁에 따라 미국 수출용 라벨 1개소 표시로 재설계. 구조기능 표시 문구 확정 후 30일 내 FDA 통지 준비. GMP 21 CFR Part 111 적합성 점검.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <div class="footer-grid">
+    <div>
+      <h4>📚 이번 호 주요 참고 자료</h4>
+      <ul>
+        <li>FDA DSHEA Disclaimer Letter (Dec 2025)</li>
+        <li>Nat'l Law Review — Dietary Supplement Listing Act 2026 (Jan 2026)</li>
+        <li>Medfiles — EU Food Supplements 2026 (Jan 2026)</li>
+        <li>NutraIngredients — EU Supplement Regulations 2026 (Jan 2026)</li>
+        <li>EFSA Health Claims Register (Calcium)</li>
+        <li>ZMUni — China 2024 Health Food Review</li>
+        <li>Nutraceuticals World — DSHEA Label Change (Dec 2025)</li>
+      </ul>
+    </div>
+    <div>
+      <h4>📊 데이터 신뢰도</h4>
+      <ul>
+        <li>🟢 <strong>A급</strong>: FDA 공식 서한, EFSA 공식 승인 데이터</li>
+        <li>🟡 <strong>B급</strong>: NutraIngredients, NLR 업계 분석</li>
+        <li>🟠 <strong>C급</strong>: 시장 조사 기관 요약 자료</li>
+        <li>⚠️ EU 최대 함량 기준: 미확정 — 결정 후 업데이트 예정</li>
+      </ul>
+    </div>
+    <div>
+      <h4>📅 다음 호 예고 (Vol.5 — 4월 2주차)</h4>
+      <ul>
+        <li>🔜 섹션7 특집: 중동·아프리카 규제 심층 (GCC 할랄)</li>
+        <li>🔜 섹션8 집중: 병류 RTD 제품</li>
+        <li>🔜 베트남 Decree 46 재시행 업데이트</li>
+        <li>🔜 EU 비타민·미네랄 최대 함량 최신 결정 현황</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    WellFine 글로벌사업팀 · Green Food Maker | Vol.4 · 2026년 4월 1주차 | 본 보고서는 공개 자료 기반 분석이며 투자·법적 조언이 아닙니다
+  </div>
+</div>
+
+</body>
+</html>
